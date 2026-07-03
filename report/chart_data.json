@@ -1,0 +1,512 @@
+{
+  "meta": {
+    "generated": "2026-07-03",
+    "cohort_AB": 111,
+    "total": 125
+  },
+  "donut": {
+    "fit": 61,
+    "nofit": 50,
+    "total": 111,
+    "pct": 55
+  },
+  "baseType": [
+    {
+      "key": "established_videogame_genre_or_mode",
+      "label": "기성 비디오게임 장르/모드",
+      "count": 79,
+      "fit": 52,
+      "fitRate": 65.8
+    },
+    {
+      "key": "real_world_game",
+      "label": "현실 게임/활동",
+      "count": 15,
+      "fit": 7,
+      "fitRate": 46.7
+    },
+    {
+      "key": "licensed_or_franchise_IP",
+      "label": "라이선스/프랜차이즈 IP",
+      "count": 11,
+      "fit": 0,
+      "fitRate": 0
+    },
+    {
+      "key": "original_no_clear_base",
+      "label": "오리지널(베이스 없음)",
+      "count": 3,
+      "fit": 0,
+      "fitRate": 0
+    },
+    {
+      "key": "physical_party_activity",
+      "label": "물리적 파티 활동",
+      "count": 2,
+      "fit": 2,
+      "fitRate": 100
+    },
+    {
+      "key": "folklore_mythology",
+      "label": "민담/신화",
+      "count": 1,
+      "fit": 0,
+      "fitRate": 0
+    }
+  ],
+  "twist": [
+    {
+      "key": "aesthetic_reframe",
+      "label": "미학적 재구성",
+      "count": 54,
+      "medianCopies": 7.5
+    },
+    {
+      "key": "co_op_social_layer",
+      "label": "협동/소셜 레이어",
+      "count": 45,
+      "medianCopies": 8
+    },
+    {
+      "key": "genre_fusion",
+      "label": "장르 융합",
+      "count": 44,
+      "medianCopies": 7
+    },
+    {
+      "key": "mechanical_swap",
+      "label": "기계적 교체",
+      "count": 39,
+      "medianCopies": 7
+    },
+    {
+      "key": "price_or_scope_disruption",
+      "label": "가격/규모 파괴",
+      "count": 18,
+      "medianCopies": 11
+    },
+    {
+      "key": "narrative_reframe",
+      "label": "서사 재구성",
+      "count": 13,
+      "medianCopies": 9.3
+    },
+    {
+      "key": "accessibility_simplification",
+      "label": "접근성 단순화",
+      "count": 13,
+      "medianCopies": 6.5
+    },
+    {
+      "key": "physics_jank_emergence",
+      "label": "물리 잼 창발",
+      "count": 7,
+      "medianCopies": 11
+    },
+    {
+      "key": "input_embodiment",
+      "label": "입력 체화",
+      "count": 6,
+      "medianCopies": 8
+    },
+    {
+      "key": "procedural_roguelike_layer",
+      "label": "로그라이크 레이어",
+      "count": 6,
+      "medianCopies": 7.5
+    }
+  ],
+  "traits": [
+    {
+      "key": "co_op",
+      "label": "협동/소셜",
+      "v": 66.7
+    },
+    {
+      "key": "streamer",
+      "label": "스트리머 구동",
+      "v": 67.6
+    },
+    {
+      "key": "short_form",
+      "label": "숏폼 바이럴",
+      "v": 61.3
+    },
+    {
+      "key": "early_access",
+      "label": "Early Access",
+      "v": 30.6
+    },
+    {
+      "key": "sequel",
+      "label": "속편",
+      "v": 34.2
+    },
+    {
+      "key": "original",
+      "label": "신규 오리지널 IP",
+      "v": 62.2
+    },
+    {
+      "key": "solo_tiny",
+      "label": "솔로/소규모(≤5인)",
+      "v": 18
+    }
+  ],
+  "price": [
+    {
+      "label": "무료/<$5",
+      "count": 3,
+      "fit": 3
+    },
+    {
+      "label": "$5–10",
+      "count": 10,
+      "fit": 10
+    },
+    {
+      "label": "$10–20",
+      "count": 22,
+      "fit": 21
+    },
+    {
+      "label": "$20–40",
+      "count": 29,
+      "fit": 17
+    },
+    {
+      "label": "$40–60",
+      "count": 32,
+      "fit": 9
+    },
+    {
+      "label": "$60+",
+      "count": 15,
+      "fit": 1
+    }
+  ],
+  "byYear": [
+    {
+      "year": 2020,
+      "fit": 7,
+      "nofit": 2,
+      "total": 9
+    },
+    {
+      "year": 2021,
+      "fit": 8,
+      "nofit": 6,
+      "total": 14
+    },
+    {
+      "year": 2022,
+      "fit": 6,
+      "nofit": 5,
+      "total": 11
+    },
+    {
+      "year": 2023,
+      "fit": 5,
+      "nofit": 13,
+      "total": 18
+    },
+    {
+      "year": 2024,
+      "fit": 15,
+      "nofit": 10,
+      "total": 25
+    },
+    {
+      "year": 2025,
+      "fit": 8,
+      "nofit": 8,
+      "total": 16
+    },
+    {
+      "year": 2026,
+      "fit": 1,
+      "nofit": 3,
+      "total": 4
+    }
+  ],
+  "preCount": 14,
+  "matrix": [
+    [
+      {
+        "fam": 5,
+        "nov": 0,
+        "count": 8,
+        "fit": 0
+      },
+      {
+        "fam": 5,
+        "nov": 1,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 5,
+        "nov": 2,
+        "count": 4,
+        "fit": 0
+      },
+      {
+        "fam": 5,
+        "nov": 3,
+        "count": 1,
+        "fit": 0
+      },
+      {
+        "fam": 5,
+        "nov": 4,
+        "count": 7,
+        "fit": 7
+      },
+      {
+        "fam": 5,
+        "nov": 5,
+        "count": 1,
+        "fit": 1
+      }
+    ],
+    [
+      {
+        "fam": 4,
+        "nov": 0,
+        "count": 2,
+        "fit": 0
+      },
+      {
+        "fam": 4,
+        "nov": 1,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 4,
+        "nov": 2,
+        "count": 3,
+        "fit": 0
+      },
+      {
+        "fam": 4,
+        "nov": 3,
+        "count": 5,
+        "fit": 3
+      },
+      {
+        "fam": 4,
+        "nov": 4,
+        "count": 13,
+        "fit": 13
+      },
+      {
+        "fam": 4,
+        "nov": 5,
+        "count": 0,
+        "fit": 0
+      }
+    ],
+    [
+      {
+        "fam": 3,
+        "nov": 0,
+        "count": 6,
+        "fit": 0
+      },
+      {
+        "fam": 3,
+        "nov": 1,
+        "count": 1,
+        "fit": 0
+      },
+      {
+        "fam": 3,
+        "nov": 2,
+        "count": 11,
+        "fit": 0
+      },
+      {
+        "fam": 3,
+        "nov": 3,
+        "count": 19,
+        "fit": 13
+      },
+      {
+        "fam": 3,
+        "nov": 4,
+        "count": 22,
+        "fit": 21
+      },
+      {
+        "fam": 3,
+        "nov": 5,
+        "count": 3,
+        "fit": 3
+      }
+    ],
+    [
+      {
+        "fam": 2,
+        "nov": 0,
+        "count": 3,
+        "fit": 0
+      },
+      {
+        "fam": 2,
+        "nov": 1,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 2,
+        "nov": 2,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 2,
+        "nov": 3,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 2,
+        "nov": 4,
+        "count": 1,
+        "fit": 0
+      },
+      {
+        "fam": 2,
+        "nov": 5,
+        "count": 1,
+        "fit": 0
+      }
+    ],
+    [
+      {
+        "fam": 1,
+        "nov": 0,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 1,
+        "nov": 1,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 1,
+        "nov": 2,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 1,
+        "nov": 3,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 1,
+        "nov": 4,
+        "count": 0,
+        "fit": 0
+      },
+      {
+        "fam": 1,
+        "nov": 5,
+        "count": 0,
+        "fit": 0
+      }
+    ]
+  ],
+  "cases": [
+    {
+      "title": "Buckshot Roulette",
+      "base": "Russian roulette",
+      "familiarity": 5,
+      "twist_types": [
+        "mechanical_swap",
+        "genre_fusion",
+        "co_op_social_layer",
+        "price_or_scope_disruption"
+      ],
+      "novelty": 4,
+      "price": 2.99,
+      "team": 1,
+      "copies": 8,
+      "hook": "A stripped-down, item-enhanced reimagining of Russian roulette played with a pump-action shotgun against a sinister AI \"Dealer\"."
+    },
+    {
+      "title": "MECCHA CHAMELEON",
+      "base": "Hide-and-seek / Prop Hunt",
+      "familiarity": 5,
+      "twist_types": [
+        "mechanical_swap",
+        "aesthetic_reframe",
+        "co_op_social_layer",
+        "price_or_scope_disruption"
+      ],
+      "novelty": 4,
+      "price": 5.99,
+      "team": 2,
+      "copies": 12.6,
+      "hook": "A 2-person Japanese indie team turned Prop Hunt-style hide-and-seek into a $6 body-painting camouflage party game that sold over 10 million copies in 16 days with zero marketing."
+    },
+    {
+      "title": "Liar's Bar",
+      "base": "Liar's Dice / bluffing card game + Russian roulette",
+      "familiarity": 5,
+      "twist_types": [
+        "input_embodiment",
+        "co_op_social_layer",
+        "aesthetic_reframe",
+        "price_or_scope_disruption"
+      ],
+      "novelty": 4,
+      "price": 6.99,
+      "team": null,
+      "copies": 3,
+      "hook": "A first-person, socially-embodied take on Liar's Dice/bluffing where losing a bluff can mean playing Russian roulette at a seedy virtual bar table with three other players."
+    },
+    {
+      "title": "Content Warning",
+      "base": "Extraction horror co-op / found-footage YouTuber sim (Lethal Company-style)",
+      "familiarity": 3,
+      "twist_types": [
+        "narrative_reframe",
+        "price_or_scope_disruption",
+        "co_op_social_layer"
+      ],
+      "novelty": 4,
+      "price": 7.99,
+      "team": 5,
+      "copies": 6,
+      "hook": "A co-op horror game where you descend into a cursed underground with friends to film scary footage that you upload for views and cash, blending Lethal Company-style extraction horror with a YouTuber/content-creator meta-loop."
+    },
+    {
+      "title": "Chained Together",
+      "base": "Foddian ragdoll-physics climbing platformer (Only Up! / Getting Over It) fused with hide-and-seek-style forced-cooperation chain-gang concept",
+      "familiarity": 3,
+      "twist_types": [
+        "co_op_social_layer",
+        "physics_jank_emergence",
+        "price_or_scope_disruption"
+      ],
+      "novelty": 4,
+      "price": 4.99,
+      "team": 4,
+      "copies": 4,
+      "hook": "Up to four players, physically chained together, must cooperate (or comedically sabotage each other) to climb out of a hellish pit using ragdoll physics."
+    }
+  ],
+  "headline": {
+    "fits_pct_AB": 55,
+    "fits_pct_ABC": 53.5,
+    "coder_disagreement": 45,
+    "coop": 66.7,
+    "streamer": 67.6
+  }
+}

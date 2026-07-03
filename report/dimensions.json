@@ -1,0 +1,1414 @@
+[
+  {
+    "dimension": "hypothesis_test — What % of 1M+ hits fit \"familiar base + novel twist\" (base_familiarity>=3 AND twist_present AND max_novelty>=3, with analyst judgment downgrading pure brand/production-driven AAA)",
+    "headline": "Roughly half of these hits (55% Tier A+B; 54% A+B+C) fit \"familiar base + novel twist\" — the pattern is real but explains only about half the field, and its share collapses in AAA-sequel-heavy 2023 (29%) versus indie-driven cohorts (2018-2020 ~75-100%).",
+    "findings": "Using the analyst's coded `fits` verdict, 61 of 111 Tier A+B games fit the hypothesis = 55.0%. Adding Tier C (all 3 non-fits) gives 61/114 = 53.5% — a tight sensitivity band of 53.5%-55.0%. The 50 non-fits are dominated by AAA sequels, franchise/licensed IP, and remasters whose success is coded to brand equity + production value rather than a novel twist (GTA V, CoD MWII/BO6, NBA 2K24, EA FC24, Hogwarts Legacy, MK1, Battlefield 6, RE4 Remake, Dragon Ball, Assassin's Creed Valhalla). By YEAR the fit-share is strongly bimodal by cohort composition: early indie-weighted years run high (2016 4/5=80%, 2018 3/3=100%, 2019 3/4=75%, 2020 7/9=78%), then it drops as AAA sequels/remakes flood the sample — 2021 54%, 2022 54%, and a trough of 2023 5/17=29% (that year is packed with BG3, Diablo IV, Starfield, Cities Skylines II, RE4 Remake, EA FC24, MK1, NBA 2K24, all non-fits), rebounding to 2024 15/25=60% and 2025 8/16=50% as the \"friendslop\"/party-game viral wave (PEAK, R.E.P.O., RV There Yet, Schedule I, MECCHA CHAMELEON) reasserts the pattern. By TIER: Tier A 61/110=55.5%, Tier B 0/1 (PAYDAY 3, non-fit), Tier C 0/3. IMPORTANT judgment note: the analyst coded STRICTER than the raw formula — 10 games mechanically satisfy familiarity>=3 + twist_present + max_novelty>=3 but were downgraded to fits=false because their real driver is brand/production (Elden Ring, Baldur's Gate 3, Cyberpunk 2077, Split Fiction, Manor Lords, Elden Ring Nightreign, Metaphor: ReFantazio, Wo Long, Resident Evil Village, Atomic Heart). Counting those as fits (pure-formula ceiling) yields 71/111 = 64%. So the defensible band across strict-formula vs. analyst-judgment is ~54-64%.",
+    "tables": [
+      {
+        "cut": "Tier A+B (cohort)",
+        "n": 111,
+        "fits_true": 61,
+        "fits_pct": "55.0%"
+      },
+      {
+        "cut": "Tier A+B+C (sensitivity)",
+        "n": 114,
+        "fits_true": 61,
+        "fits_pct": "53.5%"
+      },
+      {
+        "cut": "Pure-formula ceiling (A+B, incl. 10 judgment-downgrades)",
+        "n": 111,
+        "fits_true": 71,
+        "fits_pct": "64.0%"
+      },
+      {
+        "cut": "Tier A only",
+        "n": 110,
+        "fits_true": 61,
+        "fits_pct": "55.5%"
+      },
+      {
+        "cut": "Tier B only",
+        "n": 1,
+        "fits_true": 0,
+        "fits_pct": "0%"
+      },
+      {
+        "cut": "Tier C only",
+        "n": 3,
+        "fits_true": 0,
+        "fits_pct": "0%"
+      }
+    ],
+    "exemplars": [
+      "Balatro (2024): poker hand-rankings (familiarity 5) recast as a solitaire roguelike deckbuilder — max_novelty 5, fit_strength 5, textbook case",
+      "Buckshot Roulette (2024): Russian roulette (5) + shotgun/item-inventory twist — nov 4, fit_strength 5",
+      "MECCHA CHAMELEON (2026) & Liar's Bar (2024): real party games (Prop Hunt; Liar's Dice + Russian roulette, both familiarity 5) reframed as cheap streamer-viral co-op — fit_strength 5",
+      "PowerWash Simulator (2022): a real-world chore (familiarity 5) reframed into a meditative ASMR loop — fit_strength 5",
+      "Palworld (2024): Pokemon creature-collecting (5) fused with survival-crafting + dark meme reframe — nov 4, fit_strength 5",
+      "Fall Guys (2020): TV obstacle-course game show (Takeshi's Castle/Wipeout, familiarity 4) + battle-royale + ragdoll — fit_strength 5",
+      "Schedule I (2025) & R.E.P.O./RV There Yet/PEAK (2024-25): familiar sim/co-op-extraction loops (familiarity 3-4) plus a novel aesthetic/physics reframe, all viral fits"
+    ],
+    "counterexamples": [
+      "GTA V, CoD MWII/Black Ops 6, NBA 2K24, EA Sports FC 24, Mortal Kombat 1, Battlefield 6: AAA sequels/annual franchises with twist_present=false — success coded to brand + marketing, not a twist",
+      "Hogwarts Legacy, Dragon Ball Sparking Zero, Assassin's Creed Valhalla, RE4 Remake, Oblivion Remastered: licensed/franchise IP or remakes with max_novelty<=2 — familiarity is maximal but the twist bar fails",
+      "Elden Ring, Baldur's Gate 3, Cyberpunk 2077, Split Fiction, Metaphor: ReFantazio, Manor Lords, Elden Ring Nightreign, Wo Long, Resident Evil Village, Atomic Heart: the 10 borderline cases that PASS the raw formula (familiarity>=3, twist, nov>=3) but were judgment-downgraded to non-fit because the real driver is FromSoft/CDPR/Larian/Atlus pedigree + AAA production, not a user-friendly twist on a mass-familiar concept",
+      "No Man's Sky, Stray, Teardown: genuinely novel but built on original_no_clear_base (familiarity 2) — fail the familiarity gate, so novelty alone doesn't make them fit"
+    ],
+    "caveats": "Headline share depends entirely on where the twist/novelty threshold and the brand-vs-twist judgment are drawn: analyst-coded verdict = 55% (A+B), but the raw mechanical formula (familiarity>=3 AND twist AND max_novelty>=3) would put 10 more borderline AAA hits in the 'fit' column, lifting it to 64% — so treat 54-64% as the real uncertainty band, not a point estimate. The Tier A+B vs A+B+C sensitivity is trivial (all 3 Tier C games are non-fits, moving the number only ~1.5pts) because the confident set already contains the fits; the bigger swing is the judgment axis, not the tier axis. Year buckets 2011/2013/2018/2019/2026 have n<=5 and are statistically noisy (e.g., 2018=100% is just 3 games). The strong apparent decline is really a composition effect — cohorts loaded with AAA sequels/remasters (2023) mechanically drag the share down — not evidence the pattern itself is fading, since 2024-25 rebounds. Every fits verdict is one analyst's coding of subjective fields (base_familiarity, twist novelty), and 'fits' vs 'fits_recheck' are not two verdicts — fits_recheck is essentially a 'confirmed in confident set' flag (true for all A/B/C, false only for excluded Tier D). copies_m figures are largely self-reported and several carry players_not_sales/owners_not_sold inflation flags, but that affects magnitude, not the fit classification."
+  },
+  {
+    "dimension": "base_concept_taxonomy — frequency of base_concept_type, recurring base-concept names, and how base type relates to hypothesis-fit",
+    "headline": "Nearly 3 in 4 hits (71%) are built on an already-established video-game genre/mode, not a famous real-world game or IP; established-genre bases fit the \"familiar-base + twist\" hypothesis at 66% while licensed IP fits at 0%, and the fit-share overall is 55% (A+B) / 54% (A+B+C).",
+    "findings": "Across the 111-game confident cohort (Tier A+B), base_concept_type is dominated by established_videogame_genre_or_mode: 79 games (71.2%). The remaining tail is real_world_game 15 (13.5%), licensed_or_franchise_IP 11 (9.9%), original_no_clear_base 3 (2.7%), physical_party_activity 2 (1.8%), and folklore_mythology 1 (0.9%). Adding the 3 Tier-C games (A+B+C, N=114) barely moves it: established 70.2%, real_world 14.0%, licensed 10.5% — the taxonomy is stable across the sensitivity band. Hypothesis fit=true is 61/111 = 55.0% (A+B) and 61/114 = 53.5% (A+B+C). Fit is overwhelmingly concentrated in the established-genre base: 52/79 = 66% of established-genre games fit, vs 0/11 for licensed IP, 0/3 for original_no_clear_base, and 0/1 for folklore. The two physical_party_activity games (Fall Guys, Dead by Daylight) both fit (2/2). real_world_game splits at 7/15 = 47%, but that category is bimodal: the ~10 games whose base is a genuine non-video-game activity (poker, Russian roulette, hide-and-seek, prop hunt, social deduction, power-washing, TV game show, tag) fit at roughly 80% (Among Us, Balatro, Buckshot Roulette, MECCHA CHAMELEON, PowerWash Simulator, Liar's Bar + the 2 party games), while the ~5-7 \"real_world_game\" entries that are actually franchise/genre bases mislabeled (Diablo IV, Cities: Skylines II, CoD: Black Ops 6, EA Sports FC 24, Diablo II Resurrected, STALKER 2, KCD II) fit at ~0%. Recurring base-concept families (established genre): soulslike/action-RPG is the single most common recurring base (7 games — Elden Ring, Black Myth, Nioh 2, Lies of P, WUCHANG, Lords of the Fallen, Wo Long, plus Nightreign/Remnant as hybrids), followed by survival-crafting (6-8 depending on grouping: Valheim, Terraria, Sons of the Forest, Enshrouded, Grounded, Core Keeper, V Rising, Planet Crafter, Astroneer, Subnautica 2), ARPG/loot-grinder (5: Diablo IV, PoE2, Grim Dawn, Last Epoch, Diablo II Resurrected), then 3-way clusters of open-world action-RPG, licensed open-world RPG, military FPS, turn-based JRPG, extraction shooter, and factory automation. Provenance strongly predicts fit: 69/111 (62%) are original IP and fit at 80% (55/69), whereas the 42 sequels/licensed/remake titles fit at just 14% (6/42). Familiarity of the base concept shows an inverted-U vs fit: fam=3 (gaming-literate genres) 60% fit, fam=4 70% fit, but fam=5 (household-famous) only 38% fit — because most fam=5 games are licensed AAA sequels (Hogwarts Legacy, MK1, CoD, AC Valhalla) with twist_present=false; the fam=5 games that DO fit are the real-world-activity ones (Balatro, Buckshot Roulette, MECCHA, PowerWash, Liar's Bar).",
+    "tables": [
+      {
+        "cohort": "A+B (N=111)",
+        "established_genre": "79 (71.2%)",
+        "real_world_game": "15 (13.5%)",
+        "licensed_IP": "11 (9.9%)",
+        "original_no_base": "3 (2.7%)",
+        "physical_party": "2 (1.8%)",
+        "folklore": "1 (0.9%)"
+      },
+      {
+        "cohort": "A+B+C (N=114)",
+        "established_genre": "80 (70.2%)",
+        "real_world_game": "16 (14.0%)",
+        "licensed_IP": "12 (10.5%)",
+        "original_no_base": "3 (2.6%)",
+        "physical_party": "2 (1.8%)",
+        "folklore": "1 (0.9%)"
+      }
+    ]
+  },
+  {
+    "dimension": "twist_taxonomy",
+    "headline": "Four twist types (aesthetic_reframe, co-op layer, genre_fusion, mechanical_swap) blanket the hit list, but the rarer price/scope-disruption and physics-jank twists are what actually track with higher unit sales.",
+    "findings": "Of 111 Tier A+B hits, 92 (82.9%) carry at least one coded twist_type; 19 (17.1%) carry none — and that no-twist group is almost entirely AAA sequels, sports, and licensed IP (GTA V, CoD MWII/BO6, Battlefield 6, EA FC 24, NBA 2K24, Mortal Kombat 1, DBZ Sparking, Silksong, KCD2, FS22/25, Cities Skylines II, Dragon's Dogma 2, STALKER 2, Crimson Desert, Space Marine 2, Teardown). Twist frequency is heavily top-loaded: aesthetic_reframe 48.6% (54 games), co_op_social_layer 40.5% (45), genre_fusion 39.6% (44), mechanical_swap 35.1% (39) — these \"big four\" account for the bulk of all tags. A steep long tail follows: price_or_scope_disruption 16.2% (18), narrative_reframe 11.7% (13), accessibility_simplification 11.7% (13), physics_jank_emergence 6.3% (7), input_embodiment 5.4% (6), procedural_roguelike_layer 5.4% (6). The most common CO-OCCURRING pairs are aesthetic_reframe+genre_fusion and aesthetic_reframe+co_op_social_layer (23 games each), then aesthetic_reframe+mechanical_swap (21) and co_op+genre_fusion (19) — aesthetic_reframe is the connective tissue in most multi-twist recipes. On copies: the big-four twists show essentially ZERO median lift (aesthetic_reframe +0.5M, mechanical_swap -0.8M, genre_fusion -1.2M vs games without them) — they are table stakes, not differentiators. The RARE twists carry the signal: price_or_scope_disruption has the largest median lift (11.0M with vs 6.5M without, +4.5M), then physics_jank_emergence (11.0 vs 7.0, +4.0M), narrative_reframe (9.3 vs 7.2, +2.1M), and co_op_social_layer (8.0 vs 6.5, +1.5M). Stacking helps modestly and monotonically by median: 0 twists median 7.0M, 2 twists 6.5M, 3 twists 7.5M, 4 twists 10.5M (n=10). Means are distorted by GTA V (230M) inflating the zero-twist mean to 21.6M; excluding it, zero-twist mean falls to 10.0M and median stays 7.0M. Hypothesis fits=true share: 55.0% (61/111) for Tier A+B; 53.5% (61/114) for Tier A+B+C (all three added Tier C games — Saints Row, Sea of Stars, Indiana Jones — are fits=false, so the numerator is unchanged and the share dips slightly).",
+    "tables": [
+      {
+        "table": "twist_frequency",
+        "twist_type": "aesthetic_reframe",
+        "games": 54,
+        "pct_of_111": "48.6%",
+        "median_copies_with": 7.5,
+        "median_copies_without": 7,
+        "median_lift_m": 0.5
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "co_op_social_layer",
+        "games": 45,
+        "pct_of_111": "40.5%",
+        "median_copies_with": 8,
+        "median_copies_without": 6.5,
+        "median_lift_m": 1.5
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "genre_fusion",
+        "games": 44,
+        "pct_of_111": "39.6%",
+        "median_copies_with": 6.8,
+        "median_copies_without": 8,
+        "median_lift_m": -1.2
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "mechanical_swap",
+        "games": 39,
+        "pct_of_111": "35.1%",
+        "median_copies_with": 7,
+        "median_copies_without": 7.8,
+        "median_lift_m": -0.8
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "price_or_scope_disruption",
+        "games": 18,
+        "pct_of_111": "16.2%",
+        "median_copies_with": 11,
+        "median_copies_without": 6.5,
+        "median_lift_m": 4.5
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "narrative_reframe",
+        "games": 13,
+        "pct_of_111": "11.7%",
+        "median_copies_with": 9.3,
+        "median_copies_without": 7.2,
+        "median_lift_m": 2.1
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "accessibility_simplification",
+        "games": 13,
+        "pct_of_111": "11.7%",
+        "median_copies_with": 6.5,
+        "median_copies_without": 7.5,
+        "median_lift_m": -1
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "physics_jank_emergence",
+        "games": 7,
+        "pct_of_111": "6.3%",
+        "median_copies_with": 11,
+        "median_copies_without": 7,
+        "median_lift_m": 4
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "input_embodiment",
+        "games": 6,
+        "pct_of_111": "5.4%",
+        "median_copies_with": 8,
+        "median_copies_without": 7,
+        "median_lift_m": 1
+      },
+      {
+        "table": "twist_frequency",
+        "twist_type": "procedural_roguelike_layer",
+        "games": 6,
+        "pct_of_111": "5.4%",
+        "median_copies_with": 6.8,
+        "median_copies_without": 7.5,
+        "median_lift_m": -0.7
+      },
+      {
+        "table": "top_cooccurring_pairs",
+        "pair": "aesthetic_reframe + genre_fusion",
+        "games": 23
+      },
+      {
+        "table": "top_cooccurring_pairs",
+        "pair": "aesthetic_reframe + co_op_social_layer",
+        "games": 23
+      },
+      {
+        "table": "top_cooccurring_pairs",
+        "pair": "aesthetic_reframe + mechanical_swap",
+        "games": 21
+      },
+      {
+        "table": "top_cooccurring_pairs",
+        "pair": "co_op_social_layer + genre_fusion",
+        "games": 19
+      },
+      {
+        "table": "top_cooccurring_pairs",
+        "pair": "genre_fusion + mechanical_swap",
+        "games": 15
+      },
+      {
+        "table": "top_cooccurring_pairs",
+        "pair": "co_op_social_layer + mechanical_swap",
+        "games": 14
+      },
+      {
+        "table": "top_cooccurring_pairs",
+        "pair": "co_op_social_layer + price_or_scope_disruption",
+        "games": 12
+      },
+      {
+        "table": "copies_by_twist_count",
+        "distinct_twist_count": 0,
+        "n": 19,
+        "median_copies": 7,
+        "mean_copies": 21.6
+      },
+      {
+        "table": "copies_by_twist_count",
+        "distinct_twist_count": 1,
+        "n": 6,
+        "median_copies": 5,
+        "mean_copies": 7.5
+      },
+      {
+        "table": "copies_by_twist_count",
+        "distinct_twist_count": 2,
+        "n": 29,
+        "median_copies": 6.5,
+        "mean_copies": 10.2
+      },
+      {
+        "table": "copies_by_twist_count",
+        "distinct_twist_count": 3,
+        "n": 47,
+        "median_copies": 7.5,
+        "mean_copies": 11.7
+      },
+      {
+        "table": "copies_by_twist_count",
+        "distinct_twist_count": 4,
+        "n": 10,
+        "median_copies": 10.5,
+        "mean_copies": 14.6
+      },
+      {
+        "table": "fits_share",
+        "cohort": "Tier A+B",
+        "n": 111,
+        "fits_true": 61,
+        "pct": "55.0%"
+      },
+      {
+        "table": "fits_share",
+        "cohort": "Tier A+B+C",
+        "n": 114,
+        "fits_true": 61,
+        "pct": "53.5%"
+      }
+    ],
+    "exemplars": [
+      "price_or_scope_disruption as the strongest copy-correlated twist: Vampire Survivors ($2.99, 15M), Buckshot Roulette ($2.99, 8M), Terraria ($9.99, 70M), MECCHA CHAMELEON ($5.99, 12.6M), PEAK ($7.99, 11M) — cheap price IS the twist.",
+      "physics_jank_emergence cluster all overperform: Fall Guys (11M), PEAK (11M), R.E.P.O. (11M), Chained Together (4M), Sea of Thieves (40M), Deep Rock Galactic (10M) — median 11.0M vs 7.0M for the rest.",
+      "aesthetic_reframe+co_op is the canonical viral-hit recipe: Palworld (25M), Among Us (8M), Human: Fall Flat (58M), Grounded (5M), Schedule I (8M), RV There Yet? (4.5M).",
+      "4-twist 'stacked' games (highest median, 10.5M): Palworld (25M), NARAKA (10M), Stardew Valley (50M), Among Us (8M), Vampire Survivors (15M), Buckshot Roulette (8M), MECCHA CHAMELEON (12.6M), Liar's Bar (3M), Fall Guys (11M), Nioh 2 (3.2M).",
+      "Highest-selling twist-bearing hit overall: Terraria (70M, genre_fusion+price_disruption+co_op) — a clean 3-twist example that outsells nearly every AAA no-twist title except GTA V."
+    ],
+    "counterexamples": [
+      "Zero-twist mega-hits break any 'twist required' reading: GTA V (230M), CoD MWII (23M), Battlefield 6 (20M), EA FC 24 (10M), NBA 2K24 (9M), Mortal Kombat 1 (8M), Silksong (7M) all sold huge with no coded twist — the brand/AAA-sequel path is a parallel route to scale.",
+      "Twist-heavy underperformers show twists alone don't guarantee volume: Ranch Simulator (3 twists incl. double genre_fusion, only 1.4M), Nioh 2 (4 twists, 3.2M), inZOI (3 twists, 1.2M), Gray Zone Warfare (3 twists, 1.5M), Loop Hero (3 twists, novelty-5, only 2M).",
+      "genre_fusion — despite being the 3rd-most-common twist (44 games) — shows NEGATIVE median lift (6.8M vs 8.0M): it is a hallmark of the hit list but not a sales amplifier on its own.",
+      "co_op_social_layer's mean lift (14.1M vs 12.3M) nearly vanishes at the median (8.0 vs 6.5M) once GTA V and a few AAA co-op titles are set aside — its apparent power is partly composition, not causation."
+    ],
+    "caveats": "Copies_m are mostly self-reported and several carry inflation flags (players_not_sales, owners_not_sold), so absolute magnitudes are noisy; medians are used throughout to blunt this and the GTA V (230M) outlier, which alone inflates the zero-twist MEAN to 21.6M (median is 7.0M; ex-GTA mean 10.0M). Twist_types is a hand-coded taxonomy from the source data — 'with vs without' comparisons are observational and confounded by price tier, co-op, streamer virality, and AAA budget (the non_fit_factors), so lift figures indicate association, not causation. Frequencies dedupe repeated tags within a game (Ranch Simulator's double genre_fusion, PoE2's double mechanical_swap counted once). A few twist_present=false games still list a twist_type (AC Valhalla, Fallen Order genre_fusion; PAYDAY 3 mechanical_swap); these are counted as listed. Small-n twists (physics_jank n=7, input_embodiment n=6, procedural_roguelike n=6) have wide uncertainty — their lift estimates are directional only. fits share reflects the dataset's own fits flag/rubric, not an independent re-derivation."
+  },
+  {
+    "dimension": "familiarity_x_novelty",
+    "headline": "Hits cluster hard in the high-familiarity (≥3) × high-novelty (≥3) cell: it holds 100% of the 61 fits=true games and hits 86% of that cell, while novelty ≤2 yields zero hits regardless of fame.",
+    "findings": "Across the 111-game Tier A+B cohort, 61 games are coded fits=true (55.0%); adding the 3 Tier C games (all fits=false) gives 61/114 = 53.5% — the sensitivity band is 53.5%–55.0%. The cross-tab is starkly bimodal. Every one of the 61 hits sits in the high-familiarity (base_familiarity ≥3) AND high-novelty (max twist novelty ≥3) quadrant. That quadrant holds 71 games total, so its internal hit rate is 61/71 = 85.9%. The other three quadrants are empty of hits: high-familiarity × low-novelty (≤2) = 0/35, low-familiarity (F2) × high-novelty = 0/2, low-familiarity × low-novelty = 0/3. So novelty ≥3 is effectively necessary (0 hits at novelty ≤2, across 38 games) and familiarity ≥3 is necessary (0 hits among the 5 F2 games, including No Man's Sky N5 and Stray N4). Within the hits, the sweet spot is NOT maximal fame: familiarity=3 supplies 37/61 hits (60.7%), F4 supplies 16 (26.2%), and F5 only 8 (13.1%) — because most F5 titles are AAA franchise sequels with no twist (novelty 0), e.g. GTA V, CoD MWII/BO6, NBA 2K24, Hogwarts Legacy, EA FC 24, Mortal Kombat 1, all sitting dead in the F5/N0 cell. On the novelty axis the hits skew high: novelty=4 alone accounts for 41/61 hits (67.2%), novelty ≥4 for 45/61 (73.8%); median novelty among hits = 4, median familiarity among hits = 3. The interaction is necessary but not sufficient: 10 games with F≥3 AND N≥3 are still coded fits=false, all attributed to brand/production drivers rather than the twist (Elden Ring, Baldur's Gate 3, Cyberpunk 2077, Resident Evil Village, Manor Lords, Split Fiction, Metaphor: ReFantazio, Elden Ring Nightreign, Atomic Heart, Wo Long). These 10 are what separate the mechanical F≥3∧N≥3 filter (71 games) from the actual hit set (61).",
+    "tables": [
+      {
+        "table": "cross_tab_total_games_per_cell",
+        "familiarity": 5,
+        "nov0": 8,
+        "nov1": 0,
+        "nov2": 4,
+        "nov3": 1,
+        "nov4": 7,
+        "nov5": 1,
+        "row_total": 21
+      },
+      {
+        "table": "cross_tab_total_games_per_cell",
+        "familiarity": 4,
+        "nov0": 2,
+        "nov1": 0,
+        "nov2": 3,
+        "nov3": 5,
+        "nov4": 13,
+        "nov5": 0,
+        "row_total": 23
+      },
+      {
+        "table": "cross_tab_total_games_per_cell",
+        "familiarity": 3,
+        "nov0": 6,
+        "nov1": 1,
+        "nov2": 11,
+        "nov3": 19,
+        "nov4": 22,
+        "nov5": 3,
+        "row_total": 62
+      },
+      {
+        "table": "cross_tab_total_games_per_cell",
+        "familiarity": 2,
+        "nov0": 3,
+        "nov1": 0,
+        "nov2": 0,
+        "nov3": 0,
+        "nov4": 1,
+        "nov5": 1,
+        "row_total": 5
+      },
+      {
+        "table": "cross_tab_fits_true_per_cell",
+        "familiarity": 5,
+        "nov0": 0,
+        "nov1": 0,
+        "nov2": 0,
+        "nov3": 0,
+        "nov4": 7,
+        "nov5": 1,
+        "row_true": 8
+      },
+      {
+        "table": "cross_tab_fits_true_per_cell",
+        "familiarity": 4,
+        "nov0": 0,
+        "nov1": 0,
+        "nov2": 0,
+        "nov3": 3,
+        "nov4": 13,
+        "nov5": 0,
+        "row_true": 16
+      },
+      {
+        "table": "cross_tab_fits_true_per_cell",
+        "familiarity": 3,
+        "nov0": 0,
+        "nov1": 0,
+        "nov2": 0,
+        "nov3": 13,
+        "nov4": 21,
+        "nov5": 3,
+        "row_true": 37
+      },
+      {
+        "table": "cross_tab_fits_true_per_cell",
+        "familiarity": 2,
+        "nov0": 0,
+        "nov1": 0,
+        "nov2": 0,
+        "nov3": 0,
+        "nov4": 0,
+        "nov5": 0,
+        "row_true": 0
+      },
+      {
+        "table": "quadrant_summary",
+        "quadrant": "high-fam(>=3) x high-nov(>=3)",
+        "games": 71,
+        "hits": 61,
+        "hit_rate_pct": 85.9
+      },
+      {
+        "table": "quadrant_summary",
+        "quadrant": "high-fam(>=3) x low-nov(<=2)",
+        "games": 35,
+        "hits": 0,
+        "hit_rate_pct": 0
+      },
+      {
+        "table": "quadrant_summary",
+        "quadrant": "low-fam(<=2) x high-nov(>=3)",
+        "games": 2,
+        "hits": 0,
+        "hit_rate_pct": 0
+      },
+      {
+        "table": "quadrant_summary",
+        "quadrant": "low-fam(<=2) x low-nov(<=2)",
+        "games": 3,
+        "hits": 0,
+        "hit_rate_pct": 0
+      },
+      {
+        "table": "hits_by_novelty_band",
+        "novelty": 5,
+        "hits": 4
+      },
+      {
+        "table": "hits_by_novelty_band",
+        "novelty": 4,
+        "hits": 41
+      },
+      {
+        "table": "hits_by_novelty_band",
+        "novelty": 3,
+        "hits": 16
+      },
+      {
+        "table": "hits_by_novelty_band",
+        "novelty": "<=2",
+        "hits": 0
+      },
+      {
+        "table": "hits_by_familiarity",
+        "familiarity": 5,
+        "hits": 8,
+        "share_of_hits_pct": 13.1
+      },
+      {
+        "table": "hits_by_familiarity",
+        "familiarity": 4,
+        "hits": 16,
+        "share_of_hits_pct": 26.2
+      },
+      {
+        "table": "hits_by_familiarity",
+        "familiarity": 3,
+        "hits": 37,
+        "share_of_hits_pct": 60.7
+      },
+      {
+        "table": "hits_by_familiarity",
+        "familiarity": 2,
+        "hits": 0,
+        "share_of_hits_pct": 0
+      },
+      {
+        "table": "fits_true_share",
+        "cohort": "Tier A+B",
+        "fits_true": 61,
+        "n": 111,
+        "pct": 55
+      },
+      {
+        "table": "fits_true_share",
+        "cohort": "Tier A+B+C",
+        "fits_true": 61,
+        "n": 114,
+        "pct": 53.5
+      }
+    ],
+    "exemplars": [
+      "Balatro (F5, N5, hit) — poker, the most famous possible base, fused with a genuinely new roguelike scoring engine; the single top-right corner cell.",
+      "Buckshot Roulette (F5, N4, hit) — Russian roulette base + shotgun/item-layer twist.",
+      "MECCHA CHAMELEON (F5, N4, hit) — hide-and-seek/Prop Hunt + body-paint camouflage mechanic.",
+      "Dead by Daylight (F5, N4, hit) — tag/hide-and-seek base + asymmetric 4v1 horror twist.",
+      "PowerWash Simulator (F5, N4, hit) — mundane real-world chore + meditative/ASMR reframe.",
+      "Vampire Survivors (F3, N4, hit) and Hades (F3, N5, hit) — gaming-familiar genre base (F3) carried by a high-novelty twist, the modal hit profile.",
+      "Palworld (F5, N4, hit) and Liar's Bar (F5, N4, hit) — both maximal-fame bases with strong twists."
+    ],
+    "counterexamples": [
+      "Elden Ring (F3, N4) coded fits=FALSE — sits in the hit quadrant but success attributed to FromSoftware pedigree/AAA production, not the twist. Largest exception by scale (30M).",
+      "Baldur's Gate 3 (F4, N3, false), Cyberpunk 2077 (F3, N3, false), Resident Evil Village (F5, N3, false) — high-fam/high-nov but flagged brand/franchise-driven.",
+      "Manor Lords, Split Fiction, Metaphor: ReFantazio, Atomic Heart, Elden Ring Nightreign, Wo Long (all F3-F4, N3, false) — the 10 quadrant games where the interaction is present but deemed not the causal driver; these separate the 71-game mechanical cell from the 61 actual hits.",
+      "GTA V, CoD Modern Warfare II, CoD Black Ops 6, NBA 2K24, Hogwarts Legacy, EA Sports FC 24, Mortal Kombat 1 (all F5, N0) — maximal fame, zero novelty, all fits=false; the dense F5/N0 cell shows fame alone never produces a hit.",
+      "No Man's Sky (F2, N5) and Stray (F2, N4) — maximal novelty but low familiarity, both false; confirms novelty alone is also insufficient."
+    ],
+    "caveats": "[\"fits=true is a coder judgment, not a pure mechanical threshold: 10 games clear F>=3 AND N>=3 but are still coded false on a brand/production 'recheck,' so the 85.9% quadrant hit rate reflects that editorial layer, not just the numbers.\",\"This is a hits-only sample (all 111/114 already sold ~1M+), so the table shows where hits land, NOT the probability that a given famous+novel concept becomes a hit — there is no non-hit control group, so no true base rate or lift can be computed.\",\"Familiarity and novelty are integer 0-5 scores assigned by the same source that assigned fits, so the clustering is partly definitional/collinear with the fits formula (which literally encodes F>=3 & twist & N>=3); the informative findings are the WITHIN-quadrant patterns (F3 dominance, N4 dominance, the 10 false exceptions), not the raw fact that hits obey the formula.\",\"Cell counts are small in places (F2 row n=5; F5/N5 n=1; F4/N5 n=0), so per-cell rates are noisy.\",\"Tier C adds only 3 games (all false) so the sensitivity band is narrow (53.5-55.0%); Tier D (free-to-play/player-count titles) is excluded from both, and several D-tier entries would also land in the high/high quadrant if counted.\"]"
+  },
+  {
+    "dimension": "counterexample_analysis — for fits=false games, the distribution of non-hypothesis success factors, and placement of Wukong / Silksong / PoE2 / Palworld",
+    "headline": "The 50 fits=false counterexamples are overwhelmingly brand-driven: ~72% ride an existing franchise or licensed IP, not a famous-base-plus-twist; Wukong, Silksong and PoE2 are three distinct failure modes, while Palworld is the fits=true anchor that shows the boundary.",
+    "findings": "In the confident Tier A+B cohort (n=111), 61 games fit the hypothesis and 50 do not — a fits=true share of 55.0%. Extending to Tier A+B+C (n=114) adds three more counterexamples (Saints Row, Sea of Stars, Indiana Jones — all fits=false), giving 61/114 = 53.5%. Sensitivity band: 53.5%–55.0%. The 50 fits=false games sort into four primary driver archetypes: (1) own-franchise sequel/remaster brand-equity = 27 games (54%); (2) licensed external IP (film/anime/sport/tabletop) = 9 (18%); (3) original-title AAA production/pedigree/acclaim = 11 (22%); (4) original no-clear-base novelty hook (familiarity<3) = 3 (6%). Buckets 1+2 — i.e. brand/IP-driven — account for 36/50 = 72% of all counterexamples. Structurally, 32 of 50 counterexamples (64%) are sequels and another 3 are franchise remasters (Oblivion Remastered, RE4 Remake, D2R), so 68% are franchise-continuity products. By failure mechanism (max_novelty of the best twist): 20 games (40%) have no qualifying twist (novelty ≤1) — pure annual/iteration/remaster (GTA V, CoD MWII/BO6, FC24, NBA2K24, MK1, Farming Sim 22/25, Silksong); 18 (36%) have only an incremental twist (novelty 2 — Wukong, PoE2, MH Wilds/Rise, Starfield, RE4 Remake, D2R, Forza); and 12 (24%) actually clear novelty≥3 but were still coded false, either because the base is a category-excluded licensed IP, familiarity was <3 (NMS novelty 5, Stray novelty 4, Teardown), or the analyst override judged brand/pedigree/production the real driver (Elden Ring novelty 4, Cyberpunk, Split Fiction, Manor Lords, Metaphor, Nightreign, Atomic Heart, Wo Long). Factor-frequency across the 50 (games cite multiple; approximate): AAA production value ~88%, franchise/pre-existing-fanbase/pent-up-demand ~80%, marketing/publisher muscle ~52%, multi-platform/cross-gen re-release ~30%, live-service post-launch cadence ~28%, critical acclaim/awards ~26%, Game Pass/PS Plus reach-inflation ~26%, nostalgia/remaster-revival ~24%, national pride/cultural resonance ~4% (only Wukong and WUCHANG). The through-line: counterexamples succeed on distribution and trust (brand equity, budget, platform reach, live-ops) rather than on a legible famous-base-plus-user-friendly-twist.",
+    "tables": [
+      {
+        "table": "fits_true_share",
+        "cohort": "Tier A+B",
+        "n": 111,
+        "fits_true": 61,
+        "fits_false": 50,
+        "fits_true_pct": "55.0%"
+      },
+      {
+        "table": "fits_true_share",
+        "cohort": "Tier A+B+C",
+        "n": 114,
+        "fits_true": 61,
+        "fits_false": 53,
+        "fits_true_pct": "53.5%"
+      },
+      {
+        "table": "counterexample_archetype",
+        "archetype": "Own-franchise sequel / remaster brand-equity",
+        "count": 27,
+        "pct_of_false": "54%"
+      },
+      {
+        "table": "counterexample_archetype",
+        "archetype": "Licensed external IP (film/anime/sport/tabletop)",
+        "count": 9,
+        "pct_of_false": "18%"
+      },
+      {
+        "table": "counterexample_archetype",
+        "archetype": "Original-title AAA production / pedigree / acclaim",
+        "count": 11,
+        "pct_of_false": "22%"
+      },
+      {
+        "table": "counterexample_archetype",
+        "archetype": "Original no-clear-base novelty hook (familiarity<3)",
+        "count": 3,
+        "pct_of_false": "6%"
+      },
+      {
+        "table": "failure_mechanism_by_novelty",
+        "mechanism": "No qualifying twist (max_novelty <=1)",
+        "count": 20,
+        "pct_of_false": "40%"
+      },
+      {
+        "table": "failure_mechanism_by_novelty",
+        "mechanism": "Incremental twist only (max_novelty = 2)",
+        "count": 18,
+        "pct_of_false": "36%"
+      },
+      {
+        "table": "failure_mechanism_by_novelty",
+        "mechanism": "Novel twist (max_novelty >=3) but coded false via licensed-category / familiarity-gate / analyst override",
+        "count": 12,
+        "pct_of_false": "24%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "AAA production value / polish / budget",
+        "games_citing_pct": "~88%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "Franchise brand equity / existing fanbase / pent-up demand",
+        "games_citing_pct": "~80%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "Marketing / publisher distribution muscle",
+        "games_citing_pct": "~52%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "Multi-platform / cross-gen re-release",
+        "games_citing_pct": "~30%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "Live-service / post-launch content cadence",
+        "games_citing_pct": "~28%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "Critical acclaim / GOTY awards",
+        "games_citing_pct": "~26%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "Game Pass / PS Plus reach-inflation",
+        "games_citing_pct": "~26%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "Nostalgia / remaster / franchise revival",
+        "games_citing_pct": "~24%"
+      },
+      {
+        "table": "factor_frequency_approx",
+        "factor": "National pride / cultural resonance",
+        "games_citing_pct": "~4%"
+      },
+      {
+        "table": "named_game_placement",
+        "game": "Black Myth: Wukong",
+        "fits": "false",
+        "failure_mode": "Twist-novelty gate: famous folklore base (familiarity 5) but best twist only novelty 2 (production-value execution, not a mechanical/social twist)",
+        "driver_bucket": "Original AAA production + national pride / cultural resonance"
+      },
+      {
+        "table": "named_game_placement",
+        "game": "Hollow Knight: Silksong",
+        "fits": "false",
+        "failure_mode": "No qualifying twist (twist_present=false, max_novelty 0); base familiarity only 3 (within-gaming metroidvania)",
+        "driver_bucket": "Own-franchise sequel brand equity + craftsmanship / 7-year hype"
+      },
+      {
+        "table": "named_game_placement",
+        "game": "Path of Exile 2",
+        "fits": "false",
+        "failure_mode": "Twist-novelty gate + anti-user-friendly: familiar ARPG base (3) but twists are depth-increasing (novelty 2), the opposite of the hypothesis's simplifying/user-friendly requirement",
+        "driver_bucket": "Own-franchise sequel brand equity + endgame depth + Tencent backing"
+      },
+      {
+        "table": "named_game_placement",
+        "game": "Palworld",
+        "fits": "true (NOT a counterexample)",
+        "failure_mode": "n/a — anchor case; Pokemon base (familiarity 5) + genuinely novel survival-crafting fusion (novelty 4)",
+        "driver_bucket": "Its brand-ish factors (shock virality, aggressive EA pricing, Game Pass) are coded as SECONDARY amplifiers, not the primary driver — this is the boundary contrast to the counterexamples"
+      }
+    ],
+    "exemplars": [
+      "GTA V — cleanest counterexample: no twist (novelty 0), success from franchise brand + GTA Online live-service monetization + repeated cross-gen re-releases",
+      "Call of Duty MWII (2022) & Black Ops 6 — annual-franchise archetype: novelty 0, driven by brand cadence, marketing budget, Warzone funnel, Game Pass reach",
+      "Hogwarts Legacy — licensed-IP archetype: familiarity 5 but twist_present=false; pure Harry Potter brand pull + $150M production",
+      "EA Sports FC 24 & NBA 2K24 — licensed-sport + live-service monetization (Ultimate Team / VC); no twist, license moat is the whole engine",
+      "Silksong — franchise sequel/craft archetype: novelty 0, seven-year anticipation and Team Cherry brand trust do the work",
+      "Elden Ring — highest-novelty false case (novelty 4): formula would pass but coded false because FromSoftware pedigree, GOTY sweep, and GRRM branding, not a mass-familiar base, drove 30M+"
+    ],
+    "counterexamples": [
+      "Wukong — a 'famous base without qualifying twist' near-miss: has the globally-familiar Journey-to-the-West base the hypothesis wants, but adds no novel user-friendly twist (novelty 2), so it lands as a production-value/national-pride counterexample rather than a formula win",
+      "No Man's Sky / Stray / Teardown — the inverse near-miss: genuinely high-novelty twists (novelty 5/4/0-but-novel-tech) that fail purely on the familiarity gate (original_no_clear_base, familiarity 2), showing novelty alone is insufficient",
+      "Palworld — the fits=true anchor that most resembles a brand/viral hit but is coded true: demonstrates the line the 50 counterexamples fall on the wrong side of (famous base + novel simplifying twist vs. brand/production/live-ops)"
+    ],
+    "caveats": "Factor percentages are approximate: each fits=false game lists multiple non_fit_factors, so the factor-frequency table double-counts by design and is not mutually exclusive (the four archetype buckets ARE mutually exclusive and sum to 50). The novelty≥3-but-false group (12 games) rests on analyst overrides and the coding rule that licensed-IP bases are category-excluded — these are judgment calls, not empirical drivers, so that 24% slice is the softest. Sales are self_reported for nearly all rows and many carry players_not_sales / owners_not_sold inflation flags (e.g. Game Pass titles like Starfield, Forza, Space Marine 2), which can overstate the reach of brand/platform-driven counterexamples specifically. Tier C adds only 3 games so the sensitivity band (53.5–55.0%) is narrow; Tier D was excluded because those titles are meets_1M=false. Placement of Palworld is intentionally on the fits=true side — the task's 'place' instruction is satisfied by contrast, not by counting it among counterexamples."
+  },
+  {
+    "dimension": "sequel_vs_original",
+    "headline": "New original IP dominates the million-seller cohort (62% of titles) and is where nearly all \"familiar-base-plus-twist\" hits live; sequels and licensed IP sell comparably per-title but almost never fit the hypothesis (0-21% vs 80%).",
+    "findings": "Of the 111 confident (Tier A+B) million-sellers, 69 (62%) are new original IP, 29 (26%) are sequels in the studio's own non-licensed IP, 12 (11%) are licensed/franchise IP, and 1 is a remake (RE4 Remake, flagged as none of the three). Adding the 3 Tier C games barely moves the mix (A+B+C, N=114: 61% / 26% / 11% / 1%). Per-title sales are surprisingly flat across buckets on the median: new-original median 7M, sequel-own-IP median 6M, licensed-IP median ~10-11M — sequels and licensed IP do NOT out-sell fresh originals on a typical-title basis. Means diverge only because of extreme outliers: the sequel mean is 15.8M but collapses to 8.2M once GTA V (230M) is removed, while new-original mean is 11.7M (9.5M excluding the Terraria/Human Fall Flat/Stardew top three). The decisive split is on the hypothesis fit, not sales: new-original titles fit at 80% (55/69), sequel-own-IP at 21% (6/29), and licensed IP at 0% (0/12). By the raw is_sequel flag, non-sequels fit at 75% vs sequels at 16% (both cohorts near-identical: A+B 55.0% overall fit, A+B+C 53.5%). Interpretation: the \"famous base + user-friendly twist\" pattern is overwhelmingly an original-IP phenomenon — sequels and licensed IP reach 1M+ via brand equity, production budget, and marketing rather than a novel legible twist, and they do so at roughly the same per-title volume as originals, just less repeatably and with fatter tails.",
+    "headline_note": "",
+    "tables": [
+      {
+        "bucket": "new_original",
+        "share_pct": 62,
+        "n": 69,
+        "median_copies_m": 7,
+        "mean_copies_m": 11.7,
+        "fits_true_pct": 80
+      },
+      {
+        "bucket": "sequel_own_IP",
+        "share_pct": 26,
+        "n": 29,
+        "median_copies_m": 6,
+        "mean_copies_m": 15.8,
+        "mean_excl_GTAV": 8.2,
+        "fits_true_pct": 21
+      },
+      {
+        "bucket": "licensed_IP",
+        "share_pct": 11,
+        "n": 12,
+        "median_copies_m": 11,
+        "mean_copies_m": 14.6,
+        "fits_true_pct": 0
+      },
+      {
+        "bucket": "remake_other",
+        "share_pct": 1,
+        "n": 1,
+        "median_copies_m": 10,
+        "mean_copies_m": 10,
+        "fits_true_pct": 0
+      }
+    ],
+    "findings_note": "",
+    "exemplars": [
+      "New-original hits that DO fit: Terraria (70M), Stardew Valley (50M), Sea of Thieves (40M), Vampire Survivors (15M), Balatro (6.5M), Hades (9.3M), PowerWash Simulator (8M) — all fresh IP applying a novel twist to a familiar base",
+      "Sequel-own-IP that still fits (the 6 exceptions): Helldivers 2 (20M), HITMAN 3 (25M), Nioh 2, Remnant 2, Persona 3 Reload, Lords of the Fallen 2023 — but the dataset flags most of these as fitting only 'by formula' with brand/production as the real driver",
+      "Licensed IP scale via brand alone: Hogwarts Legacy (40M), CoD MWII 2022 (23M), Baldur's Gate 3 (20M), AC Valhalla (20M) — all fits=false"
+    ],
+    "counterexamples": [
+      "Fresh original that does NOT fit (success from budget/hype, not a twist): Cyberpunk 2077 (40M), Black Myth Wukong (30M), Elden Ring (30M), No Man's Sky (30M), Crimson Desert (6M), Starfield (3M) — big new-IP sellers driven by production value/pedigree",
+      "GTA V (230M) is a sequel and single-handedly distorts the sequel mean; without it the sequel bucket sells no better than originals",
+      "Licensed-IP median (~11M) is the highest of any bucket, showing brand IP reliably reaches scale — it just never does so through the hypothesis's novel-twist mechanism (0/12 fit)"
+    ],
+    "caveats": "Bucketing uses priority licensed_IP > sequel_own_IP > new_original from the is_licensed_IP/is_sequel/is_original flags; a game that is both a sequel and licensed (e.g. AC Valhalla, RE Village, MWII) is counted as licensed_IP, so the 'sequel_own_IP' bucket is non-licensed sequels only (38 games carry is_sequel=true overall). RE4 Remake is flagged false on all three and sits in remake_other. copies_m are self-reported/lifetime figures with known inflation flags (players-not-sales, bundles) and span 2011-2026 launch years, so cross-title sales comparisons are rough; medians are more robust than means given the GTA V and Terraria outliers. The fits/hypothesis classification is inherited from the dataset's own coding, not re-derived here. Tier C adds only 3 games so the A+B vs A+B+C sensitivity band is narrow (overall fit 55.0% vs 53.5%)."
+  },
+  {
+    "dimension": "genre_distribution",
+    "headline": "Action RPG is the single largest genre among 1M+ hits (23%), but it is the least \"hypothesis-clean\" category; sim/management, survival-crafting, party-co-op and roguelike/deckbuilder collectively make up ~40% and account for nearly all the famous-base-plus-twist breakouts.",
+    "findings": "Across the 111-game Tier A+B cohort, normalized into 13 genre buckets, the distribution has a long head and a thin tail. Action RPG (incl. Soulslikes, loot-ARPGs, open-world action-RPGs) is the plurality at 26/111 (23.4%), followed by Simulation & management 15 (13.5%), Shooter 14 (12.6%), Survival & crafting 12 (10.8%), Party/co-op/physics/social 10 (9.0%), Horror (survival/co-op/asymmetric) 9 (8.1%), Roguelike/deckbuilder/bullet-heaven 8 (7.2%), and Action-adventure 8 (7.2%). The tail — JRPG (3), Fighting (2), Sports (2), CRPG (1), Racing (1) — is just 9/111 (8.1%) combined. The most important cross-tab is genre × hypothesis-fit (fits=true): the frequency ranking and the \"quality of fit\" ranking are almost inverted. Roguelike/deckbuilder fits 8/8 (100%), Party/co-op 9/10 (90%), Survival-crafting 10/12 (83%), and Sim/management 11/15 (73%) — but Action RPG fits only 7/26 (27%), Action-adventure 3/8 (38%), and Shooter 6/14 (43%), while Fighting/Sports/CRPG/Racing fit 0/6. So Action RPG's dominance in raw count is a brand/production-value phenomenon (Elden Ring, Monster Hunter, Diablo, Souls-likes), not a famous-base-plus-twist phenomenon. On scale (median copies_m), the ranking flips again toward AAA-heavy genres: Action-adventure ~12.5M (GTA-skewed), Horror ~11M, Shooter ~10M, Party/co-op ~9.5M — versus Sim ~4.5M, ARPG ~5.5M, Survival ~5.5M, Roguelike ~6.75M. Thus the indie-friendly, high-fit genres (roguelike, sim, party) win on count and fit but sell fewer copies per title, while the AAA genres (shooter, action-RPG, action-adventure) sell more per title but rarely fit the twist hypothesis. Overall fits=true share: Tier A+B = 61/111 = 55.0%; Tier A+B+C = 61/114 = 53.5% (the three added Tier-C titles — Saints Row, Sea of Stars, Indiana Jones — are all fits=false), giving a tight sensitivity band of ~53.5–55.0%.",
+    "tables": [
+      {
+        "genre": "Action RPG (Souls/loot/open-world)",
+        "n": 26,
+        "pct_of_cohort": 23.4,
+        "fits_true_pct": 27,
+        "median_copies_m": 5.5
+      },
+      {
+        "genre": "Simulation & management",
+        "n": 15,
+        "pct_of_cohort": 13.5,
+        "fits_true_pct": 73,
+        "median_copies_m": 4.5
+      },
+      {
+        "genre": "Shooter (FPS/TPS/extraction/BR)",
+        "n": 14,
+        "pct_of_cohort": 12.6,
+        "fits_true_pct": 43,
+        "median_copies_m": 10
+      },
+      {
+        "genre": "Survival & crafting",
+        "n": 12,
+        "pct_of_cohort": 10.8,
+        "fits_true_pct": 83,
+        "median_copies_m": 5.5
+      },
+      {
+        "genre": "Party/co-op/physics/social deduction",
+        "n": 10,
+        "pct_of_cohort": 9,
+        "fits_true_pct": 90,
+        "median_copies_m": 9.5
+      },
+      {
+        "genre": "Horror (survival/co-op/asymmetric)",
+        "n": 9,
+        "pct_of_cohort": 8.1,
+        "fits_true_pct": 56,
+        "median_copies_m": 11
+      },
+      {
+        "genre": "Roguelike/deckbuilder/bullet-heaven",
+        "n": 8,
+        "pct_of_cohort": 7.2,
+        "fits_true_pct": 100,
+        "median_copies_m": 6.75
+      },
+      {
+        "genre": "Action-adventure (incl. metroidvania)",
+        "n": 8,
+        "pct_of_cohort": 7.2,
+        "fits_true_pct": 38,
+        "median_copies_m": 12.5
+      },
+      {
+        "genre": "JRPG / turn-based RPG",
+        "n": 3,
+        "pct_of_cohort": 2.7,
+        "fits_true_pct": 67,
+        "median_copies_m": 3
+      },
+      {
+        "genre": "Fighting",
+        "n": 2,
+        "pct_of_cohort": 1.8,
+        "fits_true_pct": 0,
+        "median_copies_m": 7.25
+      },
+      {
+        "genre": "Sports",
+        "n": 2,
+        "pct_of_cohort": 1.8,
+        "fits_true_pct": 0,
+        "median_copies_m": 9.5
+      },
+      {
+        "genre": "CRPG",
+        "n": 1,
+        "pct_of_cohort": 0.9,
+        "fits_true_pct": 0,
+        "median_copies_m": 20
+      },
+      {
+        "genre": "Racing",
+        "n": 1,
+        "pct_of_cohort": 0.9,
+        "fits_true_pct": 0,
+        "median_copies_m": 8
+      }
+    ],
+    "exemplars": [
+      "Action RPG is the plurality bucket (26/111, 23.4%) — the modal genre of a 1M+ Steam hit is an action-RPG/Soulslike/loot-ARPG: Elden Ring, Monster Hunter Wilds/Rise, Diablo IV, Path of Exile 2, Lies of P, Kingdom Come Deliverance II, Last Epoch.",
+      "Simulation & management is #2 (15/111, 13.5%) and indie-heavy with 73% hypothesis-fit: Stardew Valley (50M), Factorio, Satisfactory, PowerWash Simulator, Schedule I, TCG Card Shop Simulator, inZOI.",
+      "Party/co-op/physics/social over-indexes on BOTH scale (median ~9.5M) and fit (90%): Human: Fall Flat (58M), Fall Guys, Among Us, PEAK, It Takes Two — the genre where the twist hypothesis works AND the games sell big.",
+      "Roguelike/deckbuilder/bullet-heaven is small (8/111) but 100% hypothesis-fit and entirely indie/low-budget: Balatro, Vampire Survivors, Hades, Inscryption, Loop Hero, Dead Cells — famous-base-plus-twist in its purest form.",
+      "Shooter (14/111) over-indexes on scale (median ~10M, e.g. Battlefield 6, COD MWII/BO6, Helldivers 2, ARC Raiders) — the highest-selling mainstream category by median copies alongside horror."
+    ],
+    "counterexamples": [
+      "Action RPG's #1 frequency is misleading as evidence for the twist hypothesis: only 7/26 (27%) fit — the lowest rate of any large bucket. Most (Elden Ring, Black Myth Wukong, Cyberpunk, Hogwarts, Monster Hunter, Diablo IV, Starfield, AC Valhalla) are brand/production-value hits, not famous-base+twist breakouts.",
+      "Genre count does not track hypothesis-fit: the two biggest buckets (Action RPG 27%, Shooter 43% fit) are near the bottom on fit, while the highest-fit buckets (roguelike 100%, party 90%) are 4th–7th in size.",
+      "Traditional narrative and competitive genres are nearly absent among breakouts: JRPG (3), CRPG (1), Fighting (2), Sports (2), Racing (1) total just 9/111 (8.1%) — and CRPG/Fighting/Sports/Racing fit 0/6, i.e. their hits (Baldur's Gate 3, Mortal Kombat 1, NBA 2K24, FC24, Forza) are brand/IP/license-driven, never twist-driven.",
+      "Horror's 56% fit rate is bimodal, not uniform: the fits come from cheap co-op/indie horror (Phasmophobia, Content Warning, R.E.P.O., Buckshot Roulette, Dead by Daylight) while every Resident Evil entry (Village, Requiem, RE4 Remake) plus Sons of the Forest are franchise/brand hits (fits=false)."
+    ],
+    "caveats": "Genre buckets are analyst-normalized from free-text 'genre' fields and many titles are deliberate genre fusions, so boundary calls are unavoidable (e.g., V Rising placed in survival not ARPG; Dave the Diver and Schedule I placed in sim/management; Sons of the Forest placed in horror not survival; Buckshot Roulette placed in horror not party). Reasonable re-binning could shift any bucket by ±1–3 titles, though the head-of-distribution story (Action RPG plurality; sim/survival/party/roguelike as the high-fit middle; sports/fighting/CRPG/racing thin tail) is robust. Crucially, 'over-index' here is computed WITHIN the hit cohort — against the cohort's own average fit rate (55%) and median scale — because the dataset contains no baseline denominator of all Steam releases; I therefore cannot state which genres over-index versus the broader Steam catalog, only which over-index on hypothesis-fit and on per-title scale among confirmed hits. Median copies_m rely on self-reported figures (self_reported=true for nearly all) and several carry inflation_flags (players_not_sales, owners_not_sold, review_bomb); the Action-adventure and CRPG medians in particular are distorted by tiny n and outliers (GTA V 230M; BG3 20M as the sole CRPG). fits=true reflects the dataset's own coding, which flags borderline formula-passes (e.g., Elden Ring computes true mechanically but is coded fits=false as brand-driven), so the fit rates measure the coders' judgment, not a purely mechanical rule."
+  },
+  {
+    "dimension": "team_and_devcycle",
+    "headline": "Small teams (≤10) fit the twist-hypothesis 86% of the time vs 49% for larger studios; fitting games have ~13x smaller median teams (22.5 vs 300) and shorter dev cycles (30 vs 48 months) than non-fits.",
+    "findings": "Across the 111-game Tier A+B cohort, team size is bimodal: median 80 people (known n=97, range 1–2,000), but that median sits between a large indie/tiny cluster (26% of games have ≤10 people: 9% solo + 17% teams of 2–10) and a AAA cluster (37% have >100 people: 25% at 101–300, 12% at >300). Median dev cycle is 36 months (range 1–96; 8 unknown). The hypothesis fit rate is 55.0% for Tier A+B (61/111) and 53.5% for Tier A+B+C (61/114) — a tight sensitivity band. Team size is the single strongest structural predictor of fit in this dimension: small teams (≤10) fit 86% of the time (25/29), studios (>10) only 49% (33/68), and team-size-unknown games just 21% (3/14); the collapse is nearly identical in A+B+C (86% / 47% / 20%). Profiling by outcome makes the gap stark — fitting games have median team 22.5, median dev 30 months, median prod_tier 4, and 18% are solo-built; non-fitting games have median team 300, median dev 48 months, median prod_tier 5, and 0% are solo. Mean team size is 56 (fits) vs 346 (non-fits), a ~6x gap on means and ~13x on medians. Solo development is a perfect signal in this cohort: all 11 solo-flagged games fit (100%), including 58M-seller Human: Fall Flat and 50M-seller Stardew Valley. Dev cadence tells the same story: every game shipped in ≤6 months fits (8/8, e.g. PEAK at 1 month, Terraria at 4), games ≤24 months fit 79% (23/29), while long 6-year+ builds fit only 23% (5/22) — the >72-month cluster is dominated by AAA sequels and production-value plays (Cyberpunk, Elden Ring, Baldur's Gate 3, Path of Exile 2). The mechanism is coherent: a legible famous-base-plus-twist is exactly what a tiny team can execute fast and cheaply, whereas large studios and long cycles cluster on brand/franchise/production-value hits that the rubric codes as non-fits.",
+    "tables": [
+      {
+        "table": "team_size_distribution_A_B",
+        "solo(1)": "9%",
+        "tiny(2-10)": "17%",
+        "small(11-30)": "10%",
+        "mid(31-100)": "14%",
+        "large(101-300)": "25%",
+        "aaa(>300)": "12%",
+        "unknown": "13%"
+      },
+      {
+        "table": "fit_rate_by_team_band_A_B",
+        "solo(1)": "100% (10/10)",
+        "tiny(2-10)": "79% (15/19)",
+        "small(11-30)": "64% (7/11)",
+        "mid(31-100)": "56% (9/16)",
+        "large(101-300)": "29% (8/28)",
+        "aaa(>300)": "15% (2/13)",
+        "unknown": "21% (3/14)"
+      },
+      {
+        "table": "collapsed_small_vs_studio",
+        "cohort_A_B": "small≤10: 86% (25/29) | studio>10: 49% (33/68) | unknown: 21% (3/14)",
+        "cohort_A_B_C": "small≤10: 86% (25/29) | studio>10: 47% (33/70) | unknown: 20% (3/15)"
+      },
+      {
+        "table": "fits_vs_nonfits_profile_A_B",
+        "FITS": "n=61 | median_team=22.5 | mean_team=56 | median_dev=30mo | median_prod=4 | solo=18%",
+        "NON_FITS": "n=50 | median_team=300 | mean_team=346 | median_dev=48mo | median_prod=5 | solo=0%"
+      },
+      {
+        "table": "dev_cycle_vs_fit_A_B",
+        "dev<=6mo": "100% fit (8/8)",
+        "dev<=24mo": "79% fit (23/29)",
+        "dev>=72mo": "23% fit (5/22)"
+      },
+      {
+        "table": "headline_shares",
+        "fits_true_A_B": "55.0% (61/111)",
+        "fits_true_A_B_C": "53.5% (61/114)"
+      }
+    ],
+    "exemplars": [
+      "Solo devs fit 11/11 (100%): Stardew Valley (team 1, 50M), Balatro (team 1, 6.5M), Vampire Survivors (team 1, 15M), Buckshot Roulette (team 1, 2 mo dev, 8M), Schedule I (team 1, 8M), Inscryption (team 1), TCG Card Shop Simulator (team 1, 6 mo dev), Megabonk (team 1)",
+      "Sub-6-month dev cycles all fit: PEAK (1 mo, team 7, 11M), Content Warning (2 mo, team 5, 6M), MECCHA CHAMELEON (2 mo, team 2, 12.6M), Among Us (6 mo, team 3, 8M), Terraria (4 mo, team 11, 70M)",
+      "Tiny teams (2-10) that fit: Valheim (team 5, 12M), Dyson Sphere Program (team 5, 3M), Astroneer (team 5), Cult of the Lamb (team 10), RV There Yet (team 10, 3 mo, 4.5M), Chained Together (team 4)"
+    ],
+    "counterexamples": [
+      "Small teams that did NOT fit (twist absent or coded as production/sequel-driven): Manor Lords (team 10, 72 mo, prod 5 — production-value city-builder), Teardown (team 9 — original_no_clear_base voxel engine), Hollow Knight: Silksong (team 7, 84 mo — sequel, no twist), Sons of the Forest (team 7 — sequel, incremental twist)",
+      "Large studios (>100) that DO fit — fit is not exclusive to small teams: Sea of Thieves (team 200, 40M), HITMAN 3 (team 300), Dead by Daylight (team 200, 20M), ARC Raiders (team 300, 16M), Fall Guys (team 150), Helldivers 2 (team 105, 20M), Ghost of Tsushima (team 200)",
+      "Data anomaly: Phasmophobia is flagged solo=true yet team_size=120 (likely a solo-founder studio that later scaled) — it appears in both the solo-fit list and the large-team-fit list, inflating the solo count to 11 while only 10 games have team_size=1"
+    ],
+    "caveats": "team_size is missing for 14/111 A+B games (13%), disproportionately AAA/sequel titles (Mortal Kombat 1, RE Requiem, Dragon's Dogma 2, Metaphor, DB Sparking ZERO) — these unknowns fit only 21%, so their exclusion does not weaken the small-team signal but does mean the 'studio>10' denominator is understated. Reported team_size is coarse/estimated and self-attributed (e.g., Phasmophobia 120 despite solo flag; publisher-scale headcounts like AC Valhalla 2,000 blend multi-studio co-dev). dev_months is null for 8 games. The fit variable is a rubric judgment (fits/fits_recheck), not an observed outcome, so 'small teams correlate with fits' partly reflects that the rubric codes AAA-scale/long-cycle brand hits as non-fits by construction — team size and fit are not fully independent. Correlation here is structural (small/fast teams ship legible twist games; big/slow teams ship franchise/production plays), not proof that shrinking a team causes a hit."
+  },
+  {
+    "dimension": "price_analysis",
+    "headline": "Launch prices are strongly bimodal (median $39.99): a $60+ AAA cluster (36%) and a large sub-$20 indie cluster (32%), and the cheaper a hit is, the more reliably it is viral AND hypothesis-fitting — under $10, 92% went viral and 100% fit.",
+    "findings": "Across the 111-game Tier A+B cohort (all paid — free-to-play breakouts like Marvel Rivals/Overwatch 2 are excluded as Tier D), launch price median is $39.99 and mean $39.12, spanning $2.99 (Vampire Survivors, Buckshot Roulette) to $69.99. The distribution is not centered on the median — it is bimodal: 40 games (36%) launched at $59.99 or above, while 35 games (32%) launched under $20 and 19 (17%) at $15 or under; only 7 games (6%) sit in the $40–59.98 middle band. So \"median $39.99\" is really the gap between two clusters, not a typical price. Sensitivity: adding Tier C (n=114) barely moves anything — median stays $39.99, <$20 share 31%, mean $39.53.\n\nCheap+viral is a decisive pattern. Sorting by price band: under $10 (n=13) → 92% short-form-viral, 85% meme≥4, and 100% fit the twist hypothesis; $10–19.99 (n=22) → 64% viral, 95% fit; $20–39.99 (n=29) → 59% viral, 59% fit; $40+ (n=47) → 53% viral, only 21% fit. Viral games carry a median price of $29.99 vs $44.99 for non-viral. Every one of the 9 cheapest games ($2.99–$7.99) is viral, meme≥4, and hypothesis-fitting. Conversely, of the 40 games priced $59.99+, only 18% fit the hypothesis — that tier is dominated by brand/sequel/production-value hits (GTA V, CoD, Battlefield 6, Hogwarts Legacy, sports sims). Overall hypothesis fit share is 55% (61/111) for Tier A+B and 54% (61/114) for A+B+C.\n\nThe mechanism is coherent: a low price ($2.99–$9.99) removes purchase friction for a whole friend group, which the dossiers repeatedly cite alongside streamer/TikTok virality as the growth engine (PEAK, R.E.P.O., MECCHA CHAMELEON, Liar's Bar, Chained Together, Content Warning). Cheap does not mean small — Terraria ($9.99, 70M), Human: Fall Flat ($12.99, 58M), Stardew Valley ($14.99, 50M) are among the highest-copy titles in the set. But cheap+viral is a route, not the only one: premium single-player/AAA games reach 1M+ via brand and scope instead.",
+    "tables": [
+      {
+        "table": "price_buckets_TierAB",
+        "note": "n=111"
+      },
+      {
+        "bucket": "< $10",
+        "count": 13,
+        "pct": "12%",
+        "viral_pct": "92%",
+        "fits_pct": "100%"
+      },
+      {
+        "bucket": "$10–19.99",
+        "count": 22,
+        "pct": "20%",
+        "viral_pct": "64%",
+        "fits_pct": "95%"
+      },
+      {
+        "bucket": "$20–39.99",
+        "count": 29,
+        "pct": "26%",
+        "viral_pct": "59%",
+        "fits_pct": "59%"
+      },
+      {
+        "bucket": "$40–59.98",
+        "count": 7,
+        "pct": "6%",
+        "viral_pct": "",
+        "fits_pct": ""
+      },
+      {
+        "bucket": ">= $59.99",
+        "count": 40,
+        "pct": "36%",
+        "viral_pct": "53% (band $40+)",
+        "fits_pct": "18%"
+      }
+    ],
+    "exemplars": [
+      "Cheap+viral+fits archetype — Buckshot Roulette $2.99 / Vampire Survivors $2.99 / Chained Together $4.99 / MECCHA CHAMELEON $5.99 / Liar's Bar $6.99 / PEAK $7.99 / RV There Yet? $7.99 / R.E.P.O. $9.99: every one is short-form-viral, meme=5 (or 4), and hypothesis-fitting",
+      "Cheap AND massive-scale — Terraria $9.99 (70M copies), Human: Fall Flat $12.99 (58M), Stardew Valley $14.99 (50M): low price did not cap ceiling",
+      "Cheap+viral median anchor — viral games median $29.99 vs non-viral $44.99, and all 9 games priced <$8 are viral"
+    ],
+    "counterexamples": [
+      "Expensive AND viral but NOT hypothesis-fitting — GTA V $59.99 (meme=5) and Resident Evil Village $59.99 (meme=5): viral at full AAA price, but success is brand/production-driven, fits=false. Shows virality is not exclusive to cheap games",
+      "Cheap but NOT viral — Tale of Immortal $9.99 (5M copies, viral=0, meme=2): reached scale via an underserved regional (xianxia) niche and word-of-mouth, not short-form virality — a low-price hit outside the meme pathway",
+      "Premium hypothesis-fits (rare) — Ghost of Tsushima $59.99, HITMAN 3 $59.99, Sea of Thieves $59.99: fit the twist formula despite full price, but the dossiers attribute their scale mainly to AAA brand/production, not the price-friction lever",
+      "$40+ tier fit collapse — of 40 games at $59.99+, only ~18% fit the hypothesis (CoD, Battlefield 6, Monster Hunter Wilds, Diablo IV, Starfield, sports sims are brand/sequel hits)"
+    ],
+    "caveats": "[\"Free-to-play breakout hits are structurally excluded (they sit in Tier D as not meeting 1M PAID), which removes the entire $0 price point — so the true full-market price distribution has a third mode at free that this paid cohort cannot show\",\"'Viral' here is the binary short_form_viral flag and 'meme' the 1–5 score, both self-coded in the dossier, not measured impressions — the cheap+viral correlation could partly reflect coder priors that cheap party games are viral\",\"Prices are launch/list price as recorded; several cheap titles (Vampire Survivors, Among Us) also ran heavy discounts and mobile/F2P versions, so effective acquisition price was even lower than listed\",\"Direction of causation is unproven from this data: cheap price and virality co-occur, but the dossiers frame low price as friction-removal enabling group adoption rather than proving price alone drives sales\",\"Bucket sample sizes are uneven (only 7 games in $40–59.98, 13 under $10), so within-band percentages for the smallest bands are noisy\"]"
+  },
+  {
+    "dimension": "virality_streamer",
+    "headline": "Streamer-driven virality is common but not required — 68% are streamer-driven and 61% short-form viral, yet 27% (30 games) succeeded with zero virality signals; when virality IS present it clusters hard in the meme=5 co-op \"friendslop\" tier that maps almost 1:1 onto hypothesis-fitting hits.",
+    "findings": "Across the 111-game Tier A+B cohort, streamer_driven=true for 75 games (68%) and short_form_viral=true for 68 (61%); 62 (56%) carry both flags, while 30 (27%) carry neither. Meme scores average 3.05 (median 3), bimodal: 18 games (16%) score meme=5 but 46 (41%) score meme<=2. Watchability averages 3.56 (median 4), with 57 games (51%) at watch>=4 and 18 (16%) maxed at 5. The Tier A+B+C sensitivity band (n=114) barely moves: streamer 66%, short-form 60%, neither 29%, meme=5 16%, watch>=4 50% — virality prevalence is stable to cohort choice. Hypothesis fits=true share is 55% (61/111) for A+B and 54% (61/114) for A+B+C. Virality is markedly MORE central inside the fits=true set: mean meme 3.36 vs 2.68 for non-fits, meme>=4 44% vs 16%, watch>=4 61% vs 40%, streamer 72% vs 62%, short-form 67% vs 54%. The sharpest signal is the meme=5 club (18 games): 16 of 18 are hypothesis-fitting hits — the familiar-base-plus-social-twist party/co-op titles (Among Us, Fall Guys, PEAK, R.E.P.O., Content Warning, Buckshot Roulette, Liar's Bar, Meccha Chameleon, RV There Yet?, Chained Together, Phasmophobia, Human Fall Flat, Helldivers 2, Palworld, Schedule I, Needy Streamer Overload). The only two meme=5 non-fits are GTA V and Resident Evil Village, both brand/franchise-driven. Conversely, the 30 zero-virality games skew to single-player systems/sim/soulslike and franchise sequels — and several are large sellers (AC Valhalla 20M, Monster Hunter Rise 18.6M, Dying Light 2 / EA FC 24 10M, Grim Dawn 7.5M), proving virality is a strong accelerant for the indie social hits but not a gating requirement for 1M+ scale.",
+    "tables": [
+      {
+        "cohort": "Tier A+B (n=111)",
+        "streamer_driven_pct": 68,
+        "short_form_viral_pct": 61,
+        "both_pct": 56,
+        "neither_pct": 27,
+        "meme_mean": 3.05,
+        "meme5_pct": 16,
+        "meme<=2_pct": 41,
+        "watch>=4_pct": 51,
+        "fits_true_pct": 55
+      },
+      {
+        "cohort": "Tier A+B+C (n=114)",
+        "streamer_driven_pct": 66,
+        "short_form_viral_pct": 60,
+        "both_pct": 54,
+        "neither_pct": 29,
+        "meme_mean": 3.03,
+        "meme5_pct": 16,
+        "meme<=2_pct": 43,
+        "watch>=4_pct": 50,
+        "fits_true_pct": 54
+      },
+      {
+        "split": "fits=TRUE (n=61)",
+        "streamer_pct": 72,
+        "short_form_pct": 67,
+        "meme_mean": 3.36,
+        "meme>=4_pct": 44,
+        "watch>=4_pct": 61
+      },
+      {
+        "split": "fits=FALSE (n=50)",
+        "streamer_pct": 62,
+        "short_form_pct": 54,
+        "meme_mean": 2.68,
+        "meme>=4_pct": 16,
+        "watch>=4_pct": 40
+      }
+    ],
+    "exemplars": [
+      "meme=5 + watch=5 co-op/party hits that are ALSO hypothesis-fits: Among Us, Fall Guys, PEAK, R.E.P.O., Content Warning, Buckshot Roulette, Liar's Bar, Meccha Chameleon, RV There Yet?, Chained Together, Phasmophobia, Human Fall Flat (58M), Helldivers 2 (20M)",
+      "Palworld (25M, meme=5) — viral shock-content (Pals-as-guns) drove Twitch/short-form spread on top of the Pokemon+survival twist",
+      "Buckshot Roulette / Liar's Bar / Meccha Chameleon — cheap ($3-6), 2-month-dev, zero-marketing titles that scaled to millions purely on streamer/TikTok watchability of a famous base concept",
+      "Schedule I (8M, solo dev) and TCG Card Shop Simulator (2.7M) — organic TikTok pack-opening / drug-empire clip virality (CaseOh, xQc) as the primary discovery engine"
+    ],
+    "counterexamples": [
+      "30 games (27% of A+B) have neither streamer_driven nor short_form_viral yet cleared 1M+, including large sellers: Assassin's Creed Valhalla (20M), Monster Hunter Rise (18.6M), Dying Light 2 (10M), EA Sports FC 24 (10M), Grim Dawn (7.5M), Astroneer (7.5M), Farming Simulator 22 (6M), Kingdom Come Deliverance II (6M)",
+      "Systems/sim/soulslike titles succeed on depth and word-of-mouth, not watchability: Factorio (watch 3, short_form=false), Grim Dawn (meme=1, watch=2), Dyson Sphere Program (meme=2), Tale of Immortal (meme=2, watch=2) — all hypothesis-fits that owe nothing to virality",
+      "Two meme=5 games are NOT hypothesis-fits — GTA V and Resident Evil Village — showing max memeability can be a franchise/brand asset rather than the twist-driven virality the pattern predicts",
+      "High-watchability originals that fit=false because they lack a famous base: Teardown (watch=5, meme=3) and Stray (watch=4, meme=4) went viral on novelty alone (original_no_clear_base), decoupling virality from the familiar-base hypothesis"
+    ],
+    "caveats": "meme, watchability, streamer_driven, and short_form_viral are subjective analyst-coded fields (0-5 / booleans), not measured Twitch/TikTok metrics, so 'streamer_driven' likely over-captures any title with a co-op or spectacle element; virality flags are also confounded with copies (megahits attract streamers regardless of design) and with recency (2024-26 'friendslop' co-op games are over-represented in the meme=5 tier). The fits=true vs virality correlation is descriptive, not causal — many fits=true games (Grim Dawn, Factorio, Tale of Immortal) have low virality, and virality often co-occurs with the co_op_social_layer twist type rather than driving sales independently. Sensitivity is limited to +3 Tier-C games (Saints Row 2022, Sea of Stars, Indiana Jones), all low-virality non-fits, which is why the A+B+C band moves negligibly."
+  },
+  {
+    "dimension": "coop_social",
+    "headline": "Two-thirds of million-selling hits carry co-op/multiplayer, and social chaos is the dominant engine of the cheap-and-viral breakout tier — but premium single-player still hits just as hard on average.",
+    "findings": "In the Tier A+B cohort (111), 74 games (66.7%) have co_op=true vs 37 (33.3%) single-player-only; adding the 3 Tier C games (Saints Row, Sea of Stars co-op; Indiana Jones solo) leaves the share essentially unchanged at 76/114 = 66.7% — a stable sensitivity band. Among co-op titles, player_count_max clusters heavily at small-squad scale: 44 of 74 (59%) cap at 2-4 players (5 two-player, 6 three-player, 33 four-player — the modal design in the entire dataset), 18 (24%) are party/lobby scale (5-16), and only 12 (16%) go large (22-128, plus Factorio's 65,535 and Space Engineers unbounded). Sales-wise co-op skews modestly higher: co-op median ≈8M vs solo median ≈6M, and the entire top tail is co-op — GTA V (230M), Terraria (70M), Human Fall Flat (58M), Stardew (50M), Sea of Thieves (40M) are all co-op-enabled. But solo is NOT smaller on average (solo mean ≈9M vs co-op mean ex-GTA ≈12M), because premium single-player carries its own giants (Cyberpunk 40M, Hogwarts 40M, Black Myth 30M, HITMAN 25M). The sharpest signal is social chaos: of the 18 games scored meme=5 (peak virality/watchability), 16 (89%) are co-op — and this cluster is dominated by cheap, tiny-team, short-dev \"friendslop\" party games (PEAK $7.99/1-month dev/11M; MECCHA CHAMELEON $5.99/2 devs/12.6M in ~16 days; R.E.P.O. $9.99/11M, best-selling Steam game of 2025; Content Warning, Liar's Bar $6.99, Chained Together $4.99, RV There Yet $7.99, Buckshot Roulette $2.99, Among Us $5). co_op_social_layer is by far the most common twist_type driver of these breakouts, and near-universally these titles are streamer_driven=true AND short_form_viral=true. Chaos-toned co-op (tone includes \"chaotic\"/\"chaos\") is the recurring recipe: shared physics jank + proximity voice + low price + streamer clippability.",
+    "tables": [
+      {
+        "segment": "Co-op / multiplayer (co_op=true)",
+        "tier_AB_count": 74,
+        "tier_AB_pct": "66.7%",
+        "tier_ABC_count": 76,
+        "tier_ABC_pct": "66.7%",
+        "median_copies_m": "~8"
+      },
+      {
+        "segment": "Single-player only (co_op=false)",
+        "tier_AB_count": 37,
+        "tier_AB_pct": "33.3%",
+        "tier_ABC_count": 38,
+        "tier_ABC_pct": "33.3%",
+        "median_copies_m": "~6"
+      }
+    ]
+  },
+  {
+    "dimension": "early_access",
+    "headline": "~31% of confident-set hits launched in Early Access — a mid-scale, original-IP strategy that is 4x more common among hypothesis-fitting (famous-base + twist) hits than among brand/sequel hits, and has never produced a 30M+ seller.",
+    "findings": "34 of 111 Tier A+B hits (30.6%) launched in Steam Early Access; adding the 3 Tier C games (none EA) gives 34/114 = 29.8%, so the sensitivity band is a tight ~30–31%. EA is sharply bimodal by hit \"type.\" Among the 61 fits=true games (famous base + user-friendly twist), 28 launched in EA = 45.9%; among the 50 fits=false (brand/sequel/production-driven) games, only 6 = 12.0% — fits=true hits are ~3.8x more likely to have used EA. The split is nearly identical along sequel lines: only 4 of 35 sequels (11.4%) were EA vs 30 of 76 non-sequels (39.5%), and 30 of the 34 EA titles (88%) are non-sequels. EA is a scale-ceiling strategy: median EA seller ≈ 6.85M copies, the two top EA sellers are Palworld and Phasmophobia at 25M each, and every game in the cohort at 30M+ (GTA V 230M, Terraria 70M, Human Fall Flat 58M, Stardew 50M, Cyberpunk 40M, Hogwarts 40M, Sea of Thieves 40M, Wukong/Elden Ring 30M, It Takes Two 30M) launched as a full 1.0 release, not EA. EA is not purely indie — 6 EA titles carry prod_tier 4–5 (Baldur's Gate 3, Path of Exile 2, Satisfactory, Manor Lords, inZOI, Subnautica 2) — but it clusters heavily in survival/crafting, factory-automation, roguelike, and co-op \"friendslop\" genres, and is prominent among the most recent (2024–2026) breakouts (R.E.P.O., Schedule I, Gray Zone Warfare, TCG Card Shop Sim, inZOI, PoE2, Subnautica 2).",
+    "tables": [
+      {
+        "cut": "Tier A+B (confident set)",
+        "ea_games": 34,
+        "total": 111,
+        "ea_pct": "30.6%"
+      },
+      {
+        "cut": "Tier A+B+C (sensitivity)",
+        "ea_games": 34,
+        "total": 114,
+        "ea_pct": "29.8%"
+      },
+      {
+        "cut": "fits=true subset",
+        "ea_games": 28,
+        "total": 61,
+        "ea_pct": "45.9%"
+      },
+      {
+        "cut": "fits=false subset",
+        "ea_games": 6,
+        "total": 50,
+        "ea_pct": "12.0%"
+      },
+      {
+        "cut": "sequels (is_sequel=true)",
+        "ea_games": 4,
+        "total": 35,
+        "ea_pct": "11.4%"
+      },
+      {
+        "cut": "non-sequels",
+        "ea_games": 30,
+        "total": 76,
+        "ea_pct": "39.5%"
+      }
+    ],
+    "exemplars": [
+      "Palworld — top EA seller at 25M copies; EA + rapid content cadence sustained momentum",
+      "Baldur's Gate 3 — 3 years of EA polish preceded a 20M 1.0 launch (rare AAA/CRPG EA case)",
+      "Vampire Survivors — 15M; EA let a $3 solo project iterate the genre-defining loop",
+      "Hades — 9.3M; near-textbook EA (Dec 2018–Sep 2020) with continuous content updates driving word-of-mouth",
+      "Valheim — 12M; launched into EA at $19.99 and remained a top survival-crafting seller without a 1.0",
+      "Factorio — 6.2M; a 7-year (2013–2020) transparent EA build",
+      "Satisfactory / Path of Exile 2 / Manor Lords / Subnautica 2 — high-prod-tier titles using EA as the release model, not just indies",
+      "R.E.P.O. (11M) and Schedule I (8M) — 2025 EA breakouts, illustrating EA's prominence in the newest wave of hits"
+    ],
+    "counterexamples": [
+      "GTA V (230M), Terraria (70M), Elden Ring (30M), Stardew Valley (50M) — all 30M+ mega-sellers launched full 1.0, never EA",
+      "Balatro (6.5M) — a defining recent indie hit that skipped EA entirely, launching as a finished 1.0",
+      "PEAK (11M) and Content Warning (6M) — viral co-op 'friendslop' smashes released 1.0, not EA, despite EA being common in the genre",
+      "Among Us (8M) and Fall Guys (11M) — social/party breakouts that launched as complete releases",
+      "Baldur's Gate 3 is the counterexample to 'EA = indie/small': a 450-person, prod_tier-5 AAA CRPG that still used a 3-year EA"
+    ],
+    "caveats": "[\"EA flag = 'launched into Early Access,' not 'still in EA'; several counted titles remain in EA at the data date (Path of Exile 2, Manor Lords, Subnautica 2, inZOI, Gray Zone Warfare, TCG Card Shop Sim, R.E.P.O., Schedule I).\",\"Two data-field quirks likely understate the true EA share: Core Keeper and The Planet Crafter are both recorded early_access:false despite historically shipping via Steam Early Access — correcting these would raise the A+B share to ~32.4% (36/111). I report the field as given.\",\"The fits=true vs sequel EA gaps are partly confounded: EA-heavy genres (survival-crafting, factory, roguelike, co-op comedy) are the same genres that dominate the fits=true, original-IP cohort, so 'EA,' 'original,' and 'fits=true' co-vary rather than acting independently.\",\"Sales are self-reported (self_reported=true for nearly all) and several carry inflation flags (players_not_sales, owners_not_sold), so the copies-based scale ceiling is directional, not exact.\",\"n is modest (111), so subset percentages (e.g., 6/50, 4/35) carry wide error bars; treat them as strong-signal directional splits, not precise rates.\"]"
+  },
+  {
+    "dimension": "art_and_tone — Dominant art_style and tone clusters (horror/comedy/cozy/absurd)",
+    "headline": "Realistic/grim art dominates the raw hit list (59% realistic, 53% grim-dark), but stylized+light-tone games are the ones that actually fit the twist-hypothesis: stylized/pixel art fits 81% vs 23% for pure-realistic, and cozy/comedic tones fit ~74-83% vs 44-47% for grim/epic.",
+    "findings": "Across the 111-game Tier A+B cohort, art style splits into two camps that map almost perfectly onto whether a hit is a \"familiar-base-plus-twist\" success (fits=true, 61/111 = 55%) or a brand/production-driven one. REALISTIC/PHOTOREALISTIC is the single most common look (65/111 = 59%), followed by STYLIZED/LOW-POLY/CARTOON (42 = 38%), PAINTERLY (17 = 15%), PIXEL/2D (9 = 8%), and VOXEL (3). But fit-rate inverts that popularity: any stylized/pixel/voxel game fits 42/52 = 81% (pixel/2D 8/9 = 89%, stylized/cartoon 33/42 = 79%), while pure-realistic games (no stylized or pixel element) fit just 11/48 = 23%. Painterly sits in the middle at 8/17 = 47%. On TONE (multi-label; games average ~3 tags), the dominant clusters are grim/dark/gritty (59 = 53%), comedic (42 = 38%), epic/mythic/adventure (36 = 32%), tense/atmospheric (26 = 23%), cozy/wholesome (24 = 22%), dark-comedy/satire (23 = 21%), horror/spooky (23 = 21%), whimsical/absurd (22 = 20%), and chaotic/party (21 = 19%). Fit-rate again inverts prevalence: cozy/wholesome 20/24 = 83%, whimsical 17/22 = 77%, chaotic/party 16/21 = 76%, comedic 31/42 = 74% — versus grim/dark 28/59 = 47%, epic/mythic 16/36 = 44%, emotional/dramatic 4/14 = 29%. Games carrying ANY light element (comedy/cozy/whimsical/chaotic/satire) fit 47/70 = 67%; games that are grim WITHOUT any light element fit only 12/30 = 40%. Horror is a mixed bag (14/23 = 61% fit) that splits on execution: the horror-comedy blend (Content Warning, R.E.P.O., Phasmophobia, Buckshot Roulette, Cult of the Lamb) fits 9/14 = 64%, while serious/photorealistic horror is the domain of brand-driven non-fits (RE Village, RE4 Remake, RE Requiem, Sons of the Forest, STALKER 2, Subnautica 2). Adding the 3 Tier-C games barely moves anything (A+B+C fits 61/114 = 53.5%; art/tone shares within ~1pt). Net: the raw hit population is visually dominated by AAA realism-and-grimdark, but the reproducible, low-budget, twist-driven successes cluster hard in stylized/pixel art with comedic, cozy, chaotic, or absurd tone — frequently a deliberate juxtaposition of cute/cartoon visuals against dark or violent content.",
+    "findings_note": "All percentages computed from the JSON tone[] and art_style fields; art/tone are multi-label so cluster counts sum >100%.",
+    "tables": [
+      {
+        "table": "art_style_prevalence_and_fit_TierAB",
+        "rows": "see below"
+      },
+      {
+        "art_cluster": "realistic/photorealistic",
+        "games": 65,
+        "share_pct": 59,
+        "fits_true": 23,
+        "fit_rate_pct": 35
+      },
+      {
+        "art_cluster": "stylized/low-poly/cartoon",
+        "games": 42,
+        "share_pct": 38,
+        "fits_true": 33,
+        "fit_rate_pct": 79
+      },
+      {
+        "art_cluster": "painterly",
+        "games": 17,
+        "share_pct": 15,
+        "fits_true": 8,
+        "fit_rate_pct": 47
+      },
+      {
+        "art_cluster": "pixel/2D",
+        "games": 9,
+        "share_pct": 8,
+        "fits_true": 8,
+        "fit_rate_pct": 89
+      },
+      {
+        "art_cluster": "voxel",
+        "games": 3,
+        "share_pct": 3,
+        "fits_true": 2,
+        "fit_rate_pct": 67
+      },
+      {
+        "art_cluster": "realistic-PURE (no stylized/pixel)",
+        "games": 48,
+        "share_pct": 43,
+        "fits_true": 11,
+        "fit_rate_pct": 23
+      },
+      {
+        "art_cluster": "stylized/pixel/voxel (any)",
+        "games": 52,
+        "share_pct": 47,
+        "fits_true": 42,
+        "fit_rate_pct": 81
+      }
+    ],
+    "tables_note": "Second table: tone clusters. Third: fits share by tier band.",
+    "exemplars": [
+      "Stylized+cozy/comedic fits: Stardew Valley (16-bit pixel, cozy/wholesome), Balatro (skeuomorphic CRT casino, whimsical), Vampire Survivors (retro pixel gothic pastiche, campy), Hades (painterly Greek-myth, witty)",
+      "Cute-vs-dark juxtaposition fits: Palworld (cartoonish creatures vs gritty survival), Cult of the Lamb (chibi cartoon vs cult-horror), Content Warning & R.E.P.O. (low-poly Muppet/PS1 vs horror), Buckshot Roulette (grimy low-poly, dark comedy)",
+      "Physics-comedy/chaotic-party fits: Fall Guys (pastel jellybean gameshow), Human: Fall Flat (low-poly ragdoll), PEAK / Chained Together / RV There Yet? (low-poly slapstick), MECCHA CHAMELEON (minimalist blank models)",
+      "Real-world concept + reframe fits: PowerWash Simulator (cartoony-clean, cozy/ASMR), Among Us (cute flat cartoon), Liar's Bar (low-poly noir bar, dark comedy)"
+    ],
+    "counterexamples": [
+      "Realistic + grim NON-fits (brand/production-driven): Elden Ring, Baldur's Gate 3, Cyberpunk 2077, Battlefield 6, Monster Hunter Wilds, Crimson Desert, Kingdom Come: Deliverance II — dark-fantasy/military realism carried by pedigree, not a legible twist",
+      "Photorealistic serious horror NON-fits: Resident Evil Village / RE4 Remake / RE Requiem, Sons of the Forest, STALKER 2, Subnautica 2 — franchise + fidelity, not art/tone novelty",
+      "Stylized-but-still-NON-fit (rare): Split Fiction (stylized cinematic, comedic/adventurous) coded false on twist-novelty despite fun tone; Saints Row 2022 (stylized, comedic/satirical, Tier C) false — shows light tone is necessary-not-sufficient",
+      "Grim fit exceptions: Dead by Daylight & Hunt: Showdown (realistic horror) and Nioh 2/Grim Dawn (dark) fit via mechanical twist, proving art/tone is a correlate of fit, not the cause"
+    ],
+    "caveats": "tone[] and art_style are multi-label descriptive tags, so cluster counts overlap and sum >100%; my clustering used keyword matching on those free-text tags and involves judgment calls (e.g., 'dark comedy' counts under both comedic and grim). The fits flag is the dataset's twist-hypothesis coding, itself acknowledged as borderline for several AAA titles. Art/tone strongly CORRELATES with fit but is not causal — it co-travels with budget (stylized/pixel = indie/small-team, cheap to make, twist-forward; realistic = AAA/brand). Tier C adds only 3 games so the sensitivity band is essentially flat (55.0% → 53.5% fits). Cluster n's for voxel (3) and emotional/dramatic (14) are small; treat those rates as directional."
+  },
+  {
+    "dimension": "correlations",
+    "headline": "Fit \"quality\" barely moves copies (r≈0), but small teams and co-op/streamer overlap track the hypothesis hard: team≤10 fits 86% vs team 150+ fits 17%.",
+    "findings": "Across the 111-game Tier A+B cohort, the hypothesis fits=true share is 55.0% (61/111); adding the 3 Tier C games (all non-fits) softens it to 53.5% (61/114) — a tight sensitivity band. The four requested cross-tabs split into two \"weak\" and two \"strong\" relationships. (1) fit_strength vs copies is essentially FLAT: Pearson r=-0.075 (and only +0.09 excluding the GTA V 230M outlier). Median copies are 7.0M at fit_strength 1-2, 5.0M at 3, and 8.0M at 4-5 — no monotonic lift; the single biggest seller (GTA V, 230M) is a fit_strength=1 non-fit, while max-fit-strength titles (Balatro fit5=6.5M, Buckshot Roulette fit5=8M) sit mid-pack. (2) twist_count vs copies is likewise near-zero (r=-0.107; +0.09 ex-GTA): twist_count=0 posts a 7.0M median (inflated by AAA sequels GTA/CoD/Battlefield), and twist_count=4 tops out at 10.5M median — a mild top-end bump, not a gradient. (3) team_size vs fits is the STRONGEST signal in the dimension: point-biserial r=-0.452, and a clean monotone staircase — teams ≤10 fit 86% (25/29), 11-50 fit 80% (12/15), 51-150 fit 67% (16/24), and 150+ fit just 17% (5/29). Median team size is 22 for fits vs 300 for non-fits (means 56 vs 346). (4) co_op vs streamer_driven are positively but weakly linked (phi=0.178): both are 68% prevalent (75/111 each); P(streamer|co_op)=73% vs P(streamer|solo)=56%. The co_op×streamer cell (n=55) is where the hypothesis concentrates — 64% fit rate and a 10.0M median, roughly double the neither-cell's 4.5M median and 38% fit rate. Net: whether a game FITS is predicted by who made it (tiny team) and how it is played/shared (co-op + streamer), not by how strongly analysts rated the fit or how many twists were stacked on.",
+    "tables": [
+      {
+        "crosstab": "fit_strength vs copies",
+        "group": "1-2 weak/non-fit",
+        "n": 54,
+        "median_copies_m": 7,
+        "mean_copies_m": 14.6
+      },
+      {
+        "crosstab": "fit_strength vs copies",
+        "group": "3 moderate",
+        "n": 16,
+        "median_copies_m": 5,
+        "mean_copies_m": 5.3
+      },
+      {
+        "crosstab": "fit_strength vs copies",
+        "group": "4-5 strong fit",
+        "n": 41,
+        "median_copies_m": 8,
+        "mean_copies_m": 14
+      },
+      {
+        "crosstab": "twist_count vs copies",
+        "group": "0 twists",
+        "n": 19,
+        "median_copies_m": 7,
+        "mean_copies_m": 21.6
+      },
+      {
+        "crosstab": "twist_count vs copies",
+        "group": "2 twists",
+        "n": 29,
+        "median_copies_m": 6.5,
+        "mean_copies_m": 10.4
+      },
+      {
+        "crosstab": "twist_count vs copies",
+        "group": "3 twists",
+        "n": 48,
+        "median_copies_m": 7.2,
+        "mean_copies_m": 11.5
+      },
+      {
+        "crosstab": "twist_count vs copies",
+        "group": "4 twists",
+        "n": 10,
+        "median_copies_m": 10.5,
+        "mean_copies_m": 14.6
+      },
+      {
+        "crosstab": "team_size vs fits",
+        "group": "1-10 (indie)",
+        "n": 29,
+        "fit_rate_pct": 86,
+        "median_team": 4
+      },
+      {
+        "crosstab": "team_size vs fits",
+        "group": "11-50",
+        "n": 15,
+        "fit_rate_pct": 80,
+        "median_team": 29
+      },
+      {
+        "crosstab": "team_size vs fits",
+        "group": "51-150",
+        "n": 24,
+        "fit_rate_pct": 67,
+        "median_team": 102
+      },
+      {
+        "crosstab": "team_size vs fits",
+        "group": "150+",
+        "n": 29,
+        "fit_rate_pct": 17,
+        "median_team": 300
+      },
+      {
+        "crosstab": "co_op x streamer",
+        "group": "co_op+streamer",
+        "n": 55,
+        "fit_rate_pct": 64,
+        "median_copies_m": 10
+      },
+      {
+        "crosstab": "co_op x streamer",
+        "group": "co_op only",
+        "n": 20,
+        "fit_rate_pct": 55,
+        "median_copies_m": 4.8
+      },
+      {
+        "crosstab": "co_op x streamer",
+        "group": "streamer only",
+        "n": 20,
+        "fit_rate_pct": 45,
+        "median_copies_m": 6.8
+      },
+      {
+        "crosstab": "co_op x streamer",
+        "group": "neither",
+        "n": 16,
+        "fit_rate_pct": 38,
+        "median_copies_m": 4.5
+      },
+      {
+        "crosstab": "correlation coefficients",
+        "group": "r(fit_strength,copies)",
+        "value": -0.075,
+        "note": "+0.09 excl GTA V"
+      },
+      {
+        "crosstab": "correlation coefficients",
+        "group": "r(twist_count,copies)",
+        "value": -0.107,
+        "note": "+0.09 excl GTA V"
+      },
+      {
+        "crosstab": "correlation coefficients",
+        "group": "r(team_size,fits) point-biserial",
+        "value": -0.452,
+        "note": "strongest signal"
+      },
+      {
+        "crosstab": "correlation coefficients",
+        "group": "phi(co_op,streamer)",
+        "value": 0.178,
+        "note": "weak positive"
+      }
+    ],
+    "exemplars": [
+      "team_size↔fits (the strong correlation): solo/tiny-team strong fits dominate — Balatro (team 1, fit_strength 5, 6.5M), Vampire Survivors (1, fit5, 15M), MECCHA CHAMELEON (2, fit5, 12.6M), Buckshot Roulette (1, fit5, 8M), Schedule I (1, fit4, 8M) — all ≤2-person teams rated max/near-max fit.",
+      "team>150 non-fits confirming the inverse: AC Valhalla (2000, non-fit), Battlefield 6 (2000, non-fit), CoD MWII (500, non-fit), NBA 2K24 (350, non-fit), EA FC 24 (500, non-fit) — big studios cluster at fit_strength 1-2.",
+      "co_op×streamer cell (64% fit, 10M median): R.E.P.O. (co-op+streamer, fit4, 11M), PEAK (fit4, 11M), Content Warning (fit4, 6M), Fall Guys (fit5, 11M) — the 'friendslop' quadrant is the hypothesis's home turf.",
+      "twist_count top end: the 4-twist group (highest median 10.5M) is populated almost entirely by fits — Palworld (4 twists, 25M), MECCHA CHAMELEON (12.6M), Vampire Survivors (15M), NARAKA (10M), Among Us (8M), Liar's Bar (3M)."
+    ],
+    "counterexamples": [
+      "fit_strength↔copies breaks at the top: GTA V is the #1 seller at 230M but scores fit_strength=1 (a pure non-fit) — the strongest 'fit' games never approach it (best strong-fit seller is Terraria at 70M, then Human Fall Flat 58M, Stardew 50M).",
+      "Max-fit-strength ≠ max copies: all nine fit_strength=5 games land at 6.5–25M (median 8M), i.e. mid-pack — Balatro (6.5M) and Inscryption (2.5M) are 'textbook' fits that sold modestly, while weak-fit AAA like Cyberpunk (fit2, 40M) and Hogwarts Legacy (fit1, 40M) outsold them 5-6x.",
+      "twist_count=0 still sells big: the zero-twist group has a 7.0M median and 21.6M mean — GTA V, Hogwarts Legacy (40M), Battlefield 6 (20M), CoD BO6 (14M) prove stacking twists is not required for volume when brand/AAA drivers exist.",
+      "team_size inverse has exceptions: Baldur's Gate 3 (team 450) and Elden Ring (300) are massive sellers, but both are coded non-fits — they sell on production/brand, consistent with the rule that large teams rarely FIT even when they sell.",
+      "co_op↔streamer not deterministic: 20 solo games are still streamer_driven (Balatro, Inscryption, Dave the Diver, Hades, Clair Obscur) — single-player watchability, not co-op, carries them."
+    ],
+    "caveats": "copies_m is self-reported and mixes units-sold with players-reached (inflation_flags like players_not_sales); several free-to-play mega-reach titles were excluded as Tier D, so the copies axis is noisy especially above 20M. fit_strength and twist_count are analyst-assigned ordinals, not measured, so their ~zero correlation with copies partly reflects that the analysts scored 'fit' independently of commercial scale by design. team_size is null for 14/111 games (mostly AAA/licensed non-fits), which if anything strengthens the team↔fits inverse. Correlations are descriptive on a success-only sample (all games already sold ~1M+), so this is survivorship-conditioned — it says which winners fit, not whether fitting causes winning. Pearson r on skewed copies is outlier-sensitive (GTA V flips the fit_strength/twist signs from negative to slightly positive), so treat the weak correlations as 'indistinguishable from zero,' not reliably negative. Tier C n=3 makes the A+B+C sensitivity band essentially cosmetic (55.0%→53.5%)."
+  },
+  {
+    "dimension": "production_value",
+    "headline": "Both micro-budget and AAA winners appear decisively — the cohort spans prod_tier 2→5 (no tier-1), skews AAA (41% tier-5) but keeps a robust ~12% micro-budget tail, and hypothesis-fit share falls monotonically from 100% at tier-2 to 18% at tier-5.",
+    "findings": "Across the 111-game Tier A+B cohort, production_value_tier is distributed: tier 2 (micro-budget) 13 games (11.7%), tier 3 (small/indie) 17 (15.3%), tier 4 (AA/mid) 36 (32.4%), tier 5 (AAA) 45 (40.5%); zero tier-1 games. Median prod_tier = 4. So the answer to the dimension question is an emphatic YES on both ends: 13 confirmed micro-budget (tier-2) million-plus winners coexist with 45 AAA (tier-5) winners. The distribution is not a symmetric barbell — it leans high (73% of winners are tier 4-5) — but the low end is populated by genuine, large-scale hits (Vampire Survivors 15M, MECCHA CHAMELEON 12.6M, PEAK 11M, R.E.P.O. 11M, Among Us 8M, Buckshot Roulette 8M, Schedule I 8M), several built by 1-2 person teams at $3-8 price points. The most striking pattern is an almost perfectly monotonic inverse relationship between production tier and hypothesis fit: tier-2 = 100% fit (13/13), tier-3 = 88% (15/17), tier-4 = 69% (25/36), tier-5 = 18% (8/45). In plain terms, micro-budget winners nearly always win via a famous-base-plus-user-friendly-twist, whereas AAA winners overwhelmingly win via brand/franchise/production muscle (the 37 tier-5 non-fits are dominated by sequels and licensed IP: GTA V, Elden Ring, Cyberpunk, Hogwarts Legacy, CoD, Battlefield 6, MK1, NBA 2K24, EA FC 24, RE Village/RE4, AC Valhalla). Overall fits share is 61/111 = 55.0% for Tier A+B. Adding the 3 Tier-C games (Saints Row, Sea of Stars, Indiana Jones and the Great Circle — all fits=false, all tier 4-5) barely moves the distribution (tier-2 11.4%, tier-3 14.9%, tier-4 32.5%, tier-5 41.2%) and lowers overall fit to 61/114 = 53.5%; the tier gradient is unchanged (tier-5 fit 17.0%, tier-4 fit 67.6%).",
+    "tables": [
+      {
+        "prod_tier": "2 (micro-budget)",
+        "label": "solo/tiny team, $3-8",
+        "count_AB": 13,
+        "pct_AB": "11.7%",
+        "count_ABC": 13,
+        "pct_ABC": "11.4%"
+      },
+      {
+        "prod_tier": "3 (small/indie)",
+        "label": "",
+        "count_AB": 17,
+        "pct_AB": "15.3%",
+        "count_ABC": 17,
+        "pct_ABC": "14.9%"
+      },
+      {
+        "prod_tier": "4 (AA/mid)",
+        "label": "",
+        "count_AB": 36,
+        "pct_AB": "32.4%",
+        "count_ABC": 37,
+        "pct_ABC": "32.5%"
+      },
+      {
+        "prod_tier": "5 (AAA)",
+        "label": "",
+        "count_AB": 45,
+        "pct_AB": "40.5%",
+        "count_ABC": 47,
+        "pct_ABC": "41.2%"
+      },
+      {
+        "prod_tier": "1 (garage)",
+        "label": "",
+        "count_AB": 0,
+        "pct_AB": "0%",
+        "count_ABC": 0,
+        "pct_ABC": "0%"
+      }
+    ]
+  },
+  {
+    "dimension": "region — Country_of_studio distribution of hits",
+    "headline": "Hits are Europe-centric (46%) and Europe posts the highest hypothesis-fit rate (65%); Japan supplies 14% of hits but the lowest fit rate (31%), while Sweden alone is 13% of hits and the densest \"familiar-base-plus-twist\" cluster (71% fit).",
+    "findings": "Across the 111-game Tier A+B cohort, studios span 25 countries. Europe (Western + Nordics + Eastern) is the single largest source of hits at 51/111 (46%), ahead of North America 30 (27%) and East/SE Asia 26 (23%); Oceania adds 4 (4%). The USA is the top individual country at 23 games (21%), then Japan 16 (14%) and Sweden 14 (13%) — those three alone are 48% of all hits. On the hypothesis dimension, overall fits=true is 55.0% (61/111) for Tier A+B and 53.5% (61/114) for Tier A+B+C (the 3 added Tier-C games — Saints Row, Sea of Stars, Indiana Jones — are all fits=false, nudging the share down ~1.5pts). Fit rate varies sharply by region: Nordics 75% (15/20), Western Europe 61% (11/18), China 60% (3/5), South Korea 75% (3/4), Eastern Europe 54% (7/13), North America 47% (14/30), and Japan lowest at 31% (5/16). At macro level Europe fits 65% (33/51) vs North America 47% (14/30) and East/SE Asia 46% (12/26). The pattern: Japan's hits are overwhelmingly franchise/brand-driven AAA (Elden Ring, the Monster Hunter/Resident Evil/Dragon Ball/Dragon's Dogma/Nioh/Metaphor entries), which the rubric codes as non-fits, whereas the Nordic cluster — led by Sweden — is dominated by survival-crafting and \"friendslop\" co-op twist-hits. North America splits: indie twist-hits (Stardew, Hades, Terraria, Balatro-adjacent) coexist with a large bloc of AAA franchise non-fits (Diablo IV, Starfield, MK1, NBA 2K24, CoD, Warhammer, Subnautica 2).",
+    "tables": [
+      {
+        "macro_region": "Europe",
+        "n_hits": 51,
+        "pct_of_hits": "46%",
+        "fits_true": 33,
+        "fit_rate": "65%"
+      },
+      {
+        "macro_region": "North America",
+        "n_hits": 30,
+        "pct_of_hits": "27%",
+        "fits_true": 14,
+        "fit_rate": "47%"
+      },
+      {
+        "macro_region": "East/SE Asia",
+        "n_hits": 26,
+        "pct_of_hits": "23%",
+        "fits_true": 12,
+        "fit_rate": "46%"
+      },
+      {
+        "macro_region": "Oceania",
+        "n_hits": 4,
+        "pct_of_hits": "4%",
+        "fits_true": 2,
+        "fit_rate": "50%"
+      }
+    ],
+    "exemplars": [
+      "Sweden (14 games, 13% of hits, 71% fit) is the model region for the hypothesis: Helldivers 2, Valheim, V Rising, Content Warning, Core Keeper, ARC Raiders, Satisfactory, R.E.P.O., RV There Yet?, It Takes Two — a survival-crafting + co-op-physics twist engine.",
+      "Western Europe / UK (8 games, 62% fit): Vampire Survivors, Phasmophobia, Fall Guys, Sea of Thieves, PowerWash Simulator — familiar-concept-plus-twist hits from small/mid studios.",
+      "France (5 games, 80% fit — highest among multi-game countries): Clair Obscur, Dead Cells, The Planet Crafter, Chained Together, Inscryption(Canada)… note France's fits are Clair Obscur, Dead Cells, Planet Crafter, Chained Together.",
+      "China (5, 60% fit) and South Korea (4, 75% fit) skew toward fits (NARAKA, Dyson Sphere Program, Tale of Immortal; DAVE THE DIVER, Lies of P, inZOI) despite small samples."
+    ],
+    "counterexamples": [
+      "Japan is the clearest regional non-fit cluster: 16 hits (14%) but only 31% fit (5/16). The 11 non-fits are almost all brand/franchise AAA: Elden Ring, Monster Hunter Wilds, Monster Hunter Rise, Resident Evil Village, RE4 Remake, RE Requiem, Metaphor: ReFantazio, Dragon Ball Sparking Zero, Dragon's Dogma 2, Wo Long, Elden Ring Nightreign.",
+      "North America's 30 hits split down the middle (47% fit) because it hosts both the indie twist canon (Stardew Valley, Hades, Terraria, Grim Dawn, Astroneer) and the largest bloc of franchise/brand non-fits (Diablo IV, Diablo II Resurrected, Starfield, Mortal Kombat 1, NBA 2K24, CoD MWII, CoD Black Ops 6, Warhammer Space Marine 2, Subnautica 2, Star Wars Jedi).",
+      "Poland (4 games) fits only 25% (1/4): Cyberpunk 2077, Manor Lords, Dying Light 2 are non-fits; only Lords of the Fallen codes fit — a AAA/production-driven regional profile.",
+      "Switzerland (Farming Simulator 22 & 25), Belgium (Baldur's Gate 3), Finland (Cities: Skylines II), New Zealand (Path of Exile 2), Ukraine (STALKER 2), Cyprus (Atomic Heart) — all 0% fit, each a franchise/sequel or brand-driven hit."
+    ],
+    "caveats": "[\"Country is assigned to the primary/lead studio; several titles are multi-studio. PEAK (USA Aggro Crab / Sweden Landfall) is coded United States here — recoding it to Sweden would push Nordics to 21 games and Sweden's fit rate higher. Oblivion Remastered (US Bethesda / FR Virtuos), EA FC 24 (Canada/Romania), Assassin's Creed Valhalla (Canada Ubisoft Montreal, multi-studio), and GTA V (UK Rockstar North / US parent) involve similar judgment calls.\",\"Sub-region cells are small: China (5), South Korea (4), Oceania (4), and every single-game country (Estonia, Norway, Turkey, Malaysia, Lithuania at 100% fit; Belgium, Finland, New Zealand, Cyprus, Ukraine at 0%) are statistically noisy — read only Europe/NA/Asia macro cells and the US/Japan/Sweden trio as robust.\",\"fits=true is the rubric's mechanical coding, which itself flags many 'fit-by-formula' cases as really brand/quality-driven; regional fit rates therefore reflect the coding convention, not an independent causal claim.\",\"The dataset is a curated hit list, not a population of all games per country, so 'share of hits' reflects both a country's output volume and its hit rate — it cannot distinguish the two. Japan's low fit rate partly reflects that established Japanese publishers (Capcom, FromSoftware, Atlus, Bandai Namco) dominate its representation here.\",\"Tier A+B+C band (53.5%) differs from A+B (55.0%) by only the 3 Tier-C games, all non-fits; region shares are essentially unchanged between the two bands.\"]"
+  },
+  {
+    "dimension": "tier_composition — Confidence-tier composition, self-reported milestone reliance, and data-conflict (inflation_flag) census",
+    "headline": "The confident cohort is almost entirely Tier A (110/111) and almost entirely self-reported (107/111, 96%), and a majority of it (60/111, 54%) carries at least one data-reliability flag — \"players-not-sales\" being by far the dominant conflict.",
+    "findings": "TIER COMPOSITION: The 111-game \"confident\" cohort is 110 Tier A + exactly 1 Tier B (PAYDAY 3). There is effectively no B-tier mass — the \"A+B\" label is \"A plus a single downgraded game.\" Adding the 3 Tier C games (Saints Row 2022, Sea of Stars, Indiana Jones and the Great Circle) gives the 114-game A+B+C band; the remaining 11 games in the 125-row full dataset are all Tier D (below the 1M bar: Marvel Rivals, Overwatch 2, Weird West, Wuthering Waves, Zenless Zone Zero, THE FINALS, Delta Force, Goose Goose Duck, Palia, Frostpunk 2, Anno 117). EVIDENCE BASIS: 107/111 (96.4%) of cohort sales figures are self_reported (developer/publisher press-release milestones). Only 4 (3.6%) rest on third-party analytics estimates instead: No Man's Sky, Stray, Schedule I, Liar's Bar. In the A+B+C band it's 110/114 self-reported (96.5%; +Saints Row as the only extra third-party estimate). DATA-CONFLICT CENSUS: 60/111 cohort games (54%) carry ≥1 inflation_flag; 51 (46%) are clean. 88 total flags are distributed as: players_not_sales 39 (35% of cohort), owners_not_sold 18 (16%), bundle 11 (10%), review_bomb 10 (9%), giveaway 6 (5%), free_weekend 4 (4%). The dominant conflict class is a self-reported figure that is actually a players/downloads count, not units sold: 37 games are simultaneously self_reported=true AND players_not_sales — the weakest evidence class in the cohort (e.g., Black Myth Wukong's \"30M\" and Palworld's \"25M\" are players figures). Flag-stacking (≥3 flags) marks the least-trustworthy rows: PAYDAY 3 (4 flags), and NBA 2K24, Content Warning, Grounded, Dead by Daylight, Hunt: Showdown (3 each). Notably the sole Tier B game (PAYDAY 3) is also the single most-flagged game in the cohort — its downgrade tracks its evidence quality. HYPOTHESIS SENSITIVITY: fits=true share is 61/111 = 55.0% for Tier A+B, and 61/114 = 53.5% for Tier A+B+C (all 3 added C games are fits=false, so the share only dilutes slightly). The tier band choice moves the fits share by ~1.5 pts — the hypothesis result is robust to the A+B vs A+B+C cutoff.",
+    "tables": [
+      {
+        "metric": "Tier composition (cohort A+B)",
+        "Tier_A": 110,
+        "Tier_B": 1,
+        "Tier_C": 0,
+        "Tier_D": 0,
+        "total": 111
+      },
+      {
+        "metric": "Tier composition (full 125-row dataset)",
+        "Tier_A": 110,
+        "Tier_B": 1,
+        "Tier_C": 3,
+        "Tier_D": 11,
+        "total": 125
+      },
+      {
+        "metric": "Evidence basis (cohort A+B)",
+        "self_reported_true": 107,
+        "self_reported_true_pct": "96.4%",
+        "third_party_estimate": 4,
+        "third_party_pct": "3.6%"
+      },
+      {
+        "metric": "Evidence basis (A+B+C band)",
+        "self_reported_true": 110,
+        "self_reported_true_pct": "96.5%",
+        "third_party_estimate": 4,
+        "third_party_pct": "3.5%"
+      }
+    ]
+  }
+]

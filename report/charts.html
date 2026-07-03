@@ -1,0 +1,324 @@
+<title>스팀 100만장+ 히트의 공통점 — 데이터 대시보드</title>
+<style>
+  :root{
+    --ground:#f4f5f2; --surface:#ffffff; --surface-2:#eef0ec;
+    --ink:#12161c; --ink-2:#4c5560; --muted:#8a8f89;
+    --grid:#e4e5df; --border:rgba(16,22,28,.10);
+    --fit:#2a78d6; --nofit:#eb6834; --accent:#2a78d6; --warn:#b4520e;
+    --band:linear-gradient(90deg,#2a78d6,#4a3aa7);
+    --mono:ui-monospace,"SF Mono","JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#0e131a; --surface:#161d26; --surface-2:#1e2732;
+      --ink:#f2f4f7; --ink-2:#aab3bf; --muted:#7c8590;
+      --grid:#273241; --border:rgba(255,255,255,.10);
+      --fit:#3987e5; --nofit:#d95926; --accent:#4d9bf0; --warn:#f0a35a;
+    }
+  }
+  :root[data-theme="light"]{
+    --ground:#f4f5f2; --surface:#ffffff; --surface-2:#eef0ec;
+    --ink:#12161c; --ink-2:#4c5560; --muted:#8a8f89; --grid:#e4e5df;
+    --border:rgba(16,22,28,.10); --fit:#2a78d6; --nofit:#eb6834; --accent:#2a78d6; --warn:#b4520e;
+  }
+  :root[data-theme="dark"]{
+    --ground:#0e131a; --surface:#161d26; --surface-2:#1e2732;
+    --ink:#f2f4f7; --ink-2:#aab3bf; --muted:#7c8590; --grid:#273241;
+    --border:rgba(255,255,255,.10); --fit:#3987e5; --nofit:#d95926; --accent:#4d9bf0; --warn:#f0a35a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(20px,4vw,56px) clamp(16px,4vw,32px) 80px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 14px}
+  h1{font-size:clamp(28px,5.2vw,46px);line-height:1.05;letter-spacing:-.02em;font-weight:800;
+    margin:0 0 16px;text-wrap:balance}
+  h1 .hl{color:var(--accent)}
+  .lede{font-size:clamp(15px,2.1vw,18px);color:var(--ink-2);max-width:66ch;margin:0 0 8px}
+  .meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px;
+    display:flex;flex-wrap:wrap;gap:6px 18px}
+  /* hero stat tiles */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:34px 0 8px}
+  .tile{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 18px 16px}
+  .tile .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tile .v{font-size:clamp(30px,5vw,40px);font-weight:800;letter-spacing:-.02em;margin:6px 0 2px;line-height:1}
+  .tile .s{font-size:12.5px;color:var(--ink-2)}
+  .tile.accent .v{color:var(--accent)}
+  /* callout */
+  .callout{margin:26px 0 6px;background:var(--surface);border:1px solid var(--border);
+    border-left:4px solid var(--warn);border-radius:12px;padding:18px 20px}
+  .callout h3{margin:0 0 8px;font-size:15px;letter-spacing:-.01em}
+  .callout p{margin:0 0 8px;font-size:13.5px;color:var(--ink-2)}
+  .callout p:last-child{margin:0}
+  /* cards */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 20px 18px;min-width:0}
+  .card.full{grid-column:1/-1}
+  .card h2{font-size:16px;letter-spacing:-.01em;margin:0 0 3px}
+  .card .sub{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em;margin:0 0 16px}
+  .card .note{font-size:12.5px;color:var(--ink-2);margin:14px 0 0;padding-top:12px;border-top:1px solid var(--grid)}
+  @media (max-width:720px){.grid{grid-template-columns:1fr}}
+  /* horizontal bars */
+  .row{display:grid;grid-template-columns:130px 1fr 52px;align-items:center;gap:10px;margin:9px 0}
+  .row .lbl{font-size:12.5px;color:var(--ink-2);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .track{position:relative;height:20px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+  .bar{position:absolute;left:0;top:0;bottom:0;border-radius:5px;min-width:2px}
+  .bar.fit{background:var(--fit)} .bar.nofit{background:var(--nofit)}
+  .bar.acc{background:var(--accent)}
+  .val{font-family:var(--mono);font-size:12px;color:var(--ink);text-align:right}
+  .val .u{color:var(--muted)}
+  /* stacked bars (price/year) */
+  .sbars{display:flex;flex-direction:column;gap:9px}
+  .sbar{display:grid;grid-template-columns:66px 1fr;align-items:center;gap:10px}
+  .sbar .lbl{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-align:right}
+  .stack{display:flex;height:22px;border-radius:5px;overflow:hidden;background:var(--surface-2)}
+  .seg{height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:#fff}
+  .seg.fit{background:var(--fit)} .seg.nofit{background:var(--nofit)}
+  .seg span{opacity:.95;padding:0 2px}
+  /* heatmap */
+  .heat{overflow-x:auto}
+  .hm{display:grid;grid-template-columns:auto repeat(6,minmax(56px,1fr));gap:4px;min-width:460px;margin-top:4px}
+  .hm .cnr{font-family:var(--mono);font-size:10px;color:var(--muted)}
+  .hm .colh,.hm .rowh{font-family:var(--mono);font-size:11px;color:var(--ink-2);display:flex;align-items:center;justify-content:center;padding:2px}
+  .hm .rowh{justify-content:flex-end;padding-right:8px;white-space:nowrap}
+  .cell{aspect-ratio:1.5/1;border-radius:7px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    border:1px solid var(--border);position:relative}
+  .cell .f{font-weight:800;font-size:15px;line-height:1}
+  .cell .c{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px}
+  .cell.empty{background:transparent;border:1px dashed var(--grid)}
+  .cell.hasfit .f{color:#fff}
+  .axl{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:8px}
+  .quad{margin-top:12px;font-size:12.5px;color:var(--ink-2)}
+  .quad b{color:var(--ink)}
+  /* legend */
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  /* table */
+  .tbl{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:13px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--grid);vertical-align:top}
+  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td .game{font-weight:700}
+  td .sub{font-size:11.5px;color:var(--muted)}
+  .chip{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:999px;
+    background:var(--surface-2);color:var(--ink-2);margin:2px 3px 0 0;border:1px solid var(--border)}
+  .num{font-family:var(--mono);text-align:right;white-space:nowrap}
+  .foot{margin-top:34px;font-size:12.5px;color:var(--muted);line-height:1.7}
+  .foot b{color:var(--ink-2)}
+  a{color:var(--accent)}
+  @media (prefers-reduced-motion:no-preference){.bar,.seg{transition:width .5s ease}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Steam Market Intelligence · 2020–2026 · N=111 confirmed</p>
+  <h1>100만장+ 스팀 히트의 <span class="hl">공통점</span></h1>
+  <p class="lede">“이미 유명한 게임/개념 + 독창적 변주” 가설을, 100만 장 이상 판매가 확인된 히트작 111종에 대해
+    <b>Dynamic Workflow로 330개 에이전트</b>를 팬아웃해 정량 검증했다. 결론: 패턴은 실재하나 히트의 <b>약 절반</b>만 설명한다.</p>
+  <div class="meta">
+    <span>생성 2026-07-03</span><span>후보 조사 125종 → 확정(Tier A+B) 111종</span>
+    <span>모든 판매량은 추정치</span>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="callout">
+    <h3>⚠️ 이 숫자를 읽는 법 — 생존자 편향 & 라벨 불안정성</h3>
+    <p>표본은 <b>이미 이긴 게임만</b> 담는다. 같은 공식으로 실패한 수천 개(대조군)가 없으므로 “이 패턴이 히트 확률을 높인다”는 <b>인과 주장은 불가능</b>하다 — “히트작의 절반이 사후적으로 이 패턴으로 서술된다”는 서술적 사실까지만 유효하다.</p>
+    <p>fit 분류의 <b>코더 불일치율은 45%</b>. 55%라는 헤드라인의 실제 오차 밴드는 <b>~40–70%</b>로 넓다. 아래 모든 fit 비율은 정량이 아닌 <b>방향성</b>으로 읽어야 한다.</p>
+  </div>
+
+  <div class="grid">
+    <!-- FEATURE: heatmap -->
+    <section class="card full">
+      <h2>친숙도 × 참신성 — “머니 차트”</h2>
+      <p class="sub">A+B 코호트, 셀 = 부합수 / 전체수 · 색 농도 = 부합 밀도</p>
+      <div class="heat"><div class="hm" id="hm"></div></div>
+      <p class="axl">→ 트위스트 최대 참신성 (0 = 트위스트 없음 · 5 = 전례 없음)</p>
+      <div class="quad">
+        부합작 <b>61종 전부</b>가 친숙도 ≥3 <b>그리고</b> 참신성 ≥3 영역에 있다. 참신성 ≤2(38종)와 친숙도 ≤2(6종)에서는
+        <b>부합 0</b> — 두 축 모두 <b>필요조건</b>이나, 최고 명성(친숙도 5)은 스위트스팟이 아니다(대개 트위스트 없는 AAA 속편).
+      </div>
+    </section>
+
+    <!-- fit share -->
+    <section class="card">
+      <h2>가설 부합 비율</h2>
+      <p class="sub">Tier A+B (N=111)</p>
+      <div class="track" style="height:30px" title="부합 61 / 비부합 50">
+        <div class="bar fit" id="fitbar" style="height:100%"></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--fit)"></i>부합 61 (55.0%)</span>
+        <span><i style="background:var(--surface-2)"></i>비부합 50 (45.0%)</span>
+      </div>
+      <p class="note">민감도: Tier C 포함(N=114) 시 <b>53.5%</b>. 순수 공식만 적용하면 <b>64%</b>까지 상승(분석가가 브랜드/제작비 구동 AAA 10종을 강등한 결과가 55%).</p>
+    </section>
+
+    <!-- base type -->
+    <section class="card">
+      <h2>“익숙한 베이스”의 정체</h2>
+      <p class="sub">베이스 유형별 빈도 · 우측 = 그 유형의 부합률</p>
+      <div id="basebars"></div>
+      <p class="note">핵심 반전: 히트의 <b>71%</b>는 현실 게임이 아니라 <b>이미 존재하는 비디오게임 장르</b> 위에 지어졌다. 사용자의 대표 예시(룰렛·숨바꼭질)는 소수(13.5%)인 <b>현실 게임</b> 갈래다.</p>
+    </section>
+
+    <!-- twist -->
+    <section class="card">
+      <h2>어떤 “변주”가 판매로 이어지나</h2>
+      <p class="sub">A+B · 막대 = 빈도 · 우측 = 보유작 판매 중앙값(M)</p>
+      <div id="twistbars"></div>
+      <p class="note">흔한 변주(미학·협동·융합·교체)는 <b>기본기(table stakes)</b>. 실제 판매와 연동되는 건 희귀한 <b>가격 파괴</b>·<b>물리 잼 창발</b>(중앙값 11M).</p>
+    </section>
+
+    <!-- traits -->
+    <section class="card">
+      <h2>그 외 반복되는 특징</h2>
+      <p class="sub">A+B 코호트 보유 비율</p>
+      <div id="traitbars"></div>
+      <p class="note">협동·스트리머·숏폼 바이럴이 3대 축. 단 <b>27%는 바이럴 신호 0으로</b> 100만 돌파 — 가속기이지 필수 관문은 아니다.</p>
+    </section>
+
+    <!-- price -->
+    <section class="card">
+      <h2>가격 분포 — 이중봉</h2>
+      <p class="sub">막대 = 게임 수 · 파랑 = 부합 · 주황 = 비부합</p>
+      <div class="sbars" id="pricebars"></div>
+      <p class="note">$10 미만은 <b>사실상 전부 부합</b>. $40+ 클러스터는 21%만 부합(AAA). 중앙값 $39.99는 “전형가”가 아니라 두 봉우리 사이의 골이다.</p>
+    </section>
+
+    <!-- year -->
+    <section class="card">
+      <h2>출시연도별 부합 구성</h2>
+      <p class="sub">2020–2026 · 파랑 = 부합 · 주황 = 비부합</p>
+      <div class="sbars" id="yearbars"></div>
+      <p class="note">2023년은 AAA 속편 홍수로 부합률 최저(29%) → 2024년 “friendslop” 웨이브로 반등. 코호트에 2020년 이전 레거시 롱테일 14종 포함(윈도우 혼입, 한계 참조).</p>
+    </section>
+
+    <!-- cases -->
+    <section class="card full">
+      <h2>대표 부합 사례 — 베이스 → 변주 매핑</h2>
+      <p class="sub">교과서적 “익숙한 베이스 + 독창적 변주” 5종</p>
+      <div class="tbl"><table id="casetbl">
+        <thead><tr><th>게임</th><th>베이스 (친숙도)</th><th>변주 (참신성)</th><th class="num">가격</th><th class="num">팀</th><th class="num">판매</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </section>
+  </div>
+
+  <p class="foot">
+    <b>방법론.</b> Dynamic Workflow가 330개 서브에이전트를 팬아웃 — 후보 발굴(멀티모달 스윕) → 게임별 리서치 + <b>적대적 판매 검증</b>(신뢰도 A/B/C/D) → 17개 차원 분석 → 완결성 비평·레드팀·리포트.
+    스팀은 실판매를 공개하지 않아 모든 수치는 추정치이며, 코호트의 96%가 개발사 자체 발표 마일스톤 기반(상방 편향).
+    <b>알려진 한계:</b> 생존자 편향(대조군 없음), 코더 불일치 45%, 편의표본(Lethal Company·Sony 이식작·전략·격투 장르 누락 → 협동/바이럴/부합률 구조적 과대), 2020년 이전 레거시 혼입.
+    전체 데이터셋·리포트는 <b>report/dataset.csv · report/report.md</b>. 수치는 2026년 7월 기준 스냅샷.
+  </p>
+</div>
+
+<script>
+const DATA = {
+  stats:[
+    {k:"가설 부합률 (A+B)",v:"55%",s:"밴드 40–70% · Tier C 포함 53.5%",accent:true},
+    {k:"확정 코호트",v:"111",s:"조사 125종 → Tier A+B 확정"},
+    {k:"팬아웃 에이전트",v:"330",s:"발굴·리서치·검증·분석·종합"},
+    {k:"협동 · 스트리머",v:"67%",s:"코옵 66.7% · 스트리머 67.6%"},
+  ],
+  base:[["기성 비디오게임 장르/모드",79,65.8],["현실 게임/활동",15,46.7],["라이선스/프랜차이즈 IP",11,0],["오리지널(베이스 없음)",3,0],["물리적 파티 활동",2,100],["민담/신화",1,0]],
+  twist:[["미학적 재구성",54,7.5],["협동/소셜 레이어",45,8],["장르 융합",44,7],["기계적 교체",39,7],["가격/규모 파괴",18,11],["서사 재구성",13,9.3],["접근성 단순화",13,6.5],["물리 잼 창발",7,11],["입력 체화",6,8],["로그라이크 레이어",6,7.5]],
+  traits:[["협동/소셜",66.7],["스트리머 구동",67.6],["숏폼 바이럴",61.3],["신규 오리지널 IP",62.2],["속편",34.2],["Early Access",30.6],["솔로/소규모(≤5인)",18]],
+  price:[["무료/<$5",3,3],["$5–10",10,10],["$10–20",22,21],["$20–40",29,17],["$40–60",32,9],["$60+",15,1]],
+  year:[[2020,7,2],[2021,8,6],[2022,6,5],[2023,5,13],[2024,15,10],[2025,8,8],[2026,1,3]],
+  matrix:[[5,[[0,8],[0,0],[0,4],[0,1],[7,7],[1,1]]],[4,[[0,2],[0,0],[0,3],[3,5],[13,13],[0,0]]],[3,[[0,6],[0,1],[0,11],[13,19],[21,22],[3,3]]],[2,[[0,3],[0,0],[0,0],[0,0],[0,1],[0,1]]],[1,[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]]],
+  cases:[
+    ["Buckshot Roulette","러시안 룰렛",5,["샷건 교체","아이템 레이어","협동","가격 파괴"],4,"$2.99","1인","8M"],
+    ["MECCHA CHAMELEON","숨바꼭질 / Prop Hunt",5,["바디페인트 위장","미학 재구성","협동","가격 파괴"],4,"$5.99","2인","12.6M"],
+    ["Liar's Bar","라이어스 다이스 + 룰렛",5,["1인칭 체화","협동 블러핑","누아르 재구성","가격 파괴"],4,"$6.99","—","3M"],
+    ["Content Warning","코옵 추출 호러 (Lethal Company류)",3,["‘촬영해 판다’ 서사","협동","가격 파괴"],4,"$7.99","5인","6M"],
+    ["Chained Together","Foddian 등반 플랫포머",3,["사슬 강제 협동","물리 잼 창발","가격 파괴"],4,"$4.99","4인","4M"],
+  ],
+};
+const $=(s)=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+
+// stats
+DATA.stats.forEach(s=>{const t=el("div","tile"+(s.accent?" accent":""));
+  t.innerHTML=`<div class="k">${s.k}</div><div class="v">${s.v}</div><div class="s">${s.s}</div>`;$("#stats").append(t);});
+
+// heatmap
+const hm=$("#hm");
+hm.append(el("div","cnr",'친숙↓ / 참신→'));
+[0,1,2,3,4,5].forEach(n=>hm.append(el("div","colh",n)));
+DATA.matrix.forEach(([fam,cells])=>{
+  hm.append(el("div","rowh",`친숙 ${fam}`));
+  cells.forEach(([fit,count],nov)=>{
+    if(count===0){const c=el("div","cell empty");c.title=`친숙 ${fam} × 참신 ${nov}: 0종`;hm.append(c);return;}
+    const ratio=fit/count;
+    const c=el("div","cell"+(fit>0?" hasfit":""));
+    c.style.background=`color-mix(in srgb, var(--fit) ${Math.round(ratio*100)}%, var(--surface-2))`;
+    c.innerHTML=`<div class="f">${fit}</div><div class="c">/${count}</div>`;
+    c.title=`친숙 ${fam} × 참신 ${nov}: 부합 ${fit} / ${count}종 (${Math.round(ratio*100)}%)`;
+    hm.append(c);
+  });
+});
+
+// fit bar width
+$("#fitbar").style.width="55%";
+
+// base bars (count + fitrate label)
+const maxBase=Math.max(...DATA.base.map(b=>b[1]));
+DATA.base.forEach(([lbl,count,rate])=>{
+  const r=el("div","row");
+  r.innerHTML=`<div class="lbl" title="${lbl}">${lbl}</div>
+    <div class="track" title="${count}종 · 부합률 ${rate}%"><div class="bar acc" style="width:${count/maxBase*100}%"></div></div>
+    <div class="val">${count}<span class="u"> · ${rate}%</span></div>`;
+  $("#basebars").append(r);
+});
+
+// twist bars (count + median copies)
+const maxTw=Math.max(...DATA.twist.map(t=>t[1]));
+DATA.twist.forEach(([lbl,count,med])=>{
+  const hot=med>=10;
+  const r=el("div","row");
+  r.innerHTML=`<div class="lbl" title="${lbl}">${lbl}</div>
+    <div class="track" title="${count}종 · 판매 중앙값 ${med}M"><div class="bar ${hot?'fit':'acc'}" style="width:${count/maxTw*100}%"></div></div>
+    <div class="val">${count}<span class="u"> · ${med}M</span></div>`;
+  $("#twistbars").append(r);
+});
+
+// trait bars
+DATA.traits.forEach(([lbl,v])=>{
+  const r=el("div","row");
+  r.innerHTML=`<div class="lbl" title="${lbl}">${lbl}</div>
+    <div class="track" title="${v}%"><div class="bar acc" style="width:${v}%"></div></div>
+    <div class="val">${v}<span class="u">%</span></div>`;
+  $("#traitbars").append(r);
+});
+
+// stacked helper
+function stacked(host,rows,labeler){
+  rows.forEach(row=>{
+    const [lbl,fit,nofit]=row, total=fit+nofit;
+    const s=el("div","sbar");
+    const fitPct=total?fit/total*100:0, noPct=total?nofit/total*100:0;
+    s.innerHTML=`<div class="lbl">${labeler(lbl,total)}</div>
+      <div class="stack" title="부합 ${fit} · 비부합 ${nofit} (총 ${total})">
+        <div class="seg fit" style="width:${fitPct}%">${fit?`<span>${fit}</span>`:""}</div>
+        <div class="seg nofit" style="width:${noPct}%">${nofit?`<span>${nofit}</span>`:""}</div>
+      </div>`;
+    host.append(s);
+  });
+}
+stacked($("#pricebars"),DATA.price.map(p=>[p[0],p[2],p[1]-p[2]]),(l)=>l);
+stacked($("#yearbars"),DATA.year.map(y=>[y[0],y[1],y[2]]),(l)=>l);
+
+// cases table
+const tb=$("#casetbl").querySelector("tbody");
+DATA.cases.forEach(([g,base,fam,tw,nov,price,team,copies])=>{
+  const tr=el("tr");
+  tr.innerHTML=`<td><span class="game">${g}</span></td>
+    <td>${base} <span class="sub">(친숙 ${fam})</span></td>
+    <td>${tw.map(x=>`<span class="chip">${x}</span>`).join("")} <span class="sub">(참신 ${nov})</span></td>
+    <td class="num">${price}</td><td class="num">${team}</td><td class="num">${copies}</td>`;
+  tb.append(tr);
+});
+</script>

@@ -26,10 +26,16 @@
 
 ## 산출물 (`report/`)
 
+- **📊 라이브 대시보드**: https://claude.ai/code/artifact/b7864c77-5698-4ae5-98d9-6b0703e27bf4
 - `report/report.md` — 한국어 분석 리포트 (핵심 결론 · 가설 검증 · 대표 사례 · 반례 · 그 외 공통점 · 실전 시사점 · 방법론)
-- `report/dataset.json`, `report/dataset.csv` — 게임 × 전 필드 데이터셋 (출처·신뢰도 등급 포함)
-- `report/charts.html` — 시각화 (친숙도×참신도 2×2, 변주/베이스 분류 빈도, 적합 비율, 연도별, 가격 등)
-- (HTML 아티팩트로도 게시)
+- `report/dataset.json`, `report/dataset.csv` — 게임 × 전 필드 데이터셋 (출처·신뢰도 등급 포함, 125종)
+- `report/charts.html` — 시각화 아티팩트 소스 (친숙도×참신성 2×2 히트맵, 변주/베이스 분류 빈도, 부합 비율, 가격·연도별, 대표 사례)
+- `report/stats.json`, `report/dimensions.json`, `report/chart_data.json` — 집계·차원분석·차트 데이터
+- `scripts/process_results.js`, `scripts/chart_data.js` — 워크플로 출력 → 산출물 변환 스크립트 (재현용)
+
+## 핵심 결과 요약
+
+확정 코호트(Tier A+B) **111종** 중 **55%** 가 "익숙한 베이스 + 독창적 변주"에 부합(민감도 40–70%, 코더 불일치 45%). 패턴은 실재하나 **히트의 약 절반만** 설명하며, 나머지는 속편·AAA·라이선스로 100만을 넘었다. 중요한 정정: "익숙한 베이스"의 71%는 현실 게임이 아니라 **이미 존재하는 비디오게임 장르**다. 자세한 내용·한계는 `report/report.md` 참조.
 
 ## 실행 방법
 
