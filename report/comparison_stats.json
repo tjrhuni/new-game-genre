@@ -1,0 +1,910 @@
+{
+  "meta": {
+    "window": "2020-2026",
+    "generated": "2026-07-03",
+    "seed": 20260703,
+    "phase": "control-study"
+  },
+  "stats": {
+    "generated": "2026-07-03",
+    "window": "2020-2026",
+    "seed": 20260703,
+    "n_hits": 110,
+    "n_controls": 81,
+    "control_band_counts": {
+      "flop": 6,
+      "modest": 25,
+      "moderate": 50
+    },
+    "primary_2x2_blind": {
+      "p_hit": 0.945,
+      "p_hit_ci": [
+        0.886,
+        0.975
+      ],
+      "p_ctrl": 0.84,
+      "p_ctrl_ci": [
+        0.745,
+        0.904
+      ],
+      "risk_difference": 0.106,
+      "rd_ci": [
+        0.015,
+        0.196
+      ],
+      "rd_points": 11,
+      "risk_ratio": 1.126,
+      "odds_ratio": 3.168,
+      "or_ci": [
+        1.184,
+        8.477
+      ],
+      "powered": false,
+      "verdict": "INCONCLUSIVE (RD<15pt)"
+    },
+    "band_gradient": [
+      {
+        "band": "flop",
+        "score": 0,
+        "n": 6,
+        "k": 2,
+        "fits_pct": 33
+      },
+      {
+        "band": "modest",
+        "score": 1,
+        "n": 25,
+        "k": 21,
+        "fits_pct": 84
+      },
+      {
+        "band": "moderate",
+        "score": 2,
+        "n": 50,
+        "k": 45,
+        "fits_pct": 90
+      },
+      {
+        "band": "hit",
+        "score": 3,
+        "n": 110,
+        "k": 104,
+        "fits_pct": 95
+      }
+    ],
+    "cochran_armitage": {
+      "z": 3.87,
+      "p": 0,
+      "monotone_increasing": true
+    },
+    "gate_decomposition": [
+      {
+        "feature": "gate: familiarity>=3",
+        "hit_pct": 99,
+        "ctrl_pct": 99,
+        "rd_points": 0,
+        "odds_ratio": 1.36
+      },
+      {
+        "feature": "gate: twist_present",
+        "hit_pct": 100,
+        "ctrl_pct": 96,
+        "rd_points": 4,
+        "odds_ratio": 9.854
+      },
+      {
+        "feature": "gate: max_novelty>=3",
+        "hit_pct": 96,
+        "ctrl_pct": 84,
+        "rd_points": 12,
+        "odds_ratio": 3.78
+      }
+    ],
+    "feature_discrimination_ranked": [
+      {
+        "feature": "price<$20",
+        "hit_pct": 31,
+        "ctrl_pct": 59,
+        "rd_points": -28,
+        "odds_ratio": 0.312
+      },
+      {
+        "feature": "co_op",
+        "hit_pct": 58,
+        "ctrl_pct": 33,
+        "rd_points": 25,
+        "odds_ratio": 2.749
+      },
+      {
+        "feature": "twist:co_op_social_layer",
+        "hit_pct": 47,
+        "ctrl_pct": 26,
+        "rd_points": 21,
+        "odds_ratio": 2.525
+      },
+      {
+        "feature": "team<=5/solo",
+        "hit_pct": 18,
+        "ctrl_pct": 38,
+        "rd_points": -20,
+        "odds_ratio": 0.363
+      },
+      {
+        "feature": "familiarity>=4",
+        "hit_pct": 56,
+        "ctrl_pct": 37,
+        "rd_points": 18,
+        "odds_ratio": 2.098
+      },
+      {
+        "feature": "new_original_IP",
+        "hit_pct": 61,
+        "ctrl_pct": 78,
+        "rd_points": -17,
+        "odds_ratio": 0.452
+      },
+      {
+        "feature": "twist:procedural_roguelike_layer",
+        "hit_pct": 25,
+        "ctrl_pct": 7,
+        "rd_points": 17,
+        "odds_ratio": 3.825
+      },
+      {
+        "feature": "is_sequel",
+        "hit_pct": 35,
+        "ctrl_pct": 19,
+        "rd_points": 16,
+        "odds_ratio": 2.278
+      },
+      {
+        "feature": "twist:genre_fusion",
+        "hit_pct": 52,
+        "ctrl_pct": 38,
+        "rd_points": 14,
+        "odds_ratio": 1.723
+      },
+      {
+        "feature": "twist:price_or_scope_disruption",
+        "hit_pct": 23,
+        "ctrl_pct": 9,
+        "rd_points": 14,
+        "odds_ratio": 2.963
+      },
+      {
+        "feature": "novelty>=4",
+        "hit_pct": 65,
+        "ctrl_pct": 52,
+        "rd_points": 13,
+        "odds_ratio": 1.682
+      },
+      {
+        "feature": "price<$10",
+        "hit_pct": 12,
+        "ctrl_pct": 22,
+        "rd_points": -10,
+        "odds_ratio": 0.475
+      },
+      {
+        "feature": "twist:aesthetic_reframe",
+        "hit_pct": 59,
+        "ctrl_pct": 68,
+        "rd_points": -9,
+        "odds_ratio": 0.687
+      },
+      {
+        "feature": "twist:narrative_reframe",
+        "hit_pct": 18,
+        "ctrl_pct": 26,
+        "rd_points": -8,
+        "odds_ratio": 0.637
+      },
+      {
+        "feature": "twist:input_embodiment",
+        "hit_pct": 13,
+        "ctrl_pct": 5,
+        "rd_points": 8,
+        "odds_ratio": 2.588
+      },
+      {
+        "feature": "licensed_IP",
+        "hit_pct": 8,
+        "ctrl_pct": 4,
+        "rd_points": 4,
+        "odds_ratio": 2.099
+      },
+      {
+        "feature": "twist:mechanical_swap",
+        "hit_pct": 67,
+        "ctrl_pct": 69,
+        "rd_points": -2,
+        "odds_ratio": 0.921
+      },
+      {
+        "feature": "twist:accessibility_simplification",
+        "hit_pct": 24,
+        "ctrl_pct": 22,
+        "rd_points": 1,
+        "odds_ratio": 1.076
+      },
+      {
+        "feature": "twist:physics_jank_emergence",
+        "hit_pct": 7,
+        "ctrl_pct": 7,
+        "rd_points": 0,
+        "odds_ratio": 0.963
+      }
+    ],
+    "confirmation_bias": {
+      "n": 110,
+      "blind_fits_pct": 95,
+      "original_unblinded_fits_pct": 55,
+      "blind_vs_orig_disagreement_pct": 42
+    },
+    "sensitivity": {
+      "leak_rate_pct": 47,
+      "primary_no_leak": {
+        "p_hit": 0.955,
+        "p_hit_ci": [
+          0.876,
+          0.985
+        ],
+        "p_ctrl": 0.882,
+        "p_ctrl_ci": [
+          0.734,
+          0.953
+        ],
+        "risk_difference": 0.073,
+        "rd_ci": [
+          -0.046,
+          0.192
+        ],
+        "rd_points": 7,
+        "risk_ratio": 1.083,
+        "odds_ratio": 2.719,
+        "or_ci": [
+          0.63,
+          11.729
+        ],
+        "powered": false,
+        "verdict": "INCONCLUSIVE (RD<15pt)"
+      },
+      "primary_hi_confidence": {
+        "p_hit": 0.945,
+        "p_hit_ci": [
+          0.886,
+          0.975
+        ],
+        "p_ctrl": 0.859,
+        "p_ctrl_ci": [
+          0.765,
+          0.919
+        ],
+        "risk_difference": 0.086,
+        "rd_ci": [
+          -0.002,
+          0.175
+        ],
+        "rd_points": 9,
+        "risk_ratio": 1.101,
+        "odds_ratio": 2.739,
+        "or_ci": [
+          0.998,
+          7.515
+        ],
+        "powered": false,
+        "verdict": "INCONCLUSIVE (RD<15pt)"
+      }
+    }
+  },
+  "dimensions": [
+    {
+      "dimension": "primary_discrimination",
+      "headline": "fits fires on 94.5% of hits vs 84% of controls — a statistically non-null but sub-threshold 11-point gap (OR 3.17) that collapses to INCONCLUSIVE once leaked rows are removed.",
+      "findings": "The blind primary 2x2 shows p_hit=0.945 (CI 0.886–0.975) vs p_ctrl=0.840 (CI 0.745–0.904), giving risk_difference=0.106 (11 pts, RD CI 0.015–0.196) and odds_ratio=3.168 (OR CI 1.184–8.477). Both the RD CI and the OR CI exclude the null, so a directional association is present — but the effect is only 11 points, below the pre-registered 15-point materiality bar, and the risk_ratio is a modest 1.126; hence the stated verdict INCONCLUSIVE (RD<15pt). The significance is fragile: with a 47% leak_rate, the no-leak subset gives RD=0.073 (7 pts, CI −0.046 to 0.192, OR 2.719 CI 0.63–11.73) and the high-confidence subset gives RD=0.086 (9 pts, CI −0.002 to 0.175, OR 2.739 CI 0.998–7.52) — both CIs cross zero/one, so the apparent separation is INCONCLUSIVE and is carried substantially by leaked rows. Why the top-line contrast is weak is explained by a ceiling/composition effect: controls are dominated by the moderate band (50 of 81, plus 25 modest, only 6 flop), and moderate controls already fit at 90% and modest at 84%, leaving little headroom above the 95% hit rate. Yet the underlying signal is real as a gradient — the band ladder rises monotonically flop 33% → modest 84% → moderate 90% → hit 95%, with Cochran-Armitage z=3.87 (p≈0, monotone_increasing=true). So fits tracks commercial tier in a dose-response sense but does NOT cleanly discriminate 1M+ hits from well-matched near-miss controls at the top of the scale. Separately, a confirmation-bias flag: blind coding rated 95% of hits as fitting vs 55% under the original unblinded pass (42% disagreement), so the blind fits rate itself may be inflated.",
+      "findings_note": "",
+      "tables": [
+        {
+          "title": "Primary 2x2 (blind) and sensitivity subsets",
+          "columns": [
+            "contrast",
+            "p_hit",
+            "p_ctrl",
+            "RD (pts)",
+            "RD CI",
+            "OR",
+            "OR CI",
+            "verdict"
+          ],
+          "rows": [
+            [
+              "blind (all)",
+              "0.945",
+              "0.840",
+              "11",
+              "0.015 to 0.196",
+              "3.168",
+              "1.184–8.477",
+              "significant but RD<15 → INCONCLUSIVE"
+            ],
+            [
+              "no-leak (53% of rows)",
+              "0.955",
+              "0.882",
+              "7",
+              "-0.046 to 0.192",
+              "2.719",
+              "0.63–11.73",
+              "INCONCLUSIVE (CI crosses 0)"
+            ],
+            [
+              "high-confidence",
+              "0.945",
+              "0.859",
+              "9",
+              "-0.002 to 0.175",
+              "2.739",
+              "0.998–7.52",
+              "INCONCLUSIVE (CI crosses 0)"
+            ]
+          ]
+        },
+        {
+          "title": "Band gradient (Cochran-Armitage z=3.87, p≈0, monotone)",
+          "columns": [
+            "band",
+            "score",
+            "n",
+            "k fits",
+            "fits %"
+          ],
+          "rows": [
+            [
+              "flop",
+              "0",
+              "6",
+              "2",
+              "33"
+            ],
+            [
+              "modest",
+              "1",
+              "25",
+              "21",
+              "84"
+            ],
+            [
+              "moderate",
+              "2",
+              "50",
+              "45",
+              "90"
+            ],
+            [
+              "hit",
+              "3",
+              "110",
+              "104",
+              "95"
+            ]
+          ]
+        }
+      ],
+      "caveats": "Observational and matched, not randomized — association only, no causal claim. The full-sample RD CI (0.015–0.196) technically excludes zero, but it is not \"no difference\" nor a clean positive: it is INCONCLUSIVE because RD=11pts is below the 15-pt bar AND both leak-robustness subsets have CIs spanning zero. The 47% leak rate is high, and results depend materially on leaked rows. A ceiling effect (controls concentrated in the moderate band, already ~90% fitting) mechanically compresses the top-tier contrast, so a weak hit-vs-control gap does not imply the construct is inert — the monotone band trend argues the opposite. The 42% blind-vs-original disagreement and 95% blind fit rate suggest the blind fits label may be over-inclusive, which would further shrink true discrimination. n_controls=81 (only 6 flops) limits power at the low end."
+    },
+    {
+      "dimension": "monotone_gradient",
+      "headline": "Fits-rate rises monotonically flop→modest→moderate→hit (33→84→90→95%, Cochran-Armitage z=3.87, p≈0), but the trend is driven almost entirely by the tiny n=6 flop cell — above flop the gradient is nearly flat and saturating.",
+      "findings": "The blind \"fits\" rate increases at every step of the ordinal success ladder: flop 2/6=33%, modest 21/25=84%, moderate 45/50=90%, hit 104/110=95%. The Cochran-Armitage trend test (scores 0/1/2/3) gives z=3.87, p≈0, monotone_increasing=true — so a strictly ordered, statistically significant positive trend is present and not an artifact of collapsing bands. However, the trend is structurally lopsided: the flop→modest step is +51 points (33→84%), whereas modest→moderate→hit together add only +11 points (84→90→95%) and are consistent with a ceiling/saturation pattern. Because the flop cell is only n=6 (k=2), a single reclassification there swings its rate by ~17 points, so the CA statistic leans heavily on 6 observations. Above the flop band the three upper cells (n=25/50/110) are near-ceiling and only weakly separable; the effective discrimination is flop-vs-everything-else, not a smooth four-level dose-response. This gradient should also be read against the primary hit-vs-control contrast, which is INCONCLUSIVE (RD=10.6pts, 95% CI [1.5, 19.6]; RD<15pt threshold; OR=3.17, CI [1.18, 8.48]) and degrades further under leak-adjustment (leak rate 47%; no-leak RD=7pts, CI [-4.6, 19.2], INCONCLUSIVE; hi-confidence RD=9pts, CI [-0.2, 17.5], INCONCLUSIVE). Note the gradient is partly tautological: bands are defined by commercial outcome and \"fits\" is a rubric judgment about whether the design-DNA matches the success thesis, so higher bands are expected to fit more by construction.",
+      "tables": [
+        {
+          "title": "Band gradient (fits rate by ordinal success score)",
+          "rows": [
+            {
+              "band": "flop",
+              "score": 0,
+              "n": 6,
+              "k_fits": 2,
+              "fits_pct": 33,
+              "step_delta_pts": "—"
+            },
+            {
+              "band": "modest",
+              "score": 1,
+              "n": 25,
+              "k_fits": 21,
+              "fits_pct": 84,
+              "step_delta_pts": "+51"
+            },
+            {
+              "band": "moderate",
+              "score": 2,
+              "n": 50,
+              "k_fits": 45,
+              "fits_pct": 90,
+              "step_delta_pts": "+6"
+            },
+            {
+              "band": "hit",
+              "score": 3,
+              "n": 110,
+              "k_fits": 104,
+              "fits_pct": 95,
+              "step_delta_pts": "+5"
+            }
+          ]
+        },
+        {
+          "title": "Trend & primary contrast",
+          "rows": [
+            {
+              "metric": "Cochran-Armitage z",
+              "value": 3.87,
+              "note": "p≈0, monotone_increasing"
+            },
+            {
+              "metric": "Primary hit vs ctrl RD",
+              "value": "10.6 pts (CI 1.5–19.6)",
+              "note": "INCONCLUSIVE (RD<15pt)"
+            },
+            {
+              "metric": "Primary OR",
+              "value": "3.17 (CI 1.18–8.48)",
+              "note": "CI excludes 1 but RD gate fails"
+            },
+            {
+              "metric": "No-leak RD",
+              "value": "7 pts (CI -4.6–19.2)",
+              "note": "INCONCLUSIVE, CI crosses 0"
+            }
+          ]
+        }
+      ],
+      "caveats": "Observational and blind-coded — association, not causation. The CA trend is real and monotone but leans on the n=6 flop cell; the top three bands are near-ceiling (84/90/95%) and only weakly separable, so this is effectively \"flop vs rest,\" not a smooth 4-level dose-response. Bands are outcome-defined and \"fits\" is a thesis-conformity judgment, making the gradient partly circular. Confirmation-bias signal is large: blind fits 95% vs original unblinded 55%, with 42% blind-vs-original disagreement, so the absolute fits levels are label-sensitive. The overall hit-vs-control effect is INCONCLUSIVE (RD 10.6pt <15pt; weakens to 7–9pt with CIs crossing zero under 47% leak adjustment), so the gradient does not establish a powered hit-vs-control difference."
+    },
+    {
+      "dimension": "gate_decomposition",
+      "headline": "Only the novelty gate (max_novelty>=3) does any separating work (RD +12pt, OR 3.78) — but even it is INCONCLUSIVE; the familiarity and twist gates are saturated in BOTH arms and separate nothing.",
+      "findings": "The 3-gate fits composite decomposes cleanly into one live gate and two dead ones. (1) familiarity>=3: hit 99% vs ctrl 99%, RD 0pt, OR 1.36 — essentially every game in both arms clears it, so it carries zero discriminative signal (a near-universal precondition, not a hit differentiator). (2) twist_present: hit 100% vs ctrl 96%, RD only 4pt; the OR of 9.854 looks dramatic but is an artifact of a near-ceiling contrast (100 vs 96 — the \"10x odds\" reflects that hits have literally zero twist-absent cases, i.e. a 0-cell, not a large practical gap). Both arms are twist-saturated. (3) max_novelty>=3: hit 96% vs ctrl 84%, RD +12pt, OR 3.78 — this is the ONLY gate with a real between-arm gap, and it single-handedly accounts for essentially all of the composite fits signal (primary blind RD is +11pt; the novelty gate's +12pt tracks it almost exactly). So \"does the design clear the fits bar\" reduces operationally to \"does it reach novelty>=3.\" Crucially, at RD +12pt the novelty gate still sits under the study's own 15pt powered threshold, so it must be read as INCONCLUSIVE, not established. Corroborating the novelty axis as the load-bearing one: in the ranked feature table novelty>=4 is itself a positive discriminator (65% vs 52%, RD +13pt, OR 1.68), and the band gradient is monotone increasing (flop 33% -> modest 84% -> moderate 90% -> hit 95% fits; Cochran-Armitage z=3.87). Note the two dead gates are dead for opposite reasons: familiarity is a floor both arms already stand on, while twist is a ceiling both arms already hit.",
+      "tables": [
+        {
+          "title": "Gate decomposition (hit% vs ctrl%)",
+          "rows": [
+            {
+              "gate": "familiarity>=3",
+              "hit_pct": 99,
+              "ctrl_pct": 99,
+              "rd_points": 0,
+              "odds_ratio": 1.36,
+              "read": "SATURATED / no signal"
+            },
+            {
+              "gate": "twist_present",
+              "hit_pct": 100,
+              "ctrl_pct": 96,
+              "rd_points": 4,
+              "odds_ratio": 9.854,
+              "read": "near-ceiling both arms; OR inflated by 0-cell; INCONCLUSIVE"
+            },
+            {
+              "gate": "max_novelty>=3",
+              "hit_pct": 96,
+              "ctrl_pct": 84,
+              "rd_points": 12,
+              "odds_ratio": 3.78,
+              "read": "only real separator, but RD<15 -> INCONCLUSIVE"
+            }
+          ]
+        },
+        {
+          "title": "Composite fits by band (monotone gradient)",
+          "rows": [
+            {
+              "band": "flop",
+              "fits_pct": 33
+            },
+            {
+              "band": "modest",
+              "fits_pct": 84
+            },
+            {
+              "band": "moderate",
+              "fits_pct": 90
+            },
+            {
+              "band": "hit",
+              "fits_pct": 95
+            }
+          ]
+        }
+      ],
+      "caveats": "Observational, matched design — association not causation. No per-gate confidence intervals were supplied, so significance for the three gate contrasts cannot be tested directly; however all three RDs (0, 4, 12pt) fall below the study's stated 15pt powered threshold, so NONE is individually established — the novelty gate is the strongest candidate but remains INCONCLUSIVE. The twist gate's OR of 9.854 is not trustworthy as an effect size: it derives from a 100%-vs-96% contrast with a zero cell (no twist-absent hits), which explodes the odds ratio while the actual RD is only 4pt. Both familiarity and twist are near-universal (>=96%) in controls too, meaning these gates describe a baseline of what shipped games look like in this window, not what makes a hit. Confidence-bias flag is severe: blind fits 95% vs original unblinded 55% (42% disagreement), so absolute fit rates are coder-dependent even if between-arm gaps are less so. Sensitivity analyses on the overall composite (leak-adjusted RD +7pt, hi-confidence RD +9pt, both CIs crossing zero) reinforce that the whole fits signal is fragile — and since the composite signal is essentially the novelty gate, that fragility applies directly to the one gate that separates. Small control tail (flop n=6) makes the low end of the gradient noisy."
+    },
+    {
+      "dimension": "feature_discrimination",
+      "headline": "What separates hits is production-scale (price $20+, teams >5, co-op) plus a few twist types (co-op-social, roguelike, scope-disruption) — NOT the ubiquitous twists (mechanical_swap, aesthetic_reframe) that both arms share equally.",
+      "findings": ".",
+      "tables": [
+        {
+          "title": "Top separators (RD >= 15pt, hit-leaning or control-leaning)",
+          "columns": [
+            "feature",
+            "hit_pct",
+            "ctrl_pct",
+            "RD_pt",
+            "OR",
+            "direction"
+          ],
+          "rows": [
+            [
+              "price<$20",
+              31,
+              59,
+              -28,
+              0.312,
+              "controls (hits pricier)"
+            ],
+            [
+              "co_op",
+              58,
+              33,
+              25,
+              2.749,
+              "hits"
+            ],
+            [
+              "twist:co_op_social_layer",
+              47,
+              26,
+              21,
+              2.525,
+              "hits"
+            ],
+            [
+              "team<=5/solo",
+              18,
+              38,
+              -20,
+              0.363,
+              "controls (hits bigger teams)"
+            ],
+            [
+              "familiarity>=4",
+              56,
+              37,
+              18,
+              2.098,
+              "hits"
+            ],
+            [
+              "new_original_IP",
+              61,
+              78,
+              -17,
+              0.452,
+              "controls (hits less original)"
+            ],
+            [
+              "twist:procedural_roguelike_layer",
+              25,
+              7,
+              17,
+              3.825,
+              "hits"
+            ],
+            [
+              "is_sequel",
+              35,
+              19,
+              16,
+              2.278,
+              "hits"
+            ]
+          ]
+        },
+        {
+          "title": "Non-separators (|RD| <= 2pt — shared / table-stakes)",
+          "columns": [
+            "feature",
+            "hit_pct",
+            "ctrl_pct",
+            "RD_pt",
+            "OR"
+          ],
+          "rows": [
+            [
+              "twist:mechanical_swap",
+              67,
+              69,
+              -2,
+              0.921
+            ],
+            [
+              "twist:accessibility_simplification",
+              24,
+              22,
+              1,
+              1.076
+            ],
+            [
+              "twist:physics_jank_emergence",
+              7,
+              7,
+              0,
+              0.963
+            ]
+          ]
+        },
+        {
+          "title": "Sub-threshold / directionally inconclusive (|RD| < 15pt)",
+          "columns": [
+            "feature",
+            "hit_pct",
+            "ctrl_pct",
+            "RD_pt",
+            "OR"
+          ],
+          "rows": [
+            [
+              "twist:genre_fusion",
+              52,
+              38,
+              14,
+              1.723
+            ],
+            [
+              "twist:price_or_scope_disruption",
+              23,
+              9,
+              14,
+              2.963
+            ],
+            [
+              "novelty>=4",
+              65,
+              52,
+              13,
+              1.682
+            ],
+            [
+              "price<$10",
+              12,
+              22,
+              -10,
+              0.475
+            ],
+            [
+              "twist:aesthetic_reframe",
+              59,
+              68,
+              -9,
+              0.687
+            ],
+            [
+              "twist:narrative_reframe",
+              18,
+              26,
+              -8,
+              0.637
+            ],
+            [
+              "twist:input_embodiment",
+              13,
+              5,
+              8,
+              2.588
+            ],
+            [
+              "licensed_IP",
+              8,
+              4,
+              4,
+              2.099
+            ]
+          ]
+        }
+      ],
+      "caveats": "Association only, observational — not causation. (1) The feature table reports point RD/OR with NO per-feature confidence intervals, so individual \"separators\" are unhedged; treat the ~15pt cutoff as a rough eyeball, not a significance test. (2) ~19 features were scanned with no multiple-comparisons correction — expect 1-2 false positives among the borderline (14-18pt) rows. (3) Heavy collinearity: price<$20, team<=5/solo, and co_op all proxy the same latent \"production scale/budget,\" so they are not four independent findings but largely one — the co_op / co_op_social_layer pair likewise double-counts. (4) The price and team directions plausibly reflect SURVIVORSHIP (1M+ sellers are bigger games because scale buys marketing/polish) rather than a design lever a small studio can pull. (5) The overall primary contrast is itself underpowered and INCONCLUSIVE (blind RD 11pt, CI [1.5,19.6]; leak-sensitivity RD drops to 7pt, CI crosses zero [-4.6,19.2]) with a 47% leak rate, so feature-level gaps sit atop a weak base signal. (6) Confirmation-bias flag: blind fits 95% vs original-unblinded 55% (42% disagreement) means the coded \"twist\" features carry rater latitude. (7) n_controls=81 is band-skewed (50 moderate / 25 modest / 6 flop), so \"control\" here means mostly moderate-success games, compressing hit-vs-control contrasts."
+    },
+    {
+      "dimension": "confirmation_bias",
+      "headline": "Blind coding rated 95% of hits as \"fits\" vs 55% unblinded (+40pt), with 42% of hits flipping between passes — the gap runs opposite to theory-confirming bias and mostly signals a lenient, noisy rubric.",
+      "findings": "On the same 110 hits, the blind pass coded 95% as fitting the theory (blind_fits_pct=95) versus 55% in the phase-1 unblinded pass (original_unblinded_fits_pct=55) — a +40 point delta — and the two passes disagreed on 42% of individual hits (blind_vs_orig_disagreement_pct=42). The direction is diagnostically important: naive confirmation bias predicts the UNBLINDED rate should be inflated (coders who know a title is a hit talk themselves into \"fits\"), which would make unblinded > blind. Here the opposite holds — blind is 40pts HIGHER — so the pattern is not theory-confirming inflation of the unblinded pass; instead the blind rubric is markedly more lenient/generous than the original human judgment. The 42% disagreement is near coin-flip magnitude and, since only ~5% of hits are blind-\"no\", almost all of that disagreement is one-directional: cases the unblinded pass called \"no\" the blind pass reclassifies as \"fits.\" This means most of the delta is rubric drift + coding noise, not a clean bias signal, and the blind 95% sits at a near-ceiling that barely discriminates hits from the control arm (p_ctrl=0.84; blind primary RD=10.6pts, rd_ci [1.5, 19.6], OR=3.168 [1.184, 8.477], verdict INCONCLUSIVE because RD<15pt). Under leak-adjusted sensitivity the separation weakens further and the CI crosses zero (no-leak RD=7pts, rd_ci [-4.6, 19.2], OR=2.719 [0.63, 11.73] — INCONCLUSIVE), so the residual hit-vs-control edge is not robust to a 47% leak rate. Net: the blind fits-rate is high but this is driven by a permissive rubric that says \"fits\" for almost any familiar-base + twist design (the band gradient rises 33/84/90/95 across flop/modest/moderate/hit, Cochran-Armitage z=3.87, monotone), and the 40pt blind-vs-unblinded gap plus 42% disagreement should be read as an inter-pass reliability problem (rubric leniency and noise), not as evidence of confirmation bias operating in the expected direction.",
+      "findings_note": "",
+      "tables": [
+        {
+          "title": "Blind vs unblinded fits-rate on the same 110 hits",
+          "rows": [
+            [
+              "Blind fits_pct",
+              "95%"
+            ],
+            [
+              "Phase-1 unblinded fits_pct",
+              "55%"
+            ],
+            [
+              "Delta",
+              "+40 pts (blind higher)"
+            ],
+            [
+              "Per-title disagreement",
+              "42%"
+            ],
+            [
+              "Expected sign if confirmation bias",
+              "unblinded > blind (observed: reverse)"
+            ]
+          ]
+        },
+        {
+          "title": "Blind fits-rate by band (rubric leniency / discrimination)",
+          "rows": [
+            [
+              "flop (n=6)",
+              "33%"
+            ],
+            [
+              "modest (n=25)",
+              "84%"
+            ],
+            [
+              "moderate (n=50)",
+              "90%"
+            ],
+            [
+              "hit (n=110)",
+              "95%"
+            ],
+            [
+              "control arm overall",
+              "84% (p_ctrl)"
+            ]
+          ]
+        },
+        {
+          "title": "Blind hit-vs-control primary contrast (and leak sensitivity)",
+          "rows": [
+            [
+              "Primary blind RD",
+              "10.6 pts, CI [1.5, 19.6] — INCONCLUSIVE (<15pt)"
+            ],
+            [
+              "Primary blind OR",
+              "3.168, CI [1.184, 8.477]"
+            ],
+            [
+              "No-leak RD",
+              "7 pts, CI [-4.6, 19.2] — INCONCLUSIVE (crosses 0)"
+            ],
+            [
+              "Hi-confidence RD",
+              "8.6 pts, CI [-0.2, 17.5] — INCONCLUSIVE"
+            ]
+          ]
+        }
+      ],
+      "caveats": "Observational and association-only; no causal claim. The confirmation_bias block gives only aggregate rates (95% vs 55%, 42% disagreement) — the raw phase-1 unblinded per-title codes are not in the sample rows, so I cannot verify the directionality of each disagreement or compute a kappa; the \"mostly one-directional\" inference rests on the near-ceiling blind rate leaving little room for blind-\"no\" flips. \"Unblinded\" and \"blind\" may differ in rubric version and coder, so the 40pt gap conflates rubric change with blinding. The blind hit-vs-control contrasts are underpowered (powered=false) and INCONCLUSIVE under both the primary and leak-adjusted specs (RD<15pt and/or CI crossing zero), so the blind pass's ability to separate hits from controls is not established regardless of the bias interpretation. Leak rate is high (47%), and leaked design-DNA could itself inflate the blind fits-rate."
+    },
+    {
+      "dimension": "revised_thesis",
+      "headline": "\"Familiar base + twist\" is necessary-not-sufficient — near-universal in BOTH arms (base gate RD 0pts), so it is a floor condition, not a hit discriminator; what actually separates bands is the DEGREE and FLAVOR of novelty.",
+      "findings": "The compound pattern does not cleanly discriminate hits from comparable non-hits. The full blind \"fits\" rubric is 94.5% in hits vs 84.0% in controls: RD = 10.6pts (CI [1.5, 19.6]), OR = 3.17 (CI [1.18, 8.48]) — the study's own verdict is INCONCLUSIVE because RD < 15pts, even though the CI just excludes zero. Decomposing the gate shows WHY it fails as a discriminator: the \"familiar base\" leg (familiarity>=3) is 99% in hits AND 99% in controls (RD 0pts, OR 1.36 — non-discriminating), and \"twist_present\" is 100% vs 96% (RD only 4pts). Both legs are effectively saturated in both arms, so a game HAVING a familiar base and a twist tells you almost nothing about whether it hit — it is table stakes. The discriminating margin lives entirely in the third leg, max_novelty>=3: 96% vs 84%, RD 12pts, OR 3.78 — i.e. it is not the PRESENCE of a twist but its AMBITION/execution that shifts the odds, and even that is only 12pts. This is reinforced by a genuine dose-response: fit rate climbs monotonically 33% (flop, n=6) → 84% (modest) → 90% (moderate) → 95% (hit), Cochran-Armitage z = 3.87 (p ≈ 0, monotone increasing) — the pattern tracks the success ladder continuously rather than switching on at \"hit,\" which is the signature of a necessary-not-sufficient quality gradient. Robustness cuts against a strong claim: removing the ~47% leaked rows drops RD to 7pts (CI [-4.6, 19.2], crosses zero, INCONCLUSIVE) and the high-confidence-only subset gives RD 9pts (CI [-0.2, 17.5], crosses zero, INCONCLUSIVE) — so the headline 11pt gap is not robust to de-leaking or confidence restriction. Finally, confirmation-bias telemetry is decisive for the honest claim: blind coders saw the pattern in 95% of hits vs only 55% under the original UN-blinded pass (42% disagreement) — the rubric finds \"familiar base + twist\" nearly everywhere once you look for it, which is itself evidence of non-discrimination, not of a hit formula. Where real separation exists it is in specific ingredients, not the abstract pattern: co_op (58% vs 33%, RD +25, OR 2.75), twist:co_op_social_layer (47% vs 26%, RD +21), twist:procedural_roguelike_layer (25% vs 7%, RD +17, OR 3.83), higher price tier (price<$20 is NEGATIVE: 31% vs 59%, RD -28, OR 0.31), and familiarity>=4 (56% vs 37%, RD +18) — while generic twists like mechanical_swap (67% vs 69%, RD -2) and aesthetic_reframe (59% vs 68%, RD -9) do not discriminate at all. Honest revised claim: \"familiar base + twist\" is a NECESSARY-NOT-SUFFICIENT entry condition (near-universal among viable releases in both arms; base-familiarity leg is outright non-discriminating at RD 0), NOT a hit predictor. It functions as a floor you must clear, not a lever that separates hits from equally-twisted non-hits.",
+      "findings_note": "",
+      "tables": [
+        {
+          "title": "Gate decomposition — which leg actually discriminates",
+          "columns": [
+            "gate leg",
+            "hit %",
+            "ctrl %",
+            "RD (pts)",
+            "OR",
+            "reads as"
+          ],
+          "rows": [
+            [
+              "familiarity>=3 (familiar base)",
+              "99",
+              "99",
+              "0",
+              "1.36",
+              "non-discriminating (saturated both arms)"
+            ],
+            [
+              "twist_present",
+              "100",
+              "96",
+              "4",
+              "9.85",
+              "near-saturated; tiny margin"
+            ],
+            [
+              "max_novelty>=3 (twist DEGREE)",
+              "96",
+              "84",
+              "12",
+              "3.78",
+              "only real signal, still <15pt INCONCLUSIVE"
+            ],
+            [
+              "full blind 'fits' rubric",
+              "94.5",
+              "84.0",
+              "10.6",
+              "3.17",
+              "INCONCLUSIVE (RD<15pt)"
+            ]
+          ]
+        },
+        {
+          "title": "Band gradient — dose-response (Cochran-Armitage z=3.87, p≈0)",
+          "columns": [
+            "band",
+            "score",
+            "n",
+            "fits %"
+          ],
+          "rows": [
+            [
+              "flop",
+              "0",
+              "6",
+              "33"
+            ],
+            [
+              "modest",
+              "1",
+              "25",
+              "84"
+            ],
+            [
+              "moderate",
+              "2",
+              "50",
+              "90"
+            ],
+            [
+              "hit",
+              "3",
+              "110",
+              "95"
+            ]
+          ]
+        },
+        {
+          "title": "Sensitivity — headline gap is not robust",
+          "columns": [
+            "cut",
+            "RD (pts)",
+            "RD CI",
+            "verdict"
+          ],
+          "rows": [
+            [
+              "primary (all rows)",
+              "10.6",
+              "[1.5, 19.6]",
+              "INCONCLUSIVE (RD<15)"
+            ],
+            [
+              "de-leaked (47% dropped)",
+              "7",
+              "[-4.6, 19.2]",
+              "INCONCLUSIVE (CI crosses 0)"
+            ],
+            [
+              "high-confidence only",
+              "9",
+              "[-0.2, 17.5]",
+              "INCONCLUSIVE (CI crosses 0)"
+            ]
+          ]
+        }
+      ],
+      "caveats": "Observational and association-only — controls were selected to be COMPARABLE releases, which by construction pushes the base pattern toward saturation in both arms (a restriction/selection effect); a random no-name control pool would likely show a larger base-familiarity gap, so \"non-discriminating\" is conditional on the matched design. The primary contrast is underpowered (study flags powered=false) and its own verdict is INCONCLUSIVE at RD 10.6pts; de-leaking (leak rate 47%) and confidence-restriction both push RD below significance with CIs crossing zero, so do not read the 11pt gap as established. flop band n=6 makes the low end of the gradient fragile. The feature-discrimination and twist-type percentages are descriptive, uncorrected for multiple comparisons, and several ORs have wide/unreported CIs — treat co_op, roguelike-layer, price-tier signals as hypotheses, not confirmed effects. The 42% blind-vs-unblinded disagreement indicates the rubric is susceptible to post-hoc pattern-seeing; the blind numbers are the trustworthy ones and they are what show near-universality."
+    }
+  ],
+  "redteam_ko": "방어 논리에 대한 가장 강한 정직한 반박(한국어):\n\n이 연구의 핵심 신호는 통제집단 설계에 의해 사실상 만들어졌을 수 있다. 첫째, \"적격성 필터\"가 이미 familiarity≥3 게이트(hit 99% vs ctrl 99%, RD 0pt)와 twist_present(hit 100% vs ctrl 96%, RD 4pt)를 양쪽 모두 통과하도록 통제집단을 선별했다면, 남는 판별력의 대부분은 진짜 인과가 아니라 밴드 배정 규칙과 표본 구성의 산물이며, 실제로 flop 밴드는 n=6·k=2에 불과해 33% 수치는 통계적으로 무의미하고 단조증가 추세(z=3.87) 자체가 소수의 극단 셀에 의존한다. 둘째, 정보 가용성 비대칭이 결정적이다. 히트작은 문서화가 풍부해 twist를 코더가 쉽게 \"발견\"하는 반면 비히트작은 자료가 빈약해 twist가 실재해도 누락되는데, 이는 confirmation_bias 지표에서 그대로 드러난다. 블라인드 적합률 95%가 원저자의 비블라인드 55%와 42%나 불일치한다는 것은 코딩이 결과를 알수록 twist를 더 많이 붙였다는 방향성 오염의 직접 증거다. 셋째, 이 코딩 잡음은 오히려 귀무가설 쪽으로의 감쇠(attenuation-toward-null)를 일으키므로, \"차이 없음\"이라는 결론조차 진짜 효과의 부재가 아니라 측정 오차로 상당 부분 설명될 수 있어 어느 방향으로도 결론을 내릴 수 없다. 넷째, 감도분석이 이를 확증한다. 누출률이 47%에 달하고 누출을 제거하면 RD가 10.6pt에서 7.3pt로 떨어지며 신뢰구간 [-0.046, 0.192]와 OR 신뢰구간 [0.63, 11.729]이 모두 무효값(0과 1)을 가로질러, 1차 분석의 \"유의성\"(OR 3.168, CI [1.184, 8.477])이 누출된 관측치에 의존하고 있음을 보여준다 — 즉 검정력 미달(powered:false)과 RD<15pt로 판정 자체가 INCONCLUSIVE다. 다섯째, 설령 차이가 실재해도 마케팅 예산·위시리스트 축적·출시 타이밍·순수한 운 같은 미측정 교란요인이 통제되지 않았고, price<$20가 오히려 통제집단에 유리한(RD -28pt) 등 특징들이 서로 얽혀 있어 \"친숙한 기반+참신한 변주\"는 히트의 원인이 아니라 잘 문서화된 성공작에 사후적으로 붙는 상관 서술일 뿐이다 — 이는 인과가 아니라 연관이며, 그것도 취약한 연관이다.",
+  "critic_ko": "통제군의 최대 취약점은 flop 밴드(n=6)로, 이 셀만으로는 저성과 구간의 적합률 추정이 사실상 불가능하며 modest(25)·moderate(50)도 밴드별 회귀에는 얇습니다. 또한 licensed_IP, input_embodiment, physics_jank_emergence, price_or_scope_disruption 같은 저빈도 twist 피처는 양쪽 표본이 한 자릿수 %라 개별 OR이 불안정하고, 통제군(81)이 히트(110)보다 적어 primary 2x2가 이미 미검정(powered:false, RD<15pt)인 상태입니다. 결정적으로 leak_rate 47%에 누수 제거 시 RD가 11→7pt로 무너지고 CI가 0을 포함하며, blind 대 원본 적합률 괴리(95% vs 55%, 불일치 42%)는 확증편향 위험을 시사합니다. 강화하려면 flop/modest 밴드와 통제군 표본을 대폭 늘려 밴드당 최소 수십 개를 확보하고, 누수 없는 하이컨피던스 하위표본만으로 사전등록된 코딩 기준에 따라 재검정하며, 저빈도 twist는 상위 카테고리로 묶어 검정력을 확보하는 것이 필요합니다."
+}

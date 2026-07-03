@@ -26,16 +26,17 @@
 
 ## 산출물 (`report/`)
 
-- **📊 라이브 대시보드**: https://claude.ai/code/artifact/b7864c77-5698-4ae5-98d9-6b0703e27bf4
-- `report/report.md` — 한국어 분석 리포트 (핵심 결론 · 가설 검증 · 대표 사례 · 반례 · 그 외 공통점 · 실전 시사점 · 방법론)
-- `report/dataset.json`, `report/dataset.csv` — 게임 × 전 필드 데이터셋 (출처·신뢰도 등급 포함, 125종)
-- `report/charts.html` — 시각화 아티팩트 소스 (친숙도×참신성 2×2 히트맵, 변주/베이스 분류 빈도, 부합 비율, 가격·연도별, 대표 사례)
-- `report/stats.json`, `report/dimensions.json`, `report/chart_data.json` — 집계·차원분석·차트 데이터
-- `scripts/process_results.js`, `scripts/chart_data.js` — 워크플로 출력 → 산출물 변환 스크립트 (재현용)
+- **📊 라이브 대시보드** (Phase 1+2): https://claude.ai/code/artifact/b7864c77-5698-4ae5-98d9-6b0703e27bf4
+- **Phase 1 (히트작 내부 분석):** `report/report.md` · `report/dataset.{json,csv}`(125종) · `report/{stats,dimensions,chart_data}.json`
+- **Phase 2 (대조군 검증):** `report/control-study.md` · `report/comparison_stats.json`(2×2·게이트분해·특징랭킹) · `report/control_dataset.{json,csv}`(비히트 81종) · `report/recoded_hits_blind.json`(히트 blind 재코딩)
+- `report/charts.html` — 대시보드 소스 · `scripts/*.js` — 워크플로 출력 → 산출물 변환(재현용)
 
 ## 핵심 결과 요약
 
-확정 코호트(Tier A+B) **111종** 중 **55%** 가 "익숙한 베이스 + 독창적 변주"에 부합(민감도 40–70%, 코더 불일치 45%). 패턴은 실재하나 **히트의 약 절반만** 설명하며, 나머지는 속편·AAA·라이선스로 100만을 넘었다. 중요한 정정: "익숙한 베이스"의 71%는 현실 게임이 아니라 **이미 존재하는 비디오게임 장르**다. 자세한 내용·한계는 `report/report.md` 참조.
+- **Phase 1 (승자만):** 확정 히트 **111종** 중 **55%** 가 "익숙한 베이스 + 독창적 변주"에 부합. 단 "익숙한 베이스"의 71%는 현실 게임이 아니라 **이미 존재하는 비디오게임 장르**.
+- **Phase 2 (대조군 81종 추가, 양쪽 blind 코딩):** **이 패턴은 히트를 판별하지 못한다.** 비히트작의 **84%**도 부합하고, "익숙한 베이스" 게이트는 히트 99% vs 대조군 99%로 **판별력 0**. 복합 위험차 +11pt는 실질성 문턱(15pt) 미달 → **결론 불가**(누출 통제 시 7pt).
+- **실제(미약한) 판별자:** 협동(+25pt)·로그라이크 깊이(+17)·특정 변주. Phase 1의 "저가·소규모팀·오리지널" 서사는 대조군에서 **뒤집힌다**(생존편향 보정).
+- **결론:** "익숙한 베이스 + 변주"는 성공 **레시피가 아니라 최소 진입 조건(바닥)** 이다. 상세는 `report/control-study.md`.
 
 ## 실행 방법
 
@@ -50,11 +51,13 @@ Workflow({ scriptPath: 'game-hits-analysis.workflow.js' })
 ## 파일 구조
 
 ```
-game-hits-analysis.workflow.js   # 5단계 오케스트레이션 (schemas + prompts + merge + phases)
-report/                          # 실행 산출물 (dataset, report, charts)
+game-hits-analysis.workflow.js   # Phase 1: 히트작 발굴·검증·분석 (5단계)
+control-study.workflow.js        # Phase 2: 대조군 발굴·blind 코딩·비교 (Phase 0–5)
+scripts/                         # args 추출·주입, 결과 처리, 차트 데이터
+report/                          # 실행 산출물 (dataset, reports, charts, comparison_stats)
 README.md
 ```
 
 ## 한계
 
-추정치 불확실성, 소유자≠판매(번들/무료/증정), **생존자 편향**(대조군 없음), 최신·영어권 언론 편향, 코딩 주관성. 리포트의 「방법론·신뢰도·한계」 절에 상세 기술. 모든 수치는 **2026년 7월 기준** 스냅샷.
+추정치 불확실성, 소유자≠판매(번들/무료/증정), 최신·영어권 언론 편향, 코딩 주관성. **생존자 편향은 Phase 2 대조군으로 직접 검증**했으나(그리고 패턴이 히트를 판별하지 못함을 확인), 대조군도 편의표본이며 여전히 관찰연구(연관≠인과)이고 표본이 미검정(대조군 81 < 히트 110, flop 밴드 n=6)이라 복합 판정은 결론 불가다. 코딩 잡음(불일치 42%)은 귀무 쪽 감쇠를 일으킨다. 각 리포트의 「한계」 절에 상세 기술. 모든 수치는 **2026년 7월 기준** 스냅샷.

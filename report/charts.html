@@ -105,6 +105,27 @@
   .chip{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:999px;
     background:var(--surface-2);color:var(--ink-2);margin:2px 3px 0 0;border:1px solid var(--border)}
   .num{font-family:var(--mono);text-align:right;white-space:nowrap}
+  /* phase 2 */
+  .divider{height:1px;background:var(--grid);margin:40px 0 0}
+  .p2head{margin:32px 0 6px}
+  .p2title{font-size:clamp(21px,3.6vw,31px);font-weight:800;letter-spacing:-.02em;margin:6px 0 10px;text-wrap:balance}
+  .p2title .hl{color:var(--accent)}
+  .grp{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center;margin:13px 0}
+  .grp .lbl{font-size:12px;color:var(--ink-2);text-align:right}
+  .grp .pair{display:flex;flex-direction:column;gap:4px}
+  .gbar{position:relative;height:15px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+  .gbar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+  .gbar.hit .fill{background:var(--fit)} .gbar.ctrl .fill{background:var(--nofit)}
+  .gbar .t{position:absolute;right:5px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:9.5px;color:var(--ink)}
+  .forest{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+  .frow{display:grid;grid-template-columns:150px 1fr 40px;gap:8px;align-items:center}
+  .frow .lbl{font-size:11.5px;color:var(--ink-2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fbar{position:relative;height:17px;background:linear-gradient(90deg,transparent calc(50% - .5px),var(--grid) calc(50% - .5px),var(--grid) calc(50% + .5px),transparent calc(50% + .5px))}
+  .fbar .seg{position:absolute;top:2px;bottom:2px;border-radius:3px;min-width:1px}
+  .fbar .seg.pos{left:50%;background:var(--fit)} .fbar .seg.neg{right:50%;background:var(--nofit)}
+  .frow .rd{font-family:var(--mono);font-size:11px;text-align:right}
+  .faxis{display:grid;grid-template-columns:150px 1fr 40px;gap:8px;font-family:var(--mono);font-size:9.5px;color:var(--muted);margin-top:3px}
+  .faxis .ends{display:flex;justify-content:space-between}
   .foot{margin-top:34px;font-size:12.5px;color:var(--muted);line-height:1.7}
   .foot b{color:var(--ink-2)}
   a{color:var(--accent)}
@@ -112,10 +133,9 @@
 </style>
 
 <div class="wrap">
-  <p class="eyebrow">Steam Market Intelligence · 2020–2026 · N=111 confirmed</p>
+  <p class="eyebrow">Steam Market Intelligence · 2020–2026 · 2단계 · 680+ 에이전트</p>
   <h1>100만장+ 스팀 히트의 <span class="hl">공통점</span></h1>
-  <p class="lede">“이미 유명한 게임/개념 + 독창적 변주” 가설을, 100만 장 이상 판매가 확인된 히트작 111종에 대해
-    <b>Dynamic Workflow로 330개 에이전트</b>를 팬아웃해 정량 검증했다. 결론: 패턴은 실재하나 히트의 <b>약 절반</b>만 설명한다.</p>
+  <p class="lede">“이미 유명한 게임/개념 + 독창적 변주” 가설을 2단계로 검증했다. <b>Phase 1</b>(히트 111종): 55%가 부합. <b>Phase 2</b>(대조군 81종 추가): 그러나 이 패턴은 히트를 <b>가르지 못한다</b> — 비히트작의 84%도 부합한다. 진짜(미약한) 판별자는 <b>협동·장르 깊이</b>이지 “익숙한 베이스”가 아니다. <span style="color:var(--muted)">↓ Phase 2 결과 먼저</span></p>
   <div class="meta">
     <span>생성 2026-07-03</span><span>후보 조사 125종 → 확정(Tier A+B) 111종</span>
     <span>모든 판매량은 추정치</span>
@@ -127,8 +147,62 @@
     <h3>⚠️ 이 숫자를 읽는 법 — 생존자 편향 & 라벨 불안정성</h3>
     <p>표본은 <b>이미 이긴 게임만</b> 담는다. 같은 공식으로 실패한 수천 개(대조군)가 없으므로 “이 패턴이 히트 확률을 높인다”는 <b>인과 주장은 불가능</b>하다 — “히트작의 절반이 사후적으로 이 패턴으로 서술된다”는 서술적 사실까지만 유효하다.</p>
     <p>fit 분류의 <b>코더 불일치율은 45%</b>. 55%라는 헤드라인의 실제 오차 밴드는 <b>~40–70%</b>로 넓다. 아래 모든 fit 비율은 정량이 아닌 <b>방향성</b>으로 읽어야 한다.</p>
+    <p style="color:var(--accent)"><b>→ 이 한계를 Phase 2에서 대조군을 붙여 직접 검증했다</b> — 결과는 바로 아래.</p>
   </div>
 
+  <!-- ==================== PHASE 2: CONTROL GROUP ==================== -->
+  <div class="divider"></div>
+  <div class="p2head">
+    <p class="eyebrow">Phase 2 · 대조군 검증 (Control Group) · 비히트작 81종 blind 코딩</p>
+    <h2 class="p2title">그래서 — 이 패턴이 히트를 <span class="hl">실제로 가르는가?</span></h2>
+    <p class="lede">Phase 1은 승자만 봤다(생존자 편향). 1M을 <b>못 넘긴</b> 비슷한 게임 81종을 <b>동일 blind 기준</b>으로 코딩해 비교하자, 답은 <b>“거의 못 가른다”</b>였다 — 비히트작의 84%도 이 패턴에 부합한다.</p>
+  </div>
+
+  <div class="stats" id="stats2"></div>
+
+  <div class="grid">
+    <section class="card">
+      <h2>부합률: 히트 vs 비히트 — 거의 동률</h2>
+      <p class="sub">blind 코딩 · 파랑=히트(n110) · 회색=대조군(n81)</p>
+      <div class="grp"><div class="lbl">P(fits | 히트)</div><div class="pair">
+        <div class="gbar hit"><div class="fill" style="width:94.5%"></div><div class="t">94.5%</div></div></div></div>
+      <div class="grp"><div class="lbl">P(fits | 대조군)</div><div class="pair">
+        <div class="gbar ctrl"><div class="fill" style="width:84%"></div><div class="t">84.0%</div></div></div></div>
+      <p class="note">위험차 <b>+11pt</b> (OR 3.17), 그러나 사전등록 실질성 문턱(15pt) 미달 → <b>결론 불가</b>. 누출 통제 시 <b>7pt</b>로 하락하며 신뢰구간이 0을 관통. “익숙한 베이스+변주”는 히트를 예측하는 판별자가 <b>아니다.</b></p>
+    </section>
+
+    <section class="card">
+      <h2>게이트 분해 — 신호는 어디에?</h2>
+      <p class="sub">fits 3게이트 · 파랑=히트 · 주황=대조군</p>
+      <div id="gates"></div>
+      <p class="note"><b>“익숙한 베이스”(친숙도≥3)는 99% vs 99% — 판별력 0.</b> 거의 모든 출시작이 익숙한 베이스 위에 있다(테이블 스테이크스). 유일한 미약한 신호는 <b>변주의 강도</b>(참신성≥3, +12pt)뿐.</p>
+    </section>
+
+    <section class="card full">
+      <h2>무엇이 실제로 히트를 가르나 — 특징별 위험차(RD)</h2>
+      <p class="sub">→ 오른쪽(파랑) = 히트로 분리 · ← 왼쪽(주황) = 비히트로 분리 · 사전(ex-ante) 특징만</p>
+      <div class="forest" id="forest"></div>
+      <div class="faxis"><div></div><div class="ends"><span>← 비히트 쪽 (−30pt)</span><span>0</span><span>히트 쪽 (+30pt) →</span></div><div></div></div>
+      <p class="note">진짜 분리자는 추상적 패턴이 아니라 <b>협동(+25)·로그라이크 깊이(+17)·특정 변주</b>다. Phase 1의 “저가·소규모팀·오리지널” 서사는 <b>뒤집힌다</b> — 가격&lt;$20(−28)·팀≤5(−20)·오리지널IP(−17)는 오히려 <b>비히트에</b> 흔하다(생존편향 보정). ⚠️ 가격·팀·협동은 “제작 규모”라는 한 잠재변수로 수렴하며 다중비교 미보정 — <b>확정 아닌 가설.</b></p>
+    </section>
+
+    <section class="card">
+      <h2>성과 사다리별 부합률 — 단조 추세</h2>
+      <p class="sub">flop→modest→moderate→hit · Cochran-Armitage z=3.87</p>
+      <div class="sbars" id="gradient"></div>
+      <p class="note">통계적 단조 증가는 실재하나 <b>flop(n6)→modest 한 계단(+51pt)에 쏠려</b> 있고 상위 3밴드(84→90→95%)는 천장에 붙어 약하게만 분리. flop 셀 n=6이라 취약.</p>
+    </section>
+
+    <section class="card">
+      <h2>확증편향 정량화</h2>
+      <p class="sub">동일 110개 히트 · blind vs Phase-1 비블라인드</p>
+      <div id="confbias"></div>
+      <p class="note">blind 95% vs 비블라인드 55% — <b>40pt 격차, 42% 불일치.</b> 히트를 아는지 여부와 무관하게 격차가 크다는 건, blind 기준이 “베이스+변주”면 거의 무엇이든 <b>부합으로 부르는 관대한 잣대</b>임을 뜻한다. 이 관대함이 곧 대조군과의 비분리 원인.</p>
+    </section>
+  </div>
+
+  <div class="divider"></div>
+  <p class="eyebrow" style="margin:30px 0 2px">Phase 1 · 히트작 111종 내부 분석 (참고)</p>
   <div class="grid">
     <!-- FEATURE: heatmap -->
     <section class="card full">
@@ -321,4 +395,45 @@ DATA.cases.forEach(([g,base,fam,tw,nov,price,team,copies])=>{
     <td class="num">${price}</td><td class="num">${team}</td><td class="num">${copies}</td>`;
   tb.append(tr);
 });
+
+// ===================== PHASE 2 render =====================
+const P2 = {
+  stats:[
+    {k:"P(fits|히트) blind",v:"94.5%",s:"vs 대조군 84.0% · 거의 동률",accent:true},
+    {k:"위험차 (RD)",v:"+11pt",s:"OR 3.17 · 문턱 15pt 미달 → 결론 불가"},
+    {k:"‘익숙한 베이스’ 게이트",v:"99=99",s:"히트 99% = 대조군 99% · 판별력 0"},
+    {k:"확증편향",v:"+40pt",s:"blind 95% vs 비블라인드 55%"},
+  ],
+  gates:[
+    {label:"익숙한 베이스 (친숙도≥3)",hit:99,ctrl:99},
+    {label:"변주 존재",hit:100,ctrl:96},
+    {label:"변주 강도 (참신성≥3)",hit:96,ctrl:84},
+  ],
+  forest:[
+    ["co_op (협동)",25],["co-op 소셜 변주",21],["familiarity≥4",18],["로그라이크 레이어",17],["is_sequel (속편)",16],
+    ["장르 융합 변주",14],["가격/규모 파괴 변주",14],["참신성≥4",13],
+    ["mechanical_swap 변주",-2],["aesthetic 변주",-9],["price<$10",-10],["오리지널 IP",-17],["team≤5/solo",-20],["price<$20",-28],
+  ],
+  gradient:[["Flop (n6)",33],["Modest (n25)",84],["Moderate (n50)",90],["Hit (n110)",95]],
+  conf:[["blind 코딩",95],["Phase-1 비블라인드",55]],
+};
+P2.stats.forEach(s=>{const t=el("div","tile"+(s.accent?" accent":""));
+  t.innerHTML=`<div class="k">${s.k}</div><div class="v">${s.v}</div><div class="s">${s.s}</div>`;$("#stats2").append(t);});
+P2.gates.forEach(g=>{const r=el("div","grp");
+  r.innerHTML=`<div class="lbl" title="${g.label}">${g.label}</div><div class="pair">
+    <div class="gbar hit"><div class="fill" style="width:${g.hit}%"></div><div class="t">히트 ${g.hit}%</div></div>
+    <div class="gbar ctrl"><div class="fill" style="width:${g.ctrl}%"></div><div class="t">대조군 ${g.ctrl}%</div></div></div>`;
+  $("#gates").append(r);});
+const maxRD=30;
+P2.forest.forEach(([lbl,rd])=>{const w=Math.min(Math.abs(rd),maxRD)/maxRD*50;
+  const seg=rd>=0?`<div class="seg pos" style="width:${w}%"></div>`:`<div class="seg neg" style="width:${w}%"></div>`;
+  const r=el("div","frow");
+  r.innerHTML=`<div class="lbl" title="${lbl}">${lbl}</div><div class="fbar" title="RD ${rd>0?'+':''}${rd}pt">${seg}</div><div class="rd" style="color:${rd>=0?'var(--fit)':'var(--nofit)'}">${rd>0?'+':''}${rd}</div>`;
+  $("#forest").append(r);});
+P2.gradient.forEach(([lbl,pct])=>{const s=el("div","sbar");
+  s.innerHTML=`<div class="lbl">${lbl}</div><div class="stack" title="${pct}% 부합"><div class="seg fit" style="width:${pct}%">${pct>=20?`<span>${pct}%</span>`:""}</div></div>`;
+  $("#gradient").append(s);});
+P2.conf.forEach(([lbl,pct])=>{const r=el("div","row");
+  r.innerHTML=`<div class="lbl">${lbl}</div><div class="track" title="${pct}%"><div class="bar ${pct>=95?'fit':'nofit'}" style="width:${pct}%"></div></div><div class="val">${pct}<span class="u">%</span></div>`;
+  $("#confbias").append(r);});
 </script>
